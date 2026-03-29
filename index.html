@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌟 AI Daily | 2026-03-29</title>
+<title>🌟 AI日报 | 2026-03-29</title>
 <style>
 :root {
   --bg: #03040a;
-  --surface: rgba(12, 14, 28, 0.85);
-  --surface2: rgba(18, 21, 38, 0.9);
+  --surface: rgba(12, 14, 28, 0.88);
+  --surface2: rgba(18, 21, 38, 0.92);
   --border: rgba(255,255,255,0.07);
   --text: #e8eaf6;
   --text2: #8b92b8;
@@ -22,16 +22,15 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 20px; }
-
 body {
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: 1rem;
+  line-height: 1.85;
 }
-
-/* ── Animated BG ── */
 .bg-grid {
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background-image:
@@ -39,18 +38,14 @@ body {
     linear-gradient(90deg, rgba(157,114,255,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
-.bg-glow {
-  position: fixed; border-radius: 50%; filter: blur(120px);
-  pointer-events: none; z-index: 0;
-}
-.bg-glow-1 { width: 600px; height: 500px; top: -100px; left: -150px; background: rgba(157,114,255,0.08); }
-.bg-glow-2 { width: 500px; height: 500px; top: 30%; right: -100px; background: rgba(34,211,238,0.07); }
-.bg-glow-3 { width: 400px; height: 400px; bottom: -50px; left: 30%; background: rgba(244,114,182,0.06); }
-
+.bg-glow { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+.bg-1 { width: 600px; height: 500px; top: -100px; left: -150px; background: rgba(157,114,255,0.08); }
+.bg-2 { width: 500px; height: 500px; top: 30%; right: -100px; background: rgba(34,211,238,0.07); }
+.bg-3 { width: 400px; height: 400px; bottom: -50px; left: 30%; background: rgba(244,114,182,0.06); }
 .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
 
-/* ── HERO ── */
-.hero { text-align: center; padding: 52px 20px 36px; }
+/* ── Hero ── */
+.hero { text-align: center; padding: 48px 20px 32px; }
 .badge {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 10px 24px; border-radius: 99px;
@@ -59,228 +54,203 @@ body {
   font-size: 15px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
   color: var(--purple); margin-bottom: 22px;
 }
-.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); animation: blink 2s ease-in-out infinite; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); animation: blink 2s infinite; }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
-
 h1.title {
   font-size: clamp(40px, 7vw, 76px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
   background: linear-gradient(135deg, #fff 20%, var(--purple) 50%, var(--cyan) 80%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
 }
-.hero-sub { font-size: 19px; color: var(--text2); margin-bottom: 32px; }
-
-/* Stats bar */
+.hero-sub { font-size: 19px; color: var(--text2); margin-bottom: 28px; }
 .stats {
-  display: inline-flex; border-radius: 20px; overflow: hidden;
-  border: 1px solid var(--border); background: var(--surface);
-  backdrop-filter: blur(20px);
+  display: inline-flex; border-radius: 22px; overflow: hidden;
+  border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(20px);
 }
-.stat-item {
-  padding: 18px 28px; text-align: center;
-  border-right: 1px solid var(--border); min-width: 110px;
-}
+.stat-item { padding: 16px 26px; text-align: center; border-right: 1px solid var(--border); min-width: 100px; }
 .stat-item:last-child { border-right: none; }
-.stat-n { font-size: 36px; font-weight: 900; line-height: 1;
-  background: linear-gradient(135deg, var(--purple), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.stat-l { font-size: 13px; color: var(--text2); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 5px; }
+.stat-n { font-size: 34px; font-weight: 900; background: linear-gradient(135deg, var(--purple), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-l { font-size: 12px; color: var(--text2); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
 
 /* ── Summary Cards ── */
-.summary {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 24px 0;
-}
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
 .sum-card {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 20px; padding: 20px 22px;
-  backdrop-filter: blur(20px);
-  position: relative; overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+  border-radius: 20px; padding: 20px 22px; backdrop-filter: blur(20px);
+  position: relative; overflow: hidden; transition: transform 0.3s;
 }
-.sum-card:hover { transform: translateY(-4px) scale(1.01); }
-.sum-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  border-radius: 20px 20px 0 0;
-}
+.sum-card:hover { transform: translateY(-3px); }
+.sum-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 20px 20px 0 0; }
 .sum-card:nth-child(1)::before { background: linear-gradient(90deg, var(--orange), var(--red)); }
 .sum-card:nth-child(2)::before { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
 .sum-card:nth-child(3)::before { background: linear-gradient(90deg, var(--pink), var(--purple)); }
 .sum-card:nth-child(4)::before { background: linear-gradient(90deg, var(--green), var(--cyan)); }
 .sum-card h3 { font-size: 14px; color: var(--text2); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
-.sum-card p { font-size: 17px; line-height: 1.8; color: var(--text); }
+.sum-card p { font-size: 16px; line-height: 1.8; color: var(--text); }
 
 /* ── Tab Bar ── */
 .tab-bar {
-  display: flex; gap: 8px; flex-wrap: wrap;
-  margin: 28px 0 0;
-  padding: 14px 16px;
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin: 24px 0 0; padding: 14px 18px;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 20px; backdrop-filter: blur(20px);
+  border-radius: 22px; backdrop-filter: blur(20px);
 }
 .tab-btn {
   display: flex; align-items: center; gap: 8px;
-  padding: 12px 20px; border-radius: 14px;
+  padding: 10px 18px; border-radius: 12px;
   border: none; background: transparent; color: var(--text2);
-  font-size: 16px; font-weight: 600; cursor: pointer;
-  transition: all 0.22s cubic-bezier(0.34,1.56,0.64,1);
-  position: relative; white-space: nowrap;
-}
-.tab-btn .tab-icon { font-size: 14px; }
-.tab-btn .tab-label {}
-.tab-btn .tab-count {
-  font-size: 12px; font-weight: 700;
-  padding: 2px 9px; border-radius: 99px;
-  background: rgba(255,255,255,0.08); color: var(--text2);
+  font-size: 15px; font-weight: 600; cursor: pointer;
   transition: all 0.22s;
 }
-.tab-btn:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+.tab-btn .tab-count { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.08); }
+.tab-btn:hover { color: var(--text); }
 .tab-btn.active { color: #fff; }
-.tab-btn.active .tab-count { background: rgba(255,255,255,0.2); }
-.tab-btn[data-tab="all"].active { background: linear-gradient(135deg, var(--purple), var(--pink)); box-shadow: 0 4px 20px rgba(157,114,255,0.4); }
-.tab-btn[data-tab="product"].active { background: linear-gradient(135deg, var(--pink), var(--purple)); box-shadow: 0 4px 20px rgba(244,114,182,0.35); }
-.tab-btn[data-tab="industry"].active { background: linear-gradient(135deg, var(--cyan), #0891b2); box-shadow: 0 4px 20px rgba(34,211,238,0.35); }
-.tab-btn[data-tab="biz"].active { background: linear-gradient(135deg, var(--orange), var(--red)); box-shadow: 0 4px 20px rgba(251,146,60,0.35); }
-.tab-btn[data-tab="startup"].active { background: linear-gradient(135deg, var(--green), #059669); box-shadow: 0 4px 20px rgba(52,211,153,0.35); }
-.tab-btn[data-tab="discussion"].active { background: linear-gradient(135deg, var(--yellow), var(--orange)); box-shadow: 0 4px 20px rgba(251,191,36,0.35); }
+.tab-btn[data-tab="all"].active { background: linear-gradient(135deg, var(--purple), var(--pink)); }
+.tab-btn[data-tab="china"].active { background: linear-gradient(135deg, var(--red), var(--orange)); }
+.tab-btn[data-tab="product"].active { background: linear-gradient(135deg, var(--pink), var(--purple)); }
+.tab-btn[data-tab="industry"].active { background: linear-gradient(135deg, var(--cyan), #0891b2); }
+.tab-btn[data-tab="biz"].active { background: linear-gradient(135deg, var(--orange), var(--red)); }
+.tab-btn[data-tab="startup"].active { background: linear-gradient(135deg, var(--green), #059669); }
+.tab-btn[data-tab="discuss"].active { background: linear-gradient(135deg, var(--yellow), var(--orange)); }
 
-/* ── Section (accordion) ── */
+/* ── Section ── */
 .section { margin-bottom: 8px; }
 .sec-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 20px;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 16px; cursor: pointer;
-  backdrop-filter: blur(20px); transition: all 0.2s;
-  user-select: none;
+  border-radius: 18px; cursor: pointer;
+  backdrop-filter: blur(20px); transition: all 0.2s; user-select: none;
 }
 .sec-header:hover { background: var(--surface2); }
-.sec-header.open { border-radius: 16px 16px 0 0; border-bottom-color: transparent; }
-.sec-left { display: flex; align-items: center; gap: 10px; }
-.sec-icon { font-size: 18px; }
-.sec-title { font-size: 19px; font-weight: 700; }
-.sec-count { font-size: 13px; background: rgba(157,114,255,0.12); color: var(--purple); padding: 3px 12px; border-radius: 99px; }
-.sec-arrow { font-size: 14px; color: var(--text2); transition: transform 0.3s; }
+.sec-header.open { border-radius: 18px 18px 0 0; border-bottom-color: transparent; }
+.sec-left { display: flex; align-items: center; gap: 12px; }
+.sec-icon { font-size: 20px; }
+.sec-title { font-size: 18px; font-weight: 700; }
+.sec-count { font-size: 12px; background: rgba(157,114,255,0.12); color: var(--purple); padding: 3px 12px; border-radius: 99px; }
+.sec-arrow { font-size: 15px; color: var(--text2); transition: transform 0.3s; }
 .sec-header.open .sec-arrow { transform: rotate(180deg); }
-
 .sec-body {
-  display: none;
-  background: var(--surface); border: 1px solid var(--border);
-  border-top: none; border-radius: 0 0 16px 16px;
-  padding: 16px;
+  display: none; background: var(--surface); border: 1px solid var(--border);
+  border-top: none; border-radius: 0 0 18px 18px; padding: 16px;
   backdrop-filter: blur(20px);
 }
-.sec-body.open { display: block; animation: fadeUp 0.25s ease-out; }
+.sec-body.open { display: block; animation: fadeUp 0.3s ease-out; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-/* News Grid */
-.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
+/* News Cards */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
 .news-card {
-  background: rgba(8, 10, 22, 0.7); border: 1px solid var(--border);
-  border-radius: 20px; padding: 22px 24px;
-  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
-  position: relative; overflow: hidden;
+  background: rgba(8,10,22,0.7); border: 1px solid var(--border);
+  border-radius: 18px; padding: 20px 22px;
+  transition: all 0.3s; position: relative; overflow: hidden;
 }
-.news-card::before {
-  content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
-  border-radius: 4px 0 0 4px;
-  background: linear-gradient(180deg, var(--purple), var(--cyan));
-  opacity: 0; transition: opacity 0.3s;
-}
-.news-card:hover { border-color: rgba(157,114,255,0.4); transform: translateY(-4px); box-shadow: 0 16px 50px rgba(157,114,255,0.15); }
+.news-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; border-radius: 4px 0 0 4px; background: linear-gradient(180deg, var(--purple), var(--cyan)); opacity: 0; transition: opacity 0.3s; }
+.news-card:hover { border-color: rgba(157,114,255,0.4); transform: translateY(-3px); box-shadow: 0 14px 48px rgba(157,114,255,0.12); }
 .news-card:hover::before { opacity: 1; }
 
-.tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
-.tag {
-  font-size: 12px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
-  padding: 4px 12px; border-radius: 8px;
-}
-.tag-cn { background: rgba(251,146,60,0.12); color: var(--orange); }
-.tag-global { background: rgba(157,114,255,0.12); color: var(--purple); }
-.tag-hot { background: rgba(248,113,113,0.12); color: var(--red); }
-.tag-new { background: rgba(52,211,153,0.12); color: var(--green); }
-.tag-verge { background: rgba(34,211,238,0.1); color: var(--cyan); }
-.tag-wired { background: rgba(244,114,182,0.1); color: var(--pink); }
+.tag { font-size: 12px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 12px; border-radius: 8px; }
+.tag-cn { background: rgba(248,113,113,0.15); color: var(--red); }
+.tag-global { background: rgba(157,114,255,0.15); color: var(--purple); }
+.tag-hot { background: rgba(248,113,113,0.15); color: var(--red); }
+.tag-new { background: rgba(52,211,153,0.15); color: var(--green); }
+.tag-verge { background: rgba(34,211,238,0.12); color: var(--cyan); }
+.tag-wired { background: rgba(244,114,182,0.12); color: var(--pink); }
+.tag-hk { background: rgba(251,191,36,0.12); color: var(--yellow); }
 
-.news-card h3 { font-size: 18px; font-weight: 700; line-height: 1.6; margin-bottom: 10px; color: var(--text); }
-.news-card .desc { font-size: 16px; color: var(--text2); line-height: 1.85; margin-bottom: 14px; }
+.tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.news-card h3 { font-size: 17px; font-weight: 700; line-height: 1.6; margin-bottom: 10px; color: var(--text); }
+.news-card .desc { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 14px; }
 .news-card .meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(139,146,184,0.5); }
 .news-card .meta a { color: var(--cyan); text-decoration: none; font-weight: 600; }
 .news-card .meta a:hover { text-decoration: underline; }
 
-/* ── Footer ── */
-.footer { text-align: center; padding: 32px 20px; color: rgba(139,146,184,0.35); font-size: 14px; border-top: 1px solid var(--border); margin-top: 48px; }
-.footer strong { color: rgba(157,114,255,0.5); }
-
-/* ── Responsive ── */
+/* Footer */
+.footer { text-align: center; padding: 28px 20px; color: rgba(139,146,184,0.3); font-size: 13px; border-top: 1px solid var(--border); margin-top: 40px; }
+.footer strong { color: rgba(157,114,255,0.4); }
+.section.hidden { display: none !important; }
 @media (max-width: 640px) {
   html { font-size: 18px; }
   .news-grid { grid-template-columns: 1fr; }
-  .stats { flex-wrap: wrap; border-radius: 18px; }
+  .stats { flex-wrap: wrap; }
   .stat-item { min-width: 90px; padding: 12px 16px; }
-  .stat-n { font-size: 28px; }
-  .tab-bar { padding: 12px 14px; }
-  .tab-btn { padding: 10px 14px; font-size: 15px; }
 }
-
-/* ── Hide sections by tab ── */
-.section.hidden { display: none !important; }
 </style>
 </head>
 <body>
-
-<!-- BG Effects -->
 <div class="bg-grid"></div>
-<div class="bg-glow bg-glow-1"></div>
-<div class="bg-glow bg-glow-2"></div>
-<div class="bg-glow bg-glow-3"></div>
+<div class="bg-glow bg-1"></div>
+<div class="bg-glow bg-2"></div>
+<div class="bg-glow bg-3"></div>
 
 <div class="container">
 
 <!-- HERO -->
 <div class="hero">
-  <div class="badge"><span class="live-dot"></span> 2026.03.29 · 24h Global AI Report</div>
-  <h1 class="title">🌟 全球AI动态日报</h1>
-  <p class="hero-sub">星野整理 · 全网AI资讯一文打尽</p>
+  <div class="badge"><span class="live-dot"></span> 2026.03.29 · 24小时全球AI动态</div>
+  <h1 class="title">🌟 全球AI日报</h1>
+  <p class="hero-sub">星野整理 · 国内外AI资讯一文打尽</p>
   <div class="stats">
-    <div class="stat-item"><div class="stat-n">29</div><div class="stat-l">条资讯</div></div>
-    <div class="stat-item"><div class="stat-n">5</div><div class="stat-l">大分类</div></div>
-    <div class="stat-item"><div class="stat-n">10+</div><div class="stat-l">新闻源</div></div>
+    <div class="stat-item"><div class="stat-n">25</div><div class="stat-l">条资讯</div></div>
+    <div class="stat-item"><div class="stat-n">6</div><div class="stat-l">大分类</div></div>
+    <div class="stat-item"><div class="stat-n">10+</div><div class="stat-l">中文源</div></div>
     <div class="stat-item"><div class="stat-n">🇨🇳🇺🇸🌐</div><div class="stat-l">国内外</div></div>
   </div>
 </div>
 
 <!-- SUMMARY -->
 <div class="summary">
-  <div class="sum-card"><h3>🇨🇳 国内最热</h3><p>小米三年600亿押注AI，MiMo-V2全家桶正式发布；宇树科技具身智能体验馆亚洲首店5月底落沪；首个具身智能行业标准发布，6月实施。</p></div>
-  <div class="sum-card"><h3>🌐 国际最热</h3><p>Google TurboQuant让AI内存提速8倍/降本50%；OpenAI突然关闭Sora；Anthropic Claude实现Mac电脑操控；Cloudflare Workers提速100倍。</p></div>
-  <div class="sum-card"><h3>🚀 产品亮点</h3><p>腾讯首发Agent全景图；Cohere开源语音模型Transcribe挑战英伟达；谷歌Live Translate登陆iOS；淘天全员Token自由；OpenAI Codex插件发布。</p></div>
-  <div class="sum-card"><h3>💼 商业风向</h3><p>ChatGPT广告6周赚1亿美元即将全球扩张；红杉/高瓴等6家VC签约中关村；AI失业补助计划启动每月$1000；苹果巨额留才奖防OpenAI挖角。</p></div>
+  <div class="sum-card"><h3>🇨🇳 国内最热</h3><p>小米三年600亿押注AI，MiMo-V2发布；宇树科技具身智能体验馆亚洲首店5月底落沪；首个具身智能行业标准发布，6月实施。</p></div>
+  <div class="sum-card"><h3>🌐 国际最热</h3><p>Google TurboQuant让AI内存提速8倍/降本50%；OpenAI突然关闭Sora；Anthropic Claude实现Mac操控；ChatGPT广告6周赚1亿美元。</p></div>
+  <div class="sum-card"><h3>🚀 产品亮点</h3><p>腾讯首发Agent全景图；Cohere开源语音模型Transcribe挑战英伟达；谷歌Live Translate登陆iOS；淘天全员Token自由。</p></div>
+  <div class="sum-card"><h3>💼 商业风向</h3><p>红杉/高瓴等6家VC签约中关村；AI失业补助计划启动每月$1000；苹果巨额留才奖防OpenAI挖角。</p></div>
 </div>
 
-<!-- TAB BAR -->
+<!-- TABS -->
 <div class="tab-bar">
-  <button class="tab-btn active" data-tab="all" onclick="filterTab('all', this)">📋 全部 <span class="tab-count">29</span></button>
-  <button class="tab-btn" data-tab="product" onclick="filterTab('product', this)">🚀 新品 <span class="tab-count">7</span></button>
-  <button class="tab-btn" data-tab="industry" onclick="filterTab('industry', this)">🏭 行业 <span class="tab-count">8</span></button>
-  <button class="tab-btn" data-tab="biz" onclick="filterTab('biz', this)">💼 商业 <span class="tab-count">6</span></button>
-  <button class="tab-btn" data-tab="startup" onclick="filterTab('startup', this)">💡 创业 <span class="tab-count">4</span></button>
-  <button class="tab-btn" data-tab="discussion" onclick="filterTab('discussion', this)">🔥 讨论 <span class="tab-count">4</span></button>
+  <button class="tab-btn active" data-tab="all" onclick="filterTab('all',this)">📋 全部 <span class="tab-count">25</span></button>
+  <button class="tab-btn" data-tab="china" onclick="filterTab('china',this)">🇨🇳 国内要闻 <span class="tab-count">8</span></button>
+  <button class="tab-btn" data-tab="product" onclick="filterTab('product',this)">🚀 新品动态 <span class="tab-count">6</span></button>
+  <button class="tab-btn" data-tab="industry" onclick="filterTab('industry',this)">🏭 行业资讯 <span class="tab-count">5</span></button>
+  <button class="tab-btn" data-tab="biz" onclick="filterTab('biz',this)">💼 商业运用 <span class="tab-count">4</span></button>
+  <button class="tab-btn" data-tab="startup" onclick="filterTab('startup',this)">💡 创业融资 <span class="tab-count">4</span></button>
+  <button class="tab-btn" data-tab="discuss" onclick="filterTab('discuss',this)">🔥 讨论热点 <span class="tab-count">4</span></button>
+</div>
+
+<!-- ══ 国内要闻 ══ -->
+<div class="section" id="sec-china">
+  <div class="sec-header open" onclick="toggleSection(this)">
+    <div class="sec-left"><span class="sec-icon">🇨🇳</span><span class="sec-title">国内要闻</span><span class="sec-count">8条 · 全中文链接</span></div>
+    <span class="sec-arrow">▾</span>
+  </div>
+  <div class="sec-body open">
+    <div class="news-grid">
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🔥 HOT</span></div><h3>小米三年投600亿！MiMo-V2大模型家族正式发布，覆盖全模态</h3><p class="desc">小米正式发布MiMo-V2大模型家族，涵盖语言/视觉/多模态，雷军宣布三年AI投入600亿元人民币，是国内大厂最强AI投入宣言。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26612" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>宇树科技具身智能体验馆亚洲首店5月底落沪，面积超100㎡</h3><p class="desc">2026全国精品首发季暨"首发上海"系列活动发布仪式上，宇树科技宣布其具身智能体验馆亚洲首店5月底在上海静安久光百货开业，展示全线机器人产品。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743547264106501" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">政策</span></div><h3>首个具身智能行业标准正式发布：6月起实施</h3><p class="desc">具身智能行业首个官方标准正式发布，覆盖机器人感知/决策/执行全链路，将于2026年6月1日起实施，行业正式告别野蛮生长。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26610" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>红杉中国、高瓴创投等6家顶级VC中关村集中签约</h3><p class="desc">2026中关村论坛年会"AI未来论坛"上，红杉中国、高瓴创投、经纬创投、五源资本、金沙江创投、真知创投6家顶级VC作为投资生态伙伴集中签约，押注全球前沿科技。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743854538899714" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">大厂</span></div><h3>美团王兴：自研LongCat大模型全量开放，进攻AI本地生活</h3><p class="desc">美团CEO王兴首次披露美团已自研LongCat大模型三年，现正式向本地生活场景全量开放，进攻AI本地生活入口。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26611" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>科大讯飞AIPC华东制造基地正式投产，年规划产能10万台</h3><p class="desc">科大讯飞在浙江金华建成年产能10万台国产AIPC产线，深度集成ERP/WMS/MES七大数字化平台，与龙芯中科达成战略合作。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743798461022208" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">机器人</span></div><h3>宇树科技王兴兴：具身智能GPT时刻还需两到三年</h3><p class="desc">宇树CEO王兴兴表示，带一台机器人到陌生场景能完成80%~90%任务，才是具身GPT时刻，预计还要2~3年，但今年或明年会有重大技术突破。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://wap.egsea.com/detail/article?id=2260781" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">政策</span></div><h3>北京率先启动智能网联新能源汽车专属商业保险开发</h3><p class="desc">北京在全国率先启动智能网联新能源汽车专属商业保险产品开发，以适应智能驾驶技术带来的新型风险因素和使用场景变化。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://ysxw.cctv.cn/article.html?toc_style_id=feeds_default&item_id=12554965963627942738&channelId=1119" target="_blank">原文 →</a></div></div>
+    </div>
+  </div>
 </div>
 
 <!-- ══ 新品动态 ══ -->
 <div class="section" id="sec-product">
   <div class="sec-header open" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">🚀</span><span class="sec-title">新品动态</span><span class="sec-count">7条</span></div>
+    <div class="sec-left"><span class="sec-icon">🚀</span><span class="sec-title">新品动态</span><span class="sec-count">6条</span></div>
     <span class="sec-arrow">▾</span>
   </div>
   <div class="sec-body open">
     <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span><span class="tag tag-cn">🇨🇳 国内</span></div><h3>腾讯首发 Agent 产品全景图：打造面向 AI 时代的"全栈引擎"</h3><p class="desc">腾讯正式发布Agent产品全景图，覆盖开发/生产/消费全链路，大厂系统性布局AI Agent生态的标志性事件。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26628" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span><span class="tag tag-global">🌐 国际</span></div><h3>Cohere 发布开源语音模型 Transcribe，挑战英伟达统治力</h3><p class="desc">Cohere发布开源语音识别模型Transcribe，主打轻量化，号称在多个基准测试中超越Nvidia竞品。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26624" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span><span class="tag tag-global">🌐 国际</span></div><h3>谷歌 Live Translate 登陆 iOS：Gemini 加持，70余种语言实时翻译</h3><p class="desc">Google将Live Translate实时翻译功能引入iOS，配合Gemini大模型，支持70多种语言，告别机械音。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26623" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-cn">🇨🇳 国内</span></div><h3>雷军：未来三年投 600 亿！小米 MiMo-V2 大模型家族正式发布</h3><p class="desc">小米正式发布MiMo-V2大模型家族，涵盖语言/视觉/多模态，雷军宣布三年AI投入600亿元。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26612" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span></div><h3>OpenAI 推出 Codex 插件：一键打包技能与 MCP 配置</h3><p class="desc">OpenAI为开发者推出Codex插件，支持一键打包AI技能与MCP配置，大幅降低Agent开发门槛。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26630" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>Google TurboQuant 算法：AI 内存提速 8 倍，成本降低 50%</h3><p class="desc">Google推出TurboQuant量化算法，内存速度提升8倍成本降低50%，24小时内即被移植到MLX和llama.cpp。</p><div class="meta"><span>VentureBeat · 3月25日</span><a href="https://venturebeat.com/infrastructure/googles-new-turboquant-algorithm-speeds-up-ai-memory-8x-cutting-costs-by-50" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>OpenAI 突然关闭 Sora：发布数周即戛然而止，行业震动</h3><p class="desc">OpenAI本周还在常规更新Sora，下一秒即宣布关闭Sora视频模型App和API，原因不明，震动AI视频行业。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/technology/openai-is-shutting-down-sora-its-powerful-ai-video-app" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>腾讯首发Agent产品全景图：打造面向AI时代的"全栈引擎"</h3><p class="desc">腾讯正式发布Agent产品全景图，覆盖开发/生产/消费全链路，大厂系统性布局AI Agent生态的标志性事件。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26628" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>Cohere发布开源语音模型Transcribe，挑战英伟达统治力</h3><p class="desc">Cohere发布开源语音识别模型Transcribe，主打轻量化，号称在多个基准测试中超越Nvidia竞品。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26624" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>谷歌Live Translate登陆iOS：Gemini加持，70余种语言实时翻译</h3><p class="desc">Google将Live Translate实时翻译功能引入iOS，配合Gemini大模型，支持70多种语言，告别机械音。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26623" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>OpenAI推出Codex插件：一键打包技能与MCP配置</h3><p class="desc">OpenAI为开发者推出Codex插件，支持一键打包AI技能与MCP配置，大幅降低Agent开发门槛。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26630" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>Google TurboQuant算法：AI内存提速8倍，成本降低50%</h3><p class="desc">Google推出TurboQuant量化算法，内存速度提升8倍成本降低50%，24小时内即被移植到MLX和llama.cpp。</p><div class="meta"><span>VentureBeat · 3月25日</span><a href="https://venturebeat.com/infrastructure/googles-new-turboquant-algorithm-speeds-up-ai-memory-8x-cutting-costs-by-50" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>OpenAI突然关闭Sora：发布数周即戛然而止，行业震动</h3><p class="desc">OpenAI本周还在常规更新Sora，下一秒即宣布关闭Sora视频模型App和API，原因不明，震动AI视频行业。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/technology/openai-is-shutting-down-sora-its-powerful-ai-video-app" target="_blank">原文 →</a></div></div>
     </div>
   </div>
 </div>
@@ -288,19 +258,16 @@ h1.title {
 <!-- ══ 行业资讯 ══ -->
 <div class="section" id="sec-industry">
   <div class="sec-header open" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">🏭</span><span class="sec-title">行业资讯</span><span class="sec-count">8条</span></div>
+    <div class="sec-left"><span class="sec-icon">🏭</span><span class="sec-title">行业资讯</span><span class="sec-count">5条</span></div>
     <span class="sec-arrow">▾</span>
   </div>
   <div class="sec-body open">
     <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-cn">🇨🇳 国内</span></div><h3>首个具身智能行业标准正式发布：6月起实施，告别"野蛮生长"</h3><p class="desc">具身智能行业首个官方标准正式发布，覆盖感知/决策/执行全链路，2026年6月1日起实施。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26610" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>宇树科技王兴兴：具身智能GPT时刻大概还需两到三年</h3><p class="desc">宇树CEO王兴兴表示，带一台机器人到陌生场景能完成80%~90%任务，才是具身GPT时刻，预计还要2~3年。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://wap.egsea.com/detail/article?id=2260781" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>维基百科向 AI 下"逐客令"：严禁 LLM 生成内容</h3><p class="desc">维基百科编委会明确禁止AI生成内容进入百科，违者页面将被删除或限制编辑。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26627" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>Anthropic Claude 实现 Mac 操控：AI Agent 进入"真干活"阶段</h3><p class="desc">Anthropic将Claude Mac控制功能集成进Claude Cowork和Claude Code，Claude可代替用户操作桌面应用、编写代码并返回成品。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/technology/anthropics-claude-can-now-control-your-mac-escalating-the-fight-to-build-ai" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>Cloudflare Workers 提速 100 倍：无容器架构直跑 AI Agent 代码</h3><p class="desc">Cloudflare发布Dynamic Workers架构，抛弃容器直接在V8隔离环境运行AI Agent代码，速度提升100倍。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/infrastructure/cloudflares-new-dynamic-workers-ditch-containers-to-run-ai-agent-code-100x" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 国际</span></div><h3>前 Qwen 核心技术骨干：大模型正进化为"行动派"</h3><p class="desc">前Qwen核心技术骨干发文称，大模型正从"理解"向"行动"跃迁，Agent化是下一代模型核心方向。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26618" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span><span class="tag tag-global">🌐 国际</span></div><h3>深度机智发布 PhysBrain 1.0：让机器人拥有"物理常识"</h3><p class="desc">深度机智发布PhysBrain 1.0，专注于机器人物理常识推理，显著提升具身智能任务成功率。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26619" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 国际</span></div><h3>xMemory 技术：AI Agent Token 消耗减半，上下文膨胀获解</h3><p class="desc">xMemory通过四级语义层次替代传统Flat RAG，多轮对话Agent的Token消耗降低近50%。</p><div class="meta"><span>VentureBeat · 3月25日</span><a href="https://venturebeat.com/orchestration/how-xmemory-cuts-token-costs-and-context-bloat-in-ai-agents" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>Anthropic Claude实现Mac操控：AI Agent进入"真干活"阶段</h3><p class="desc">Anthropic将Claude Mac控制功能集成进Claude Cowork和Claude Code，Claude可代替用户操作桌面应用、编写代码并返回成品。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/technology/anthropics-claude-can-now-control-your-mac-escalating-the-fight-to-build-ai" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>Cloudflare Workers提速100倍：无容器架构直跑AI Agent代码</h3><p class="desc">Cloudflare发布Dynamic Workers架构，抛弃容器直接在V8隔离环境运行AI Agent代码，速度提升100倍。</p><div class="meta"><span>VentureBeat · 3月24日</span><a href="https://venturebeat.com/infrastructure/cloudflares-new-dynamic-workers-ditch-containers-to-run-ai-agent-code-100x" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>深度机智发布PhysBrain 1.0：让机器人拥有"物理常识"</h3><p class="desc">深度机智发布PhysBrain 1.0，专注于机器人物理常识推理，显著提升具身智能任务成功率。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26619" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>xMemory技术：AI Agent Token消耗减半，上下文膨胀获解</h3><p class="desc">xMemory通过四级语义层次替代传统Flat RAG，多轮对话Agent的Token消耗降低近50%。</p><div class="meta"><span>VentureBeat · 3月25日</span><a href="https://venturebeat.com/orchestration/how-xmemory-cuts-token-costs-and-context-bloat-in-ai-agents" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>维基百科向AI下"逐客令"：严禁LLM生成内容</h3><p class="desc">维基百科编委会明确禁止AI生成内容进入百科，违者页面将被删除或限制编辑。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26627" target="_blank">原文 →</a></div></div>
     </div>
   </div>
 </div>
@@ -308,66 +275,47 @@ h1.title {
 <!-- ══ 商业运用 ══ -->
 <div class="section" id="sec-biz">
   <div class="sec-header open" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">💼</span><span class="sec-title">商业运用</span><span class="sec-count">6条</span></div>
+    <div class="sec-left"><span class="sec-icon">💼</span><span class="sec-title">商业运用</span><span class="sec-count">4条</span></div>
     <span class="sec-arrow">▾</span>
   </div>
   <div class="sec-body open">
     <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>ChatGPT 广告业务六周狂赚 1 亿美元：即将向全球扩张</h3><p class="desc">OpenAI通过ChatGPT内嵌广告6周实现1亿美元收入，商业化速度超预期，即将向全球用户全面开放。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26626" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>美团王兴：自研 LongCat 大模型全量开放，进攻 AI 本地生活入口</h3><p class="desc">美团CEO王兴首次披露美团已自研LongCat大模型三年，现正式向本地生活场景全量开放。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26611" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>科大讯飞 AIPC 华东基地正式投产：年产能 10 万台</h3><p class="desc">科大讯飞在浙江金华建成年产能10万台国产AIPC产线，深度集成ERP/WMS/MES七大数字化平台。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743798461022208" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>北京率先启动智能网联新能源汽车专属商业保险开发</h3><p class="desc">北京在全国率先启动智能网联新能源汽车专属商业保险产品开发，适应智能驾驶技术带来的新型风险。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://ysxw.cctv.cn/article.html?toc_style_id=feeds_default&item_id=12554965963627942738&channelId=1119" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>小米全掌触觉仿生手发布：体积压缩60%，仿生汗腺散热</h3><p class="desc">小米发布全新全掌触觉仿生手，体积较前代缩小60%，创新引入仿生汗腺散热结构。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26613" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 国际</span></div><h3>苹果巨额留才奖金防 OpenAI 挖角：iPhone 设计团队人手一份</h3><p class="desc">OpenAI大规模招募苹果工程师，苹果反击向iPhone核心设计团队发放巨额留才奖金。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26615" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>ChatGPT广告业务六周狂赚1亿美元：即将向全球扩张</h3><p class="desc">OpenAI通过ChatGPT内嵌广告6周实现1亿美元收入，商业化速度超预期，即将向全球用户全面开放。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26626" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">新</span></div><h3>淘天集团全员发免费Token额度，推动AI原生组织转型</h3><p class="desc">淘天集团（阿里）宣布向全员（含实习生）提供免费AI Token额度，推动组织向AI原生转型。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26625" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>苹果巨额留才奖金防OpenAI挖角：iPhone设计团队人手一份</h3><p class="desc">OpenAI大规模招募苹果工程师，苹果反击向iPhone核心设计团队发放巨额留才奖金。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26615" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>小米全掌触觉仿生手发布：体积压缩60%，仿生汗腺散热</h3><p class="desc">小米发布全新全掌触觉仿生手，体积较前代缩小60%，创新引入仿生汗腺散热结构。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26613" target="_blank">原文 →</a></div></div>
     </div>
   </div>
 </div>
 
-<!-- ══ 创业模式 ══ -->
+<!-- ══ 创业融资 ══ -->
 <div class="section" id="sec-startup">
   <div class="sec-header open" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">💡</span><span class="sec-title">创业模式</span><span class="sec-count">4条</span></div>
+    <div class="sec-left"><span class="sec-icon">💡</span><span class="sec-title">创业融资</span><span class="sec-count">4条</span></div>
     <span class="sec-arrow">▾</span>
   </div>
   <div class="sec-body open">
     <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-global">🌐 国际</span></div><h3>全球首个 AI 失业补助计划启动：每月 $1000 + 再培训支持</h3><p class="desc">政府与AI企业联合出资，为被AI替代的劳动者每月发放1000美元并提供免费再培训。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26620" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>红杉/高瓴等 6 家顶级 VC 中关村集中签约，押注全球前沿科技</h3><p class="desc">2026中关村论坛年会上，红杉中国、高瓴创投、经纬创投等6家顶级VC作为投资生态伙伴集中签约。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743854538899714" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>淘天集团全员发免费 Token 额度，推动 AI 原生组织转型</h3><p class="desc">淘天集团（阿里）宣布向全员（含实习生）提供免费AI Token额度，推动组织向AI原生转型。</p><div class="meta"><span>AIbase · 1天前</span><a href="https://www.aibase.com/news/26625" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">🇨🇳 国内</span></div><h3>宇树科技具身智能体验馆亚洲首店 5 月底落沪，面积超100㎡</h3><p class="desc">宇树科技宣布其具身智能体验馆亚洲首店将于5月底在上海静安久光百货开业，押注线下体验+零售。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://mp.weixin.qq.com/s/LQuUDdLXmTmyb5COh6J1dQ" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>全球首个AI失业补助计划启动：每月$1000+再培训支持</h3><p class="desc">政府与AI企业联合出资，为被AI替代的劳动者每月发放1000美元并提供免费再培训。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26620" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">融资</span></div><h3>三安光电：董事长及总经理拟增持公司股份</h3><p class="desc">三安光电公告，公司董事长林志强和副董事长、总经理林科闯拟自3月31日起6个月内增持公司股份，合计2500万~5000万元。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743814449446920" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">资本</span></div><h3>泡泡玛特本周获南向资金净买入超36亿港元</h3><p class="desc">本周港股主要股指集体下跌，但泡泡玛特获南向资金净买入36.84亿港元，美团-W获27.39亿港元。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743552750911744" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-cn">上市</span></div><h3>广汽丰田铂智7正式上市，限时补贴权益价14.78万起</h3><p class="desc">3月29日，丰田首款鸿蒙座舱豪华旗舰大型纯电轿车铂智7正式上市，续航600km和700km两种版本。</p><div class="meta"><span>36氪 · 3月29日</span><a href="https://36kr.com/newsflashes/3743823660138760" target="_blank">原文 →</a></div></div>
     </div>
   </div>
 </div>
 
-<!-- ══ 用户讨论 ══ -->
-<div class="section" id="sec-discussion">
+<!-- ══ 讨论热点 ══ -->
+<div class="section" id="sec-discuss">
   <div class="sec-header open" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">🔥</span><span class="sec-title">用户讨论点</span><span class="sec-count">4条</span></div>
+    <div class="sec-left"><span class="sec-icon">🔥</span><span class="sec-title">讨论热点</span><span class="sec-count">4条</span></div>
     <span class="sec-arrow">▾</span>
   </div>
   <div class="sec-body open">
     <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span><span class="tag tag-cn">🇨🇳 国内</span></div><h3>郝蕾直言 AI 将取代九成演员：平庸演技已成行业危机</h3><p class="desc">演员郝蕾公开表示AI成熟后将冲击演员行业，九成平庸演技的演员将被替代，引发业界大讨论。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26614" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-new">✨ NEW</span><span class="tag tag-global">🌐 国际</span></div><h3>苹果 iOS 27 向第三方 AI 助手开放：Siri 生态走向开放</h3><p class="desc">苹果在iOS 27中向第三方AI助手开放Siri生态，结束Siri长期封闭局面，引发果粉与AI行业热议。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26617" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 国际</span></div><h3>Anthropic 新模型 Claude Mythos 泄露：性能超越 Opus</h3><p class="desc">泄露文件显示Anthropic内部正在测试Claude Mythos，性能号称超越Opus，AI社区反应强烈。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26616" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 国际</span></div><h3>OpenClaw 之父谈 AI 温差：不准用 vs 不敢不用，企业心态矛盾</h3><p class="desc">OpenClaw创始人描述企业在AI使用上的两难困境，引发企业AI政策大讨论。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26621" target="_blank">原文 →</a></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 国际深度 ══ -->
-<div class="section" id="sec-global">
-  <div class="sec-header" onclick="toggleSection(this)">
-    <div class="sec-left"><span class="sec-icon">🌍</span><span class="sec-title">国际媒体深度</span><span class="sec-count">The Verge · The Guardian · WIRED</span></div>
-    <span class="sec-arrow">▾</span>
-  </div>
-  <div class="sec-body">
-    <div class="news-grid">
-      <div class="news-card"><div class="tag-row"><span class="tag tag-verge">🌐 The Verge</span></div><h3>OpenAI 关闭 Sora：发布仅数月即戛然而止，行业震惊</h3><p class="desc">The Verge报道，OpenAI关闭Sora AI视频生成产品的决定令行业震惊，此前产品一直在常规更新。</p><div class="meta"><span>The Verge · 3月24日</span><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-verge">🌐 The Verge</span></div><h3>Anthropic 新模型"Mythos"名称泄露：下一代超大杯正在测试</h3><p class="desc">Fortune报道，Anthropic内部 unsecured data trove 泄露了新模型名称Mythos及CEO活动细节。</p><div class="meta"><span>The Verge · 3月27日</span><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 The Guardian</span></div><h3>维基百科全面封杀 AI 生成内容：出版商"毫无机会"</h3><p class="desc">The Guardian报道，维基百科新规严禁AI生成内容进入，引发文学界对AI写作的恐慌。</p><div class="meta"><span>The Guardian · 3月29日</span><a href="https://www.theguardian.com/technology/artificialintelligenceai" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-wired">🌐 WIRED</span></div><h3>OpenAI 考虑收购核聚变能源公司 Helion，进军清洁能源</h3><p class="desc">WIRED报道，Sam Altman宣布退出Helion董事会，但OpenAI正在就收购进行深入谈判。</p><div class="meta"><span>WIRED · 3月23日</span><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank">原文 →</a></div></div>
-      <div class="news-card"><div class="tag-row"><span class="tag tag-global">🌐 The Verge</span></div><h3>Jensen Huang 称 Nvidia 已实现 AGI：业界质疑定义过于宽泛</h3><p class="desc">Nvidia CEO Jensen Huang称已实现AGI，但业界普遍认为其定义过于模糊宽泛。</p><div class="meta"><span>The Verge · 3月24日</span><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>郝蕾直言AI将取代九成演员：平庸演技已成行业危机</h3><p class="desc">演员郝蕾公开表示AI成熟后将冲击演员行业，九成平庸演技的演员将被替代，引发业界大讨论。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26614" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-new">新</span></div><h3>苹果iOS 27向第三方AI助手开放：Siri生态走向开放</h3><p class="desc">苹果在iOS 27中向第三方AI助手开放Siri生态，结束Siri长期封闭局面，引发果粉与AI行业热议。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26617" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>Anthropic Claude Mythos泄露：性能超越Opus，社区沸腾</h3><p class="desc">泄露文件显示Anthropic内部正在测试Claude Mythos，性能号称超越Opus，AI社区反应强烈。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26616" target="_blank">原文 →</a></div></div>
+      <div class="news-card"><div class="tag-row"><span class="tag tag-hot">🔥 HOT</span></div><h3>OpenClaw之父谈AI温差：不准用vs不敢不用，企业心态矛盾</h3><p class="desc">OpenClaw创始人描述企业在AI使用上的两难困境，引发企业AI政策大讨论。</p><div class="meta"><span>AIbase · 前天</span><a href="https://www.aibase.com/news/26621" target="_blank">原文 →</a></div></div>
     </div>
   </div>
 </div>
@@ -375,41 +323,23 @@ h1.title {
 <!-- Footer -->
 <div class="footer">
   <p>🌟 <strong>全球AI动态日报</strong> · 星野整理 · 2026.03.29</p>
-  <p style="margin-top:6px">数据来源：AIbase · 36氪 · VentureBeat · The Verge · The Guardian · WIRED · 澎湃新闻 · 新浪财经</p>
+  <p style="margin-top:6px">数据来源：AIbase · 36氪 · VentureBeat · 澎湃新闻 · 新浪财经 · 央视新闻 · The Verge</p>
 </div>
 
 </div>
 
 <script>
-// ── Tab filter ──
 function filterTab(cat, btn) {
-  // Update active tab button
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-
-  // Show/hide sections
   document.querySelectorAll('.section').forEach(sec => {
-    if (cat === 'all') {
-      sec.classList.remove('hidden');
-    } else {
-      if (sec.id === 'sec-' + cat) {
-        sec.classList.remove('hidden');
-      } else {
-        sec.classList.add('hidden');
-      }
-    }
+    if (cat === 'all') sec.classList.remove('hidden');
+    else sec.classList.toggle('hidden', sec.id !== 'sec-' + cat);
   });
-
-  // Scroll to first visible section
-  const firstVisible = document.querySelector('.section:not(.hidden)');
-  if (firstVisible) firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const first = document.querySelector('.section:not(.hidden)');
+  if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-
-// ── Section accordion ──
-function toggleSection(header) {
-  header.classList.toggle('open');
-  header.nextElementSibling.classList.toggle('open');
-}
+function toggleSection(h) { h.classList.toggle('open'); h.nextElementSibling.classList.toggle('open'); }
 </script>
 </body>
 </html>
