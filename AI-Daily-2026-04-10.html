@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 全球AI日报 · 2026年4月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #0d0d1a;
+  color: #e0d8ff;
+  font-size: 20px;
+  line-height: 1.8;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a0a2e, #2d1b69);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #6c4fff33;
+}
+.header .date { font-size: 1.2em; color: #a89ee8; margin-bottom: 8px; }
+.header h1 { font-size: 2em; color: #c4b5fd; margin-bottom: 8px; }
+.header .sub { font-size: 1em; color: #8b7ec8; }
+
+/* Tab nav */
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #13132b;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  background: #1e1b3a;
+  color: #a89ee8;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: inherit;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+.tab-btn:hover { background: #2d2566; color: #c4b5fd; }
+.tab-btn.active { background: #6c4fff; color: #fff; }
+
+/* Sections */
+.section { display: none; }
+.section.active { display: block; }
+
+.card {
+  background: #13132b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #2d256633;
+}
+.card .card-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.card .tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-cn { background: #ff4d4f33; color: #ff7875; border: 1px solid #ff4d4f44; }
+.tag-globe { background: #1890ff33; color: #69c0ff; border: 1px solid #1890ff44; }
+.tag-fire { background: #ff9f0033; color: #ffc53d; border: 1px solid #ff9f0044; }
+.tag-new { background: #52c41a33; color: #95de64; border: 1px solid #52c41a44; }
+.card h3 { font-size: 1.1em; color: #e8e0ff; flex: 1; line-height: 1.4; }
+.card p { color: #b8b0d8; font-size: 0.95em; margin: 6px 0; }
+.card a { color: #a78bfa; font-size: 0.9em; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.card .src { font-size: 0.85em; color: #7b6ea0; margin-top: 4px; }
+
+/* Footer */
+.footer { text-align: center; padding: 20px; color: #6b5fa0; font-size: 16px; }
+.footer a { color: #a78bfa; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  body { font-size: 18px; }
+  .tab-btn { min-width: 90px; padding: 8px 10px; font-size: 16px; }
+  .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="date">📅 2026年4月10日 · 星期五</div>
+  <h1>🌟 全球AI日报</h1>
+  <div class="sub">每日AI资讯精选 · 老年友好大字体版</div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('cn')">🇨🇳 国内要闻</button>
+  <button class="tab-btn" onclick="showTab('new')">🚀 新品动态</button>
+  <button class="tab-btn" onclick="showTab('industry')">🏭 行业资讯</button>
+  <button class="tab-btn" onclick="showTab('biz')">💼 商业运用</button>
+  <button class="tab-btn" onclick="showTab('fund')">💡 创业融资</button>
+  <button class="tab-btn" onclick="showTab('hot')">🔥 讨论热点</button>
+</div>
+
+<!-- 国内要闻 -->
+<div id="cn" class="section active">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>DeepSeek V4 将于4月下旬发布：万亿参数规模，深度适配国产芯片</h3>
+    </div>
+    <p>梁文锋近日透露，DeepSeek V4即将于4月下旬正式发布。新版本采用万亿参数规模设计，并针对国产芯片进行深度优化适配，预计将在推理效率和多模态能力上带来重大突破，再次搅动国内大模型竞争格局。</p>
+    <a href="https://www.aibase.com/news/27014" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>中兴通讯力推 Co-Claw AI 一体机，算力业务营收暴增150%</h3>
+    </div>
+    <p>中兴通讯旗下AI一体机产品Co-Claw市场反响热烈，据悉其算力业务板块营收同比暴增150%。Co-Claw定位企业级AI推理场景，支持本地化部署，正快速抢占国内政企AI市场。</p>
+    <a href="https://www.aibase.com/news/27018" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>阿里匿名模型 HappyHorse 横扫全球榜单，视频生成进入"高分时代"</h3>
+    </div>
+    <p>阿里巴巴ATH事业群推出的匿名模型HappyHorse在多项全球AI视频榜单中登顶，Elo积分力压Seedance2.0等强劲对手，标志着中国AI视频生成技术正式进入国际领先行列，引发行业广泛关注。</p>
+    <a href="https://www.aibase.com/news/27016" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>美团启动2026年 LongCat 大模型"北斗"实习计划，加码AGI人才布局</h3>
+    </div>
+    <p>美团正式启动2026年LongCat大模型北斗实习计划，面向全球招聘AGI相关优秀人才，涵盖模型训练、AI Infra、Agent系统等多个方向，显示美团正加速向通用人工智能领域深度布局。</p>
+    <a href="https://www.aibase.com/news/27007" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>小米 REDMI Book Pro 2026 本月发布：首发个人知识库功能</h3>
+    </div>
+    <p>小米宣布REDMI Book Pro 2026款将于本月正式发布，最大亮点是首发搭载个人本地知识库功能，用户可在离线状态下对文档、笔记进行AI智能管理和问答，AI能力首次深度融入笔记本电脑。</p>
+    <a href="https://www.aibase.com/news/27006" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>国家移民管理局：一季度全国1.85亿人次出入境，同比上升13.5%</h3>
+    </div>
+    <p>国家移民管理局公布2026年一季度数据：全国累计查验出入境人员1.85亿人次，同比上升13.5%。其中外国人入境同比上升22.3%，免签入境外国人达831.5万人次，占比77.9%，同比上升29.3%。</p>
+    <a href="https://www.thepaper.cn" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>智元机器人等在深圳成立智元酷拓科技公司，注册资本500万元</h3>
+    </div>
+    <p>深圳智元酷拓科技有限公司正式成立，法定代表人为邓泰华，注册资本500万元人民币，经营范围涵盖智能机器人研发、销售及人工智能软件开发等，由智元创新与深圳智酷合创科技共同持股。</p>
+    <a href="https://36kr.com/newsflashes/3760456214627080" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>小米 MiMo-V2-Pro 登顶 Kilo 多热门场景榜单，Token Plan 热度飙升</h3>
+    </div>
+    <p>小米MiMo-V2-Pro推出Token Plan一周后热度居高不下，在Kilo Gateway生态中已跻身开发者最常使用模型行列，在KiloClaw、KiloPlan等多个场景使用占比排名第一。</p>
+    <a href="https://36kr.com/newsflashes/3760441492980229" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<!-- 新品动态 -->
+<div id="new" class="section">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>阿里 0.6B 小模型"魔改"成 17B MoE：激活参数仅5%，CPU直接跑30token/s</h3>
+    </div>
+    <p>阿里黑科技震撼登场！仅0.6B参数的小模型通过MoE架构"魔改"成17B效果，激活参数仅5%，在CPU上即可实现30token/s的推理速度，大幅降低AI部署门槛，边缘设备运行大模型成为现实。</p>
+    <a href="https://www.aibase.com/news/27009" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>Claude Code 新功能：Monitor 工具上线，支持后台实时进程监控</h3>
+    </div>
+    <p>Anthropic为Claude Code推出全新Monitor工具，支持在后台实时监控AI Agent执行进程，开发者可随时查看任务进度、资源占用和中间状态，大幅提升调试效率和多任务管理体验。</p>
+    <a href="https://www.aibase.com/news/27015" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>扣子2.5重磅升级：AI Agent配云电脑+云手机+独立邮箱，建"平行世界"</h3>
+    </div>
+    <p>字节跳动旗下扣子（Coze）推出2.5版本重磅更新，为AI Agent配备云电脑、云手机和独立邮箱功能，并推出"平行世界"概念，允许Agent在虚拟环境中自主探索和执行任务，多Agent协作能力飞跃。</p>
+    <a href="https://www.aibase.com/news/27013" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>Google Gemini 支持生成3D模型与物理模拟场景，交互体验升级</h3>
+    </div>
+    <p>Google宣布Gemini新增3D模型生成和物理模拟场景支持能力，用户可通过自然语言描述直接生成可交互的3D物体和物理模拟环境，适用于游戏开发、建筑设计和教育等多种场景。</p>
+    <a href="https://www.aibase.com/news/27004" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>MiniMax 开源面向 AI Agent 的命令行工具 MMX-CLI，打破接口壁垒</h3>
+    </div>
+    <p>MiniMax正式开源MMX-CLI，这是一款面向AI Agent的命令行交互工具，支持多模态输入输出和自动化工作流编排，可无缝对接各类Agent框架，有效降低AI Agent开发者的集成门槛。</p>
+    <a href="https://www.aibase.com/news/27017" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>中科智云正式发布 SIEA-CORE：工业装备全域智能体</h3>
+    </div>
+    <p>中科智云发布SIEA-CORE（Super Industrial Equipment Agent），以自研工业世界模型为核心，使传统工业装备具备理解物理世界、预判动态过程的自主智能，从"人力操作"跃迁至"自主智能"。</p>
+    <a href="https://36kr.com/newsflashes/3760455576912643" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>Anthropic 重磅发布"顾问工具"：Sonnet/Haiku 干活，Opus 只当幕后军师</h3>
+    </div>
+    <p>Anthropic发布全新"顾问工具"架构，Haiku和Sonnet负责执行具体任务，Opus模型则退居幕后担任高级策略顾问，只在关键决策点介入提供判断，有效平衡效率与质量，降低推理成本。</p>
+    <a href="https://www.aibase.com/news/27010" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-new">✨ 新品</span>
+      <h3>蔚来 ES9 正式发布并开启预售：整车售价52.8万元起</h3>
+    </div>
+    <p>蔚来发布全新行政旗舰SUV——蔚来ES9，共推出三个版本，整车预售价52.8万-65.8万元，采用BaaS电池租用方式购买预售价42万-55万元，集成蔚来十一年体系创新成果，智能驾驶再升级。</p>
+    <a href="https://36kr.com/newsflashes/3760392327398151" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<!-- 行业资讯 -->
+<div id="industry" class="section">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Nvidia GTC 2026 发布企业级 AI Agent 平台：Adobe、Salesforce、SAP等17家采用</h3>
+    </div>
+    <p>Nvidia在GTC 2026大会上发布企业级AI Agent平台，Adobe、Salesforce、SAP、ServiceNow、Siemens等17家顶级企业宣布采用，覆盖几乎所有行业和财富500强企业，Nvidia正在构建AI时代的核心基础设施标准。</p>
+    <a href="https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>西门子联手英伟达：AI芯片验证周期从数月缩短至数日</h3>
+    </div>
+    <p>西门子与英伟达达成深度合作，将AI技术融入芯片制造验证流程。通过AI加速器，芯片验证周期从过去的数月大幅缩短至数天，显著提升先进制程芯片的研发迭代效率。</p>
+    <a href="https://www.aibase.com/news/27019" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Anthropic 最强 AI 网络攻击模型太危险不公开：Project Glasswing 曝光</h3>
+    </div>
+    <p>Anthropic坦承其最强AI网络攻击模型因风险过高而无法公开发布，转而推出Project Glasswing计划，与亚马逊、苹果、谷歌、微软、英伟达等40余家机构共享该技术，共同应对AI安全威胁。</p>
+    <a href="https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Anthropic 签约 Google 和 Broadcom：数千兆瓦下一代 TPU 容量，2027年启用</h3>
+    </div>
+    <p>Anthropic与Google、Broadcom签署大规模AI基础设施协议，"数千兆瓦下一代TPU容量"预计2027年上线，以支撑Claude前沿模型训练。Anthropic同时透露其经常性收入已突破300亿美元。</p>
+    <a href="https://www.theverge.com/2026/4/6/anthropic-google-broadcom-compute-deal" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Anthropic 挖角微软 Azure AI 掌舵人，开启 AI"工程化战争"</h3>
+    </div>
+    <p>Anthropic从微软挖来Azure AI业务负责人，正式拉开AI"工程化战争"序幕。此举被业界解读为Anthropic正从模型研发向工程化落地全面转型，与微软、OpenAI的竞争进入新阶段。</p>
+    <a href="https://www.aibase.com/news/27001" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>GLM 发布 5.1 开源大模型：AI 加入"8小时工作制"，对标 Opus 4</h3>
+    </div>
+    <p>国内智谱AI发布GLM-5.1开源大模型，该模型在多项基准测试中超越Opus 4，并创新性引入"8小时工作制"概念——模拟人类工作节奏进行任务规划，显著提升长任务执行的稳定性和效率。</p>
+    <a href="https://venturebeat.com/technology/ai-joins-the-8-hour-work-day-as-glm-ships-5-1-open-source-llm-beating-opus-4" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<!-- 商业运用 -->
+<div id="biz" class="section">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>阿里速卖通4月15日在深圳办出海闭门峰会：99家头部品牌受邀</h3>
+    </div>
+    <p>阿里旗下跨境电商平台速卖通将于4月15日在深圳举办闭门品牌峰会，仅限头部品牌定向邀请，包括小米、追觅等99家品牌已获邀，到场品牌海外销售额合计超万亿规模，演讲嘉宾半数来自海外。</p>
+    <a href="https://36kr.com/newsflashes/3760440885674757" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>亚马逊拟对外销售自研 AI 芯片：年营收目标直指500亿美元</h3>
+    </div>
+    <p>亚马逊正计划将自研AI芯片对外销售，目标年营收达到500亿美元。AWS自研Trainium和Inferentia芯片已在内部大规模部署，对外输出后将直接挑战英伟达在AI芯片市场的主导地位。</p>
+    <a href="https://www.aibase.com/news/27003" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>海底捞控股股东张勇拟增持不少于1亿港元</h3>
+    </div>
+    <p>海底捞发布公告，控股股东张勇计划自公告日起12个月内以自有资金增持公司股份，金额不少于一亿港元。张勇直接及间接持有公司约37.36%股份，增持后将维持足够公众持股量。</p>
+    <a href="https://36kr.com/newsflashes/3760487441564160" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>A股三大指数午间集体上涨：券商、电工电网、电子元器件板块领涨</h3>
+    </div>
+    <p>A股三大指数午间休盘集体上涨，沪指涨0.63%，深成指涨1.74%，创业板指涨2.62%。中信证券涨超7%，伊戈尔涨超6%，芯瑞达涨超5%。海运、贵金属、白酒板块走弱，贵州茅台跌超1%。</p>
+    <a href="https://36kr.com/newsflashes/3760454341755399" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Tubi 成为首个推出 ChatGPT App 的流媒体服务</h3>
+    </div>
+    <p>流媒体平台Tubi宣布推出ChatGPT应用商店App，用户可通过自然语言描述如"今晚想看一部像发烧梦但不是恐怖片的电影"来获取个性化推荐。Tubi由此成为首个接入ChatGPT生态的流媒体服务。</p>
+    <a href="https://www.theverge.com/2026/4/8/tubi-chatgpt-app" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Google Meet AI 语音翻译功能登陆移动端</h3>
+    </div>
+    <p>Google Meet的实时AI语音翻译功能正式登陆iOS和Android移动端，支持英语与西班牙语、法语、德语、葡萄牙语、意大利语之间的实时互译，Google Workspace和AI订阅用户可率先体验。</p>
+    <a href="https://www.theverge.com/2026/4/8/google-meet-gemini-translation-ai" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<!-- 创业融资 -->
+<div id="fund" class="section">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      <h3>隆基绿能旗下无锡隆基氢能科技公司增资至5.5亿元</h3>
+    </div>
+    <p>隆基绿能旗下无锡隆基氢能科技有限公司注册资本从4.5亿元增至5.5亿元。该公司成立于2021年4月，专注于氢能设备研发和新兴能源技术，由西安隆基氢能科技有限公司全资持股。</p>
+    <a href="https://36kr.com/newsflashes/3760431030026753" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Jeff Bezos 的 AI 实验室 Project Prometheus 挖来 xAI 联合创始人</h3>
+    </div>
+    <p>杰夫·贝索斯旗下的AI实验室Project Prometheus挖来了xAI联合创始人Kyle Kozic，该实验室由贝索斯亲自领导，前谷歌高管Vikram Bajaj担任联席CEO，专注用AI改善制造业。</p>
+    <a href="https://www.theverge.com/2026/4/6/jeff-bezos-project-prometheus-co-ceo-funding-ai-startup" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 融资</span>
+      <h3>Anthropic 年化收入突破300亿美元，持续领跑AI商业化</h3>
+    </div>
+    <p>Anthropic披露其年化经常性收入已超过300亿美元，并签约价值数十亿美元的Google和Broadcom计算基础设施协议，现金流状况显著改善，成为全球商业化最成功的AI公司之一。</p>
+    <a href="https://www.theverge.com/2026/4/6/anthropic-google-broadcom-compute-deal" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>Mercor 数据泄露致 Meta 暂停合作，OpenAI 展开调查</h3>
+    </div>
+    <p>AI培训数据公司Mercor遭遇安全 breach，Meta已暂停相关合作，OpenAI也宣布展开调查。Mercor曾为多家AI公司提供人工标注数据，此次数据泄露可能暴露AI行业数据供应链的安全隐患。</p>
+    <a href="https://www.theverge.com/2026/4/3/meta-pauses-work-with-mercor-after-data-breach" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 融资</span>
+      <h3>今年一季度水利建设投资2070亿元，同比增长4.1%</h3>
+    </div>
+    <p>据水利部数据，2026年一季度我国新开工重大水利工程15项，超去年同期，完成水利建设投资2070亿元，同比增长4.1%，实现良好开局，基础设施投资保持稳健增长态势。</p>
+    <a href="https://36kr.com/newsflashes/3760446035903241" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<!-- 讨论热点 -->
+<div id="hot" class="section">
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>火爆全网的 SBTI 测试：作者用 AI 做的，初衷是劝朋友戒酒</h3>
+    </div>
+    <p>全网刷屏的SBTI（某种行为测试）背后故事曝光：创作者透露他完全用AI生成该测试，初心只是想劝一位朋友戒酒，没想到测试结果引发广泛共鸣和传播，成为又一个AI赋能社交话题的典型案例。</p>
+    <a href="https://www.aibase.com/news/27012" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>"星际之门"推迟！OpenAI 暂停英国百亿级 AI 基建项目</h3>
+    </div>
+    <p>OpenAI宣布暂停在英国的"星际之门"（Stargate）百亿级AI基础设施建设计划，引发全球关注。OpenAI此前承诺将在英国投资数十亿美元建设AI基础设施，此次暂停原因尚不明确。</p>
+    <a href="https://www.aibase.com/news/26999" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>青少年与 AI 聊天机器人：调戏、倾诉、甚至"约会"</h3>
+    </div>
+    <p>《纽约时报》深度调查揭示青少年与AI聊天机器人的复杂关系：部分青少年对Bot进行"暴力调戏"，部分则将情感寄托于虚拟角色，甚至发展出类似约会的关系，引发社会对AI心理影响的广泛担忧。</p>
+    <a href="https://www.theverge.com/2026/4/5/ai-chatbots-teen-roleplay" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>Sam Altman 被指"不受真相约束"：《纽约客》长文剖析</h3>
+    </div>
+    <p>《纽约客》发布重磅长文，基于100余次访谈披露Sam Altman的行事风格与争议，指责其在公司治理和对外沟通中"unconstrained by truth"。文章同时提及关于Altman的各类未经证实的传闻，引发科技圈热议。</p>
+    <a href="https://www.theverge.com/2026/4/6/sam-altman-new-yorker-profile" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐 国际</span>
+      <h3>OpenAI 发布儿童安全政策框架，呼吁更新 AI 生成CSAM 相关法律</h3>
+    </div>
+    <p>OpenAI正式发布儿童安全政策蓝图，携手NCMEC和检察官联盟，旨在推动相关立法更新、改进举报流程和构建针对AI生成儿童性虐待内容的防御体系，体现了AI公司在伦理合规方面的最新努力。</p>
+    <a href="https://www.theverge.com/2026/4/8/openai-child-safety-blueprint" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>Anthropic 关闭 Claude 订阅与 OpenClaw 等第三方集成</h3>
+    </div>
+    <p>Anthropic宣布切断Claude订阅与OpenClaw等第三方集成的接口权限，引发开源生态和第三方开发者强烈不满。Anthropic称此举出于安全考量，但被视为收紧平台控制、限制生态开放性的信号。</p>
+    <a href="https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>AI 能否取代人类8小时工作制？GLM 5.1 引发职场变革讨论</h3>
+    </div>
+    <p>随着GLM 5.1开源并引入"模拟人类8小时工作节奏"的理念，业界开始热议AI是否将重塑人类工作方式。支持者认为AI将解放人类双手，批评者则担忧大规模失业问题，职场变革大讨论正在社交媒体发酵。</p>
+    <a href="https://venturebeat.com/technology/ai-joins-the-8-hour-work-day-as-glm-ships-5-1-open-source-llm-beating-opus-4" target="_blank">🔗 原文链接</a>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥 热点</span>
+      <h3>20小时深度心理评估揭示 Claude Mythos 的"人格"特征</h3>
+    </div>
+    <p>一项长达20小时的深度心理评估研究近日揭示Claude Mythos模型的"人格"特征，发现其展现出稳定的价值倾向和情感反应模式，引发关于AI是否拥有类人格特性的哲学和伦理讨论。</p>
+    <a href="https://www.aibase.com/news/27008" target="_blank">🔗 原文链接</a>
+  </div>
+</div>
+
+<div class="footer">
+  <p>🌟 全球AI日报 · 2026年4月10日 · 第四十一期</p>
+  <p>由 <strong>星野 🌟</strong> 自动生成 · 数据来源：AIbase · 36氪 · VentureBeat · The Verge</p>
+  <p><a href="https://204337189-ctrl.github.io/ai-daily-report/" target="_blank">🌐 GitHub Pages 在线阅读</a></p>
+</div>
+
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
