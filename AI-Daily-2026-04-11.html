@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 AI日报 · 2026年4月11日</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    background: #0d0b1e;
+    color: #e8e4f3;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #11998e 100%);
+    padding: 30px 40px;
+    text-align: center;
+    border-bottom: 3px solid #6c5ce7;
+  }
+  .header .date { font-size: 16px; color: #a0a0d0; margin-bottom: 8px; }
+  .header h1 { font-size: 36px; color: #fff; margin-bottom: 6px; }
+  .header .subtitle { font-size: 18px; color: #c4b5fd; }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 14px 40px;
+    background: #15103a;
+    border-bottom: 2px solid #2d1b69;
+    justify-content: center;
+  }
+  .nav button {
+    background: #2d1b69;
+    color: #c4b5fd;
+    border: 1px solid #6c5ce7;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .nav button:hover, .nav button.active {
+    background: #6c5ce7;
+    color: #fff;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px 30px; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .card {
+    background: #1a1040;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    border: 1px solid #2d1b69;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); border-color: #6c5ce7; }
+  .card-title {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card-title .tag {
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .tag-cn { background: #e74c3c; color: #fff; }
+  .tag-globe { background: #3498db; color: #fff; }
+  .tag-fire { background: #e67e22; color: #fff; }
+  .tag-new { background: #9b59b6; color: #fff; }
+  .card-body { color: #c4b5fd; font-size: 19px; line-height: 1.9; }
+  .card-body p { margin-bottom: 10px; }
+  .card-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #a78bfa;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 1px solid #6c5ce7;
+    padding-bottom: 2px;
+  }
+  .card-link:hover { color: #c4b5fd; }
+  .section-title {
+    font-size: 28px;
+    color: #fff;
+    margin: 30px 0 18px 0;
+    padding-left: 14px;
+    border-left: 5px solid #6c5ce7;
+  }
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #6c5ce7;
+    font-size: 16px;
+    border-top: 1px solid #2d1b69;
+    margin-top: 40px;
+  }
+  .hero-summary {
+    background: linear-gradient(135deg, #1a1040, #2d1b69);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 30px;
+    border: 2px solid #6c5ce7;
+    font-size: 20px;
+    color: #e8e4f3;
+    line-height: 1.9;
+  }
+  @media (max-width: 700px) {
+    body { font-size: 18px; }
+    .header h1 { font-size: 28px; }
+    .nav { padding: 10px 15px; }
+    .nav button { padding: 8px 12px; font-size: 16px; }
+    .container { padding: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="date">📅 2026年4月11日 · 星期六</div>
+  <h1>🌟 全球AI日报</h1>
+  <div class="subtitle">星野 · 每日为您梳理AI领域大事</div>
+</div>
+
+<div class="nav">
+  <button class="active" onclick="showSection('all')">📋 总览</button>
+  <button onclick="showSection('cn')">🇨🇳 国内要闻</button>
+  <button onclick="showSection('new')">🚀 新品动态</button>
+  <button onclick="showSection('industry')">🏭 行业资讯</button>
+  <button onclick="showSection('biz')">💼 商业运用</button>
+  <button onclick="showSection('fund')">💡 创业融资</button>
+  <button onclick="showSection('hot')">🔥 讨论热点</button>
+</div>
+
+<div class="container">
+
+<!-- 总览 -->
+<div id="all" class="section active">
+  <div class="hero-summary">
+    <strong>📌 今日要点</strong><br>
+    梁文锋透露 DeepSeek V4 将于4月下旬发布；蚂蚁集团斩获计算机视觉顶会冠军；腾讯具身模型 HY-Embodied-0.5 刷新22项评测16项最佳纪录；五部门联合印发《"人工智能+教育"行动计划》；Anthropic 最强网络安全AI模型因太危险停止公开发布；Nvidia 推出企业级AI Agent平台获17家软件巨头支持。
+  </div>
+
+  <div class="section-title">🇨🇳 国内要闻（8条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      梁文锋透露：DeepSeek V4 将于4月下旬正式发布
+    </div>
+    <div class="card-body">
+      <p>据AIbase报道，DeepSeek创始人梁文锋近日透露，DeepSeek V4将于4月下旬发布。该版本预计在推理能力和多模态方面有重大突破，继续保持开源路线。DeepSeek此前已凭借V3版本在全球AI榜单上掀起热潮，此番V4备受业界期待。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27014" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      五部门联合印发《"人工智能+教育"行动计划》
+    </div>
+    <div class="card-body">
+      <p>教育部、国家发展改革委等五部门联合发布《"人工智能+教育"行动计划》，明确提出将开发覆盖全学段的AI慕课资源，推动AI与教育教学深度融合。计划提出到2027年建成1000门以上AI示范课程，探索AI赋能因材施教新路径。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27023" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      蚂蚁集团斩获计算机视觉顶会冠军，AIGC检测实现"实战级"跃迁
+    </div>
+    <div class="card-body">
+      <p>蚂蚁集团在计算机视觉领域传来捷报，其AIGC（人工智能生成内容）检测技术在顶级学术会议上获得冠军。该技术在真实场景中的检测准确率大幅提升，标志着蚂蚁在AI安全领域进入"实战级"水平，可有效识别深度伪造和AI生成图像。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27031" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      腾讯发布 HY-Embodied-0.5 具身模型，22项评测16项最佳
+    </div>
+    <div class="card-body">
+      <p>腾讯发布具身智能模型 HY-Embodied-0.5，在22项行业基准评测中斩获16项最优成绩，创下具身智能领域新纪录。该模型可赋能机器人理解物理世界并执行复杂任务，标志腾讯在"物理AI"赛道进入全球领先梯队。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27028" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      字节跳动Seed团队人才流失：一年内70人离职，腾讯阿里成主要去向
+    </div>
+    <div class="card-body">
+      <p>据AIbase独家报道，字节跳动旗下Seed团队近一年来有约70名核心技术人员相继离职，主要流向腾讯和阿里巴巴等竞争对手。分析认为，随着AI人才争夺加剧，大厂间的人才流动呈现加速趋势，对国内AI研发格局产生深远影响。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27024" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      联想新财年将发布"AI主机"：从天禧生态走向全场景智能
+    </div>
+    <div class="card-body">
+      <p>联想集团宣布将在新财年推出全新"AI主机"产品线，定位从单一PC扩展至全场景智能终端。该产品将深度整合天禧AI生态，支持跨设备协同、实时翻译、智能创作等场景，标志着联想全面转型AI硬件的战略加速落地。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27033" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      国产Agent生态大爆发：小米 MiMo-V2 接入 Hermes 框架
+    </div>
+    <div class="card-body">
+      <p>小米宣布其MiMo-V2大语言模型正式接入全球顶级Agent开发框架Hermes，并同步开启14天限时免费试用活动。此举意味着国产大模型生态与全球主流Agent框架实现互通，将极大降低AI应用开发门槛，推动国内Agent生态爆发式增长。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27027" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      红果短剧合并真人与AI榜单：AI仿真人剧热度首超实拍剧
+    </div>
+    <div class="card-body">
+      <p>短剧行业传来重磅消息，红果平台宣布合并真人剧与AI仿真人剧排行榜。数据显示，AI生成的仿真人短剧热度首次超越真人实拍剧集，订阅量和完播率均创新高。这一里程碑事件预示着AI内容创作正加速进入商业主流，创意产业格局面临深刻变革。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27034" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="section-title">🚀 新品动态（4条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 新品</span>
+      MiniMax 发布 Music 2.6：AI音乐进入"翻唱"时代
+    </div>
+    <div class="card-body">
+      <p>MiniMax正式发布Music 2.6版本，全新推出Cover翻唱功能及Agent音乐创作技能。用户可上传任意歌曲，AI将自动生成全新风格演绎版本，包括音色转换、编曲重编等。该产品被业内视为AI音乐从创作工具向"翻唱平台"跃迁的标志。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27025" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 新品</span>
+      阿里匿名模型 HappyHorse 横扫全球榜单，视频生成进入"高分时代"
+    </div>
+    <div class="card-body">
+      <p>阿里巴巴低调发布匿名模型HappyHorse，该模型在全球多个权威AI评测榜单上位居前列，尤其在视频生成任务中表现惊艳，刷新多项分数纪录。阿里方面未透露具体参数规模，但评测数据已引发国际AI社区高度关注。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27016" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 新品</span>
+      中兴通讯 Co-Claw AI 一体机上市，算力业务营收暴增150%
+    </div>
+    <div class="card-body">
+      <p>中兴通讯力推Co-Claw AI一体机，专为中小企业本地化AI部署设计，集成大模型推理、AI图像生成、数据分析等能力。财报显示，中兴通讯算力相关业务季度营收同比增长150%，AI硬件赛道进入收获期。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27018" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 新品</span>
+      Meta AI 应用跃升至 App Store 第五名
+    </div>
+    <div class="card-body">
+      <p>Meta旗下AI应用Meta AI（内置于Instagram/Facebook等）下载量飙升，跃升至美国区App Store免费榜第五名。其中AI绘图功能"Muse Spark"成为下载主力。Meta AI的快速崛起显示社交平台内置AI功能正成为吸引用户的重要手段。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27030" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="section-title">🏭 行业资讯（4条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-globe">🌐 国际</span>
+      物理AI设备迎来爆发：2035年预计出货量达1.45亿台
+    </div>
+    <div class="card-body">
+      <p>据行业研究机构最新报告，随着具身智能和机器人技术加速成熟，物理AI设备（包括人形机器人、智能传感器等）全球出货量预计在2035年突破1.45亿台，较2025年增长近10倍。工业制造、家庭服务、医疗康复将成为三大核心应用场景。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27026" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-globe">🌐 国际</span>
+      西门子联手英伟达：AI芯片验证周期从数月缩短至数日
+    </div>
+    <div class="card-body">
+      <p>西门子与英伟达宣布达成战略合作，共同推出面向AI芯片设计的联合验证平台。借助英伟达GPU加速仿真技术，芯片验证周期从传统数月压缩至数天，大幅提升AI芯片研发迭代效率。此举被视为AI驱动半导体设计自动化的里程碑事件。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27019" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      阿里云"真武"PPU突破10万卡：汽车行业公共云最大规模AI芯片部署
+    </div>
+    <div class="card-body">
+      <p>阿里云副总裁李强在智能电动汽车发展高层论坛上透露，目前已有30多家车企在阿里云上开展智能驾驶研发，实际使用的平头哥自研"真武"PPU已突破10万卡，创下汽车行业在公共云平台使用自研AI芯片的最大规模纪录。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/newsflashes/3761838168670977" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      液冷从"可选项"变"必选项"：16只概念股获机构密集调研
+    </div>
+    <div class="card-body">
+      <p>随着AI芯片功耗大幅提升，液冷技术已从"可选项"变为数据中心"必选项"。据统计，A股市场液冷产业链概念股接近50只，其中16只个股年内获机构调研。申菱环境、光环新网等6股累计涨幅超30%，液冷产业正从试点示范迈向量产阶段。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/newsflashes/3761735684112901" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="section-title">💼 商业运用（4条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-globe">🌐 国际</span>
+      特斯拉自动驾驶软件获荷兰批准：系欧洲首例
+    </div>
+    <div class="card-body">
+      <p>荷兰交通监管机构正式批准特斯拉自动驾驶监督软件在当地运营，这是欧洲范围内首次为自动驾驶辅助系统颁发监管许可。特斯拉 CEO 马斯克表示，这是推动全自动驾驶普适化的重要一步，但欧洲多国对完全自动驾驶仍保持谨慎态度。</p>
+    </div>
+    <a class="card-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-11/doc-inhuaqpi9741004.shtml" target="_blank">🔗 原文链接</button></a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      工信部原副部长：2030年新能源汽车渗透率将超70%
+    </div>
+    <div class="card-body">
+      <p>国家制造强国建设战略咨询委副主任、工信部原副部长苏波在智能电动汽车发展高层论坛上表示，"十五五"是汽车大国建成汽车强国的决胜期。到2030年，新能源汽车将成为市场绝对主体，国内渗透率预计超过70%，提前实现汽车强国目标。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/newsflashes/3761780346241541" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      光模块加速迭代：2026年全球市场规模保持60%增速
+    </div>
+    <div class="card-body">
+      <p>华泰证券研报指出，AI发展驱动光模块加速迭代，当前1.6T光模块处于商业化放量阶段，3.2T产品预计2027—2028年开始验证。根据LightCounting最新预测，2026年全球光模块市场仍将保持60%增速，2031年市场规模有望接近600亿美元。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/newsflashes/3761776886055427" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-globe">🌐 国际</span>
+      Nvidia 企业级AI Agent平台发布：17家软件巨头集体支持
+    </div>
+    <div class="card-body">
+      <p>Nvidia在GTC 2026大会上发布企业级AI Agent开发平台，并获得Adobe、Salesforce、SAP、ServiceNow、西门子、CrowdStrike、Atlassian等17家全球软件巨头集体支持。该开源工具包旨在帮助企业快速构建自主AI Agent，标志着Nvidia从芯片供应商向AI平台公司转型深化。</p>
+    </div>
+    <a class="card-link" href="https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="section-title">💡 创业融资（4条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 融资</span>
+      锐盟半导体完成近亿元A轮融资，押注AI终端散热市场
+    </div>
+    <div class="card-body">
+      <p>压电主动式散热技术公司"锐盟半导体"宣布完成近亿元A轮融资，由松禾资本领投。融资将主要用于核心产品压电主动式散热微系统的技术迭代和量产线建设，加速在消费电子、AI终端、高性能计算等领域的批量交付，抢占AI硬件散热市场先机。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/p/3761737030894342" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-new">✨ 融资</span>
+      高端工业镜头研发商"阿基视觉"完成数千万元天使轮融资
+    </div>
+    <div class="card-body">
+      <p>高端工业镜头研发商"阿基视觉"宣布完成数千万元天使轮融资，由东莞科创、深担创投、松禾资本及林润集团联合投资。本轮融资将用于团队扩充、产能扩建及研发配套，加速高端工业镜头的国产化替代进程，切入AI视觉检测和智能制造万亿市场。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/p/3761739153081096" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-globe">🌐 国际</span>
+      黑石集团提交数据中心收购公司IPO文件
+    </div>
+    <div class="card-body">
+      <p>黑石集团向美国SEC提交文件，计划为一家数据中心收购工具公司进行IPO，募集资金重点收购已建成并完成租赁的数据中心资产。该投资工具重点布局新建数据中心，单项目估值2.5亿至15亿美元，已锁定投资级云服务商做租户，预计年化收益率5.75%至7%。</p>
+    </div>
+    <a class="card-link" href="https://finance.sina.com.cn/world/2026-04-11/doc-inhuakfm9817974.shtml" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-cn">🇨🇳 国内</span>
+      具身智能产业链迎价值重估：2026年成量产元年
+    </div>
+    <div class="card-body">
+      <p>从智元机器人"AI发布周"连续释放关键技术突破，到行业首份国家级测试标准落地，再到深圳等地涌现估值超百亿的具身智能"独角兽"，资本与产业双重共振将具身智能推向风口。分析指出2026年将成为具身智能从样品向商品全面跃迁的关键之年。</p>
+    </div>
+    <a class="card-link" href="https://36kr.com/newsflashes/3761734668452355" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="section-title">🔥 讨论热点（4条）</div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-fire">🔥 热点</span>
+      OpenAI CEO 奥尔特曼住所遭自制燃烧弹袭击
+    </div>
+    <div class="card-body">
+      <p>据多方报道，OpenAI CEO 萨姆·奥尔特曼（Sam Altman）位于旧金山的住所遭到自制燃烧弹袭击，嫌疑人在现场被警方逮捕。事件引发科技圈强烈震动，奥尔特曼随后发推文表示"深夜醒来既愤怒又觉醒"，并重申AI安全的重要性。此案是否与反AI情绪有关尚在调查中。</p>
+    </div>
+    <a class="card-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-11/doc-inhuaqpi9724251.shtml" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-fire">🔥 热点</span>
+      Anthropic 最强网络安全AI模型因"太危险"停止公开发布
+    </div>
+    <div class="card-body">
+      <p>Anthropic在其最强AI网络攻击模型论文中坦承：该模型"过于危险"，无法公开发布。作为替代，公司推出Project Glasswing计划，向亚马逊、苹果、谷歌、微软、英伟达等40余家机构提供受限访问，同时提供1亿美元API额度支持开源安全研究，引发AI安全边界大讨论。</p>
+    </div>
+    <a class="card-link" href="https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-fire">🔥 热点</span>
+      OpenAI发布第三方开发者库安全声明：未发现用户数据泄露
+    </div>
+    <div class="card-body">
+      <p>OpenAI就近期第三方开发者库Axios安全问题发布官方声明，称此次事件属于更广泛行业事件的一部分，目前未发现OpenAI用户数据被访问、系统被入侵或软件被篡改的证据。OpenAI已要求所有macOS用户更新至最新版本，以防范伪造OpenAI应用的风险。</p>
+    </div>
+    <a class="card-link" href="https://www.jiemian.com/article/14237526.html" target="_blank">🔗 原文链接</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <span class="tag tag-fire">🔥 热点</span>
+      AI内容创作已超越人类，创意产业危机愈发严重
+    </div>
+    <div class="card-body">
+      <p>AIbase发文指出，当前AI生成内容在多个维度已超越人类创作者：图片生成质量媲美专业摄影师、文字创作流畅度超过普通编辑、视频生成进入"以假乱真"阶段。红果平台AI仿真人剧热度首超真人剧只是开始，创意产业的结构性失业危机正在从预测变为现实。</p>
+    </div>
+    <a class="card-link" href="https://www.aibase.com/news/27032" target="_blank">🔗 原文链接</a>
+  </div>
+
+</div>
+
+<!-- 各分类独立视图（精简） -->
+<div id="cn" class="section">
+  <div class="section-title">🇨🇳 国内要闻</div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>梁文锋透露：DeepSeek V4 将于4月下旬正式发布</div><div class="card-body"><p>据AIbase报道，DeepSeek创始人梁文锋近日透露，DeepSeek V4将于4月下旬发布。该版本预计在推理能力和多模态方面有重大突破，继续保持开源路线。DeepSeek此前已凭借V3版本在全球AI榜单上掀起热潮，此番V4备受业界期待。</p></div><a class="card-link" href="https://www.aibase.com/news/27014" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>五部门联合印发《"人工智能+教育"行动计划》</div><div class="card-body"><p>教育部等五部门联合发布行动计划，明确将开发覆盖全学段的AI慕课资源，推动AI与教育教学深度融合，计划到2027年建成1000门以上AI示范课程。</p></div><a class="card-link" href="https://www.aibase.com/news/27023" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>蚂蚁集团斩获计算机视觉顶会冠军</div><div class="card-body"><p>蚂蚁集团AIGC检测技术在计算机视觉顶级会议获得冠军，实战检测准确率大幅提升，进入"实战级"水平。</p></div><a class="card-link" href="https://www.aibase.com/news/27031" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>腾讯发布 HY-Embodied-0.5 具身模型，22项评测16项最佳</div><div class="card-body"><p>腾讯具身智能模型 HY-Embodied-0.5 在22项行业基准评测中斩获16项最优成绩，创下具身智能领域新纪录。</p></div><a class="card-link" href="https://www.aibase.com/news/27028" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>字节跳动Seed团队人才流失：一年70人离职</div><div class="card-body"><p>字节Seed团队近一年约70名核心技术人员相继离职，主要流向腾讯和阿里巴巴，大厂AI人才争夺加剧。</p></div><a class="card-link" href="https://www.aibase.com/news/27024" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>联想新财年将发布"AI主机"</div><div class="card-body"><p>联想宣布新财年推出全新"AI主机"产品线，深度整合天禧AI生态，标志联想全面转型AI硬件战略加速。</p></div><a class="card-link" href="https://www.aibase.com/news/27033" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>小米 MiMo-V2 接入 Hermes 框架</div><div class="card-body"><p>小米MiMo-V2大语言模型接入全球顶级Agent开发框架Hermes，开启14天限时免费试用，国产Agent生态加速。</p></div><a class="card-link" href="https://www.aibase.com/news/27027" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>红果短剧AI仿真人剧热度首超真人实拍剧</div><div class="card-body"><p>红果平台合并真人剧与AI榜单，AI仿真人短剧热度首超真人实拍剧，创意产业格局面临深刻变革。</p></div><a class="card-link" href="https://www.aibase.com/news/27034" target="_blank">🔗 原文链接</a></div>
+</div>
+
+<div id="new" class="section">
+  <div class="section-title">🚀 新品动态</div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>MiniMax Music 2.6：AI音乐进入"翻唱"时代</div><div class="card-body"><p>MiniMax发布Music 2.6，全新Cover翻唱功能支持任意歌曲AI重新演绎，AI音乐从创作工具向"翻唱平台"跃迁。</p></div><a class="card-link" href="https://www.aibase.com/news/27025" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>阿里匿名模型 HappyHorse 横扫全球榜单</div><div class="card-body"><p>阿里发布匿名模型HappyHorse，视频生成任务刷新多项分数纪录，全球AI社区高度关注。</p></div><a class="card-link" href="https://www.aibase.com/news/27016" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>中兴通讯 Co-Claw AI 一体机，算力业务营收暴增150%</div><div class="card-body"><p>中兴Co-Claw AI一体机专为中小企业本地化AI部署设计，集成大模型推理、图像生成、数据分析等能力。</p></div><a class="card-link" href="https://www.aibase.com/news/27018" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>Meta AI 应用跃升至 App Store 第五名</div><div class="card-body"><p>Meta AI内置于Instagram/Facebook，下载量飙升跃升至美国区App Store免费榜第五，Muse Spark成下载主力。</p></div><a class="card-link" href="https://www.aibase.com/news/27030" target="_blank">🔗 原文链接</a></div>
+</div>
+
+<div id="industry" class="section">
+  <div class="section-title">🏭 行业资讯</div>
+  <div class="card"><div class="card-title"><span class="tag tag-globe">🌐</span>物理AI设备爆发：2035年出货量预计达1.45亿台</div><div class="card-body"><p>行业研究机构预测，2035年全球物理AI设备出货量将突破1.45亿台，工业制造、家庭服务、医疗康复成三大核心场景。</p></div><a class="card-link" href="https://www.aibase.com/news/27026" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-globe">🌐</span>西门子联手英伟达：芯片验证周期从数月缩短至数日</div><div class="card-body"><p>西门子与英伟达联合推出AI芯片设计验证平台，GPU加速仿真技术将验证周期压缩至数天。</p></div><a class="card-link" href="https://www.aibase.com/news/27019" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>阿里云"真武"PPU突破10万卡</div><div class="card-body"><p>30多家车企在阿里云开展智驾研发，平头哥自研"真武"PPU突破10万卡，创汽车行业公共云最大规模AI芯片部署纪录。</p></div><a class="card-link" href="https://36kr.com/newsflashes/3761838168670977" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>液冷从"可选项"变"必选项"</div><div class="card-body"><p>AI芯片功耗大幅提升，液冷技术已成数据中心刚性需求，A股近50只概念股，16只年内获机构调研。</p></div><a class="card-link" href="https://36kr.com/newsflashes/3761735684112901" target="_blank">🔗 原文链接</a></div>
+</div>
+
+<div id="biz" class="section">
+  <div class="section-title">💼 商业运用</div>
+  <div class="card"><div class="card-title"><span class="tag tag-globe">🌐</span>特斯拉自动驾驶软件获荷兰批准：欧洲首例</div><div class="card-body"><p>荷兰交通监管机构批准特斯拉自动驾驶监督软件运营，为欧洲首例，全自动驾驶普适化迈出重要一步。</p></div><a class="card-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-11/doc-inhuaqpi9741004.shtml" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>工信部原副部长：2030年新能源车渗透率超70%</div><div class="card-body"><p>工信部原副部长苏波表示，到2030年新能源汽车将成为市场绝对主体，国内渗透率预计超过70%。</p></div><a class="card-link" href="https://36kr.com/newsflashes/3761780346241541" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>光模块加速迭代：2026年全球市场规模保持60%增速</div><div class="card-body"><p>华泰证券研报称，1.6T光模块商业化放量，3.2T预计2027—2028年验证，2031年全球光模块市场接近600亿美元。</p></div><a class="card-link" href="https://36kr.com/newsflashes/3761776886055427" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-globe">🌐</span>Nvidia企业级AI Agent平台获17家软件巨头支持</div><div class="card-body"><p>Nvidia在GTC 2026发布企业级AI Agent平台，获Adobe、Salesforce、SAP等17家软件巨头集体支持。</p></div><a class="card-link" href="https://venturebeat.com/technology/nvidia-launches-enterprise-ai-agent-platform-with-adobe-salesforce-sap-among" target="_blank">🔗 原文链接</a></div>
+</div>
+
+<div id="fund" class="section">
+  <div class="section-title">💡 创业融资</div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>锐盟半导体完成近亿元A轮融资</div><div class="card-body"><p>压电主动式散热技术公司"锐盟半导体"完成近亿元A轮融资，松禾资本领投，押注AI终端散热市场。</p></div><a class="card-link" href="https://36kr.com/p/3761737030894342" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-new">✨</span>阿基视觉完成数千万元天使轮融资</div><div class="card-body"><p>高端工业镜头研发商"阿基视觉"完成数千万元天使轮融资，加速高端工业镜头国产化替代。</p></div><a class="card-link" href="https://36kr.com/p/3761739153081096" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-globe">🌐</span>黑石集团提交数据中心收购公司IPO文件</div><div class="card-body"><p>黑石向SEC提交文件，计划为数据中心收购工具公司IPO，重点收购已建成并租赁的数据中心资产。</p></div><a class="card-link" href="https://finance.sina.com.cn/world/2026-04-11/doc-inhuakfm9817974.shtml" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-cn">🇨🇳</span>具身智能产业链迎价值重估：2026年成量产元年</div><div class="card-body"><p>具身智能产业链获资本与产业双重共振，智元机器人连续突破，行业首份国家级测试标准落地。</p></div><a class="card-link" href="https://36kr.com/newsflashes/3761734668452355" target="_blank">🔗 原文链接</a></div>
+</div>
+
+<div id="hot" class="section">
+  <div class="section-title">🔥 讨论热点</div>
+  <div class="card"><div class="card-title"><span class="tag tag-fire">🔥</span>OpenAI CEO 奥尔特曼住所遭自制燃烧弹袭击</div><div class="card-body"><p>OpenAI CEO萨姆·奥尔特曼位于旧金山的住所遭到自制燃烧弹袭击，嫌疑人被警方逮捕。奥尔特曼发推表示"既愤怒又觉醒"。</p></div><a class="card-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-11/doc-inhuaqpi9724251.shtml" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-fire">🔥</span>Anthropic 最强网络安全AI模型因"太危险"停止公开发布</div><div class="card-body"><p>Anthropic坦承其最强AI网络攻击模型过于危险无法公开发布，推出Project Glasswing向40余家机构提供受限访问。</p></div><a class="card-link" href="https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-fire">🔥</span>OpenAI发布第三方开发者库安全声明：未发现用户数据泄露</div><div class="card-body"><p>OpenAI就第三方开发者库Axios安全问题发声明，称未发现用户数据泄露，要求macOS用户更新至最新版本。</p></div><a class="card-link" href="https://www.jiemian.com/article/14237526.html" target="_blank">🔗 原文链接</a></div>
+  <div class="card"><div class="card-title"><span class="tag tag-fire">🔥</span>AI内容创作已超越人类，创意危机愈发严重</div><div class="card-body"><p>AI生成内容在图片、文字、视频多维度超越人类创作者，创意产业结构性失业危机正从预测变为现实。</p></div><a class="card-link" href="https://www.aibase.com/news/27032" target="_blank">🔗 原文链接</a></div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>🌟 AI日报 · 2026年4月11日 · 由星野生成</p>
+  <p>数据来源：AIbase · 36氪 · 澎湃新闻 · 新浪科技 · VentureBeat · The Verge</p>
+</div>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
