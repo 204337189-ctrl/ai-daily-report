@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI日报 2026-04-13</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-size: 20px;
+  background: #0d0b1e;
+  color: #e8e4f3;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: linear-gradient(135deg, #6c3fa0, #3b1f8a);
+  padding: 28px 40px;
+  text-align: center;
+}
+header h1 { font-size: 1.6em; font-weight: 700; letter-spacing: 2px; }
+header p { color: #c4b0e8; margin-top: 8px; font-size: 0.85em; }
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background: #151230;
+  border-bottom: 2px solid #3d2a7a;
+  padding: 0 20px;
+  gap: 4px;
+}
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #9b8fc4;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: #c4a8f5; }
+.tab-btn.active {
+  color: #c4a8f5;
+  border-bottom-color: #a78bfa;
+}
+.tab-content { display: none; padding: 28px 36px; }
+.tab-content.active { display: block; }
+.cat-title {
+  font-size: 1.05em;
+  color: #a78bfa;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #2d2255;
+  letter-spacing: 1px;
+}
+.news-item {
+  background: #1a1635;
+  border-left: 4px solid #7c3aed;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 22px;
+  margin-bottom: 14px;
+  transition: background 0.2s;
+}
+.news-item:hover { background: #201b42; }
+.news-item h3 {
+  font-size: 0.95em;
+  color: #ede9fe;
+  margin-bottom: 7px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.news-item p {
+  font-size: 0.78em;
+  color: #a8a0c8;
+  line-height: 1.65;
+  margin-bottom: 9px;
+}
+.news-item a {
+  color: #a78bfa;
+  text-decoration: none;
+  font-size: 0.75em;
+}
+.news-item a:hover { text-decoration: underline; }
+footer {
+  text-align: center;
+  padding: 22px;
+  color: #5c4f82;
+  font-size: 0.72em;
+  border-top: 1px solid #1e1a3a;
+}
+.badge {
+  display: inline-block;
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1px 8px;
+  font-size: 0.7em;
+  margin-right: 6px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌟 AI日报</h1>
+  <p>2026年4月13日 · 每日AI资讯精选</p>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('bigtech')">🏢 大厂动态</button>
+  <button class="tab-btn" onclick="showTab('chip')">💻 AI芯片</button>
+  <button class="tab-btn" onclick="showTab('product')">🚀 AI应用</button>
+  <button class="tab-btn" onclick="showTab('model')">🧠 开源模型</button>
+  <button class="tab-btn" onclick="showTab('governance')">⚖️ AI治理</button>
+  <button class="tab-btn" onclick="showTab('market')">📈 市场资本</button>
+</div>
+
+<!-- 大厂动态 -->
+<div id="bigtech" class="tab-content active">
+  <div class="cat-title">🏢 大厂动态</div>
+
+  <div class="news-item">
+    <h3><span class="badge">NEW</span>OpenAI 确定英国永久总部：2027年启用，可容纳超500名员工</h3>
+    <p>OpenAI 正式宣布将在英国设立永久总部，选址伦敦，预计2027年正式启用，可容纳超过500名员工。此举被视为 OpenAI 深化欧洲市场布局的重要标志，也将带动英国AI人才就业。</p>
+    <a href="https://www.aibase.com/news/27078" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Meta 全新AI计划：打造数字版扎克伯格，与员工互动</h3>
+    <p>Meta 正在开发一个"AI版扎克伯格"项目，该AI数字人将代表扎克伯格本人与内部员工进行日常互动交流。此举引发关于AI身份模拟的热议，Meta表示将确保透明性，标明为AI而非真人。</p>
+    <a href="https://www.aibase.com/news/27076" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Anthropic 发布 Word 版 Claude，精准突围法律与金融行业</h3>
+    <p>Anthropic 推出专用于 Microsoft Word 的 Claude 插件版本，专为法律和金融从业者设计，可直接在文档中调用AI能力进行合同审阅、财务分析等任务，标志着AI办公集成进入深水区。</p>
+    <a href="https://www.aibase.com/news/27068" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>OpenAI CEO 山姆·奥特曼家中接连遭袭，警方已逮捕三名嫌疑人</h3>
+    <p>OpenAI CEO 山姆·奥特曼（Sam Altman）位于美国的住宅近期连续遭到不明人士骚扰和袭击，旧金山警方已逮捕三名嫌疑人，案件正在进一步调查中。此事件引发科技圈对AI领袖人身安全的高度关注。</p>
+    <a href="https://www.aibase.com/news/27073" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Anthropic 内部截图曝光：Claude 正研发全栈 App 构建器</h3>
+    <p> Anthropic 内部截图流出，显示 Claude 正在研发一款全栈应用构建器（App Builder），可直接生成完整Web/App应用代码，此举被指直指竞品 Lovable.dev 的核心市场，或将颠覆AI辅助编程格局。</p>
+    <a href="https://www.aibase.com/news/27064" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>广汽发布星河智舱新架构：深度融合通义千问，打造"一次指令，全搞定"</h3>
+    <p>广州汽车集团发布全新"星河智舱"智能座舱架构，深度集成阿里通义千问大模型能力，实现车内多模态交互——用户只需一句话，智舱即可自动完成导航、空调、音乐、车窗等协同操作，重新定义智能出行体验。</p>
+    <a href="https://www.aibase.com/news/27063" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<!-- AI芯片 -->
+<div id="chip" class="tab-content">
+  <div class="cat-title">💻 AI芯片与硬件</div>
+
+  <div class="news-item">
+    <h3><span class="badge">重磅</span>日本 Rapidus 正式启用10倍效率AI芯片封装线，力争赶超台积电</h3>
+    <p>日本半导体新星 Rapidus 宣布正式启用全新AI芯片封装产线，生产效率号称达到传统封装的10倍，目标直指赶超台积电先进封装能力。该产线由日本经产省重点支持，是日本半导体复兴计划的关键一步。</p>
+    <a href="https://www.aibase.com/news/27077" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>微软开源 Phi-4-reasoning-vision-15B：性价比之王，主打轻量化多模态推理</h3>
+    <p>微软正式开源 Phi-4-reasoning-vision-15B 模型，该模型仅有150亿参数但具备强大的多模态推理能力，专为资源受限场景设计，精度可媲美更大规模模型，被开发者社区称为"性价比之王"。</p>
+    <a href="https://www.aibase.com/news/27060" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>日本AI"国家队"正式集结：软银、索尼、本田联手，豪掷万亿日元打造国产大模型</h3>
+    <p>软银、索尼、本田等日本科技巨头联合宣布成立新的AI合资公司，计划投入万亿日元级资金打造日本国产大模型，旨在打破对美国和中国的AI技术依赖，构建日本自己的基础AI能力底座。</p>
+    <a href="https://www.aibase.com/news/27072" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>小鹏 GX 技术发布会定档4月15日：首发图灵芯片与线控转向</h3>
+    <p>小鹏汽车宣布将于4月15日举办GX技术发布会，届时将全球首发自研"图灵芯片"，该芯片针对智能驾驶优化，同时带来线控转向技术，展现小鹏在自动驾驶硬件自研领域的最新突破。</p>
+    <a href="https://www.aibase.com/news/27057" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<!-- AI应用 -->
+<div id="product" class="tab-content">
+  <div class="cat-title">🚀 AI应用与产品</div>
+
+  <div class="news-item">
+    <h3><span class="badge">黑科技</span>荣耀发布 YOYO Claw"龙虾"AI智能体技术：出厂预制23个子虾</h3>
+    <p>荣耀在AI Agent技术发布会上推出 YOYO Claw，代号"龙虾"，核心技术亮点在于出厂预制23个"子虾"（子智能体），可大幅降低AI推理时 Token 消耗，最高降幅达50%，显著提升端侧AI效率。</p>
+    <a href="https://www.aibase.com/news/27075" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Rust 纯原生 AI Agent 神器 Superconductor：一键聚合 Claude Code、Gemini CLI</h3>
+    <p>开发者社区推出基于 Rust 语言重写的 AI Agent 框架 Superconductor，可一键聚合 Claude Code、Gemini CLI、GPT-Code 等主流 AI 编程工具，实现统一调度，被认为是今年最具突破性的AI开发者工具。</p>
+    <a href="https://www.aibase.com/news/27070" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>紫荆智康发布"紫荆AI医院"虚拟诊室：支持医生构建专属分身智能体</h3>
+    <p>紫荆智康发布"紫荆AI医院"虚拟诊室系统，允许医生基于个人诊疗风格构建专属AI分身智能体，为患者提供7×24小时预诊、分诊和健康咨询服务，标志着AI医疗从辅助工具向准自动化迈出重要一步。</p>
+    <a href="https://www.aibase.com/news/27062" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>太乙真人配音者遭AI抢单：知名机构与配音大咖集体抵制</h3>
+    <p>热门游戏角色"太乙真人"原声配音演员披露其声音被AI配音工具未经授权使用并低价接单，国内多家配音经纪机构和知名配音演员联合发声抵制，AI声音克隆版权保护议题再次引发行业高度关注。</p>
+    <a href="https://www.aibase.com/news/27059" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<!-- 开源模型 -->
+<div id="model" class="tab-content">
+  <div class="cat-title">🧠 开源模型与许可证争议</div>
+
+  <div class="news-item">
+    <h3><span class="badge">争议</span>开源变"闭源"？MiniMax 2.7 许可证严禁商业用途引发社区反弹</h3>
+    <p>国内AI公司 MiniMax 发布的 MiniMax 2.7 模型引发开源社区强烈争议——其许可证明确禁止任何商业用途，被批评"名为开源，实为闭源"。众多开发者对此表示不满，GitHub 相关仓库Issue已超过3000条。</p>
+    <a href="https://www.aibase.com/news/27069" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Claude Mythos 被曝"注水"：数千漏洞披露多为虚标，严重者仅10个</h3>
+    <p>安全研究人员对 Anthropic 旗下 Claude Mythos 模型披露的安全漏洞报告进行审查后发现，大量漏洞评级存在虚高，数千个所谓"严重"漏洞中，实际严重级别（CVSS≥9.0）仅有约10个，引发对AI安全评测标准可信度的质疑。</p>
+    <a href="https://www.aibase.com/news/27065" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>小鹏图灵芯片细节曝光：针对自动驾驶场景专项优化</h3>
+    <p>随着4月15日发布会临近，小鹏图灵芯片的更多技术细节曝光，该芯片针对自动驾驶场景进行专项优化，内置高精度神经网络加速器，号称能效比同类产品提升40%，为小鹏下一代智能驾驶提供硬件支撑。</p>
+    <a href="https://www.aibase.com/news/27057" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<!-- AI治理 -->
+<div id="governance" class="tab-content">
+  <div class="cat-title">⚖️ AI治理与安全</div>
+
+  <div class="news-item">
+    <h3><span class="badge">重磅</span>《全球人工智能治理科技社团倡议》正式发布：智能向善</h3>
+    <p>在全球AI治理峰会框架下，多国科技社团联合发布《全球人工智能治理科技社团倡议》，呼吁AI从业者坚持"智能向善"原则，就数据隐私、算法透明、AI军事应用等议题达成初步国际共识，为下一步各国立法提供参考框架。</p>
+    <a href="https://www.aibase.com/news/27066" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>Anthropic 与 OpenClaw 创始人之间的误会：短暂封禁引发社区热议</h3>
+    <p>Anthropic 与 OpenClaw 创始人之间发生短暂封禁误会，一度在开发者社区引发轩然大波。经核实为身份验证层面的误操作，目前双方已澄清并恢复合作，相关讨论帖在社交平台获数万关注。</p>
+    <a href="https://www.aibase.com/news/27061" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>AI声音版权争议升温：配音行业集体呼吁立法保护声纹权益</h3>
+    <p>随着AI语音合成技术快速普及，多名配音演员的声纹被未经授权采集并用于商业AI配音，引发行业集体抗议。配音协会呼吁监管部门尽快出台声纹版权保护法规，为声音权益提供法律依据。</p>
+    <a href="https://www.aibase.com/news/27059" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<!-- 市场与资本 -->
+<div id="market" class="tab-content">
+  <div class="cat-title">📈 市场动态与资本流向</div>
+
+  <div class="news-item">
+    <h3>Strategy斥资10亿美元增持比特币，持仓量逾78万枚</h3>
+    <p>比特币持仓大户Strategy宣布于2026年4月6日至12日期间再购入13,927枚BTC，总价10亿美元，平均买入价71,902美元/枚。截至4月12日，Strategy总计持有780,897枚BTC，投入资金590.2亿美元，平均成本约75,577美元/枚。</p>
+    <a href="https://www.jiemian.com/article/14244884.html" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>宁德时代据悉考虑在香港发售最多50亿美元股份</h3>
+    <p>据知情人士透露，全球动力电池龙头宁德时代正在考虑在香港联交所发售股份，筹资最多50亿美元，同时不排除发行可转换债券以满足融资需求。目前相关讨论仍在进行中，尚未做出最终决定。</p>
+    <a href="https://www.cls.cn/detail/2342670" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>高盛股票交易业务收入再创历史新高：Q1收入达53.3亿美元</h3>
+    <p>高盛集团最新财报显示，其股票交易业务收入连续第二个季度创下历史纪录，Q1收入达53.3亿美元，超越此前任何季度历史高点逾10亿美元。强劲的股票交易收入抵消了固定收益业务的低迷表现。</p>
+    <a href="https://finance.sina.com.cn/stock/usstock/c/2026-04-13/doc-inhukkns5435542.shtml" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>美股大型科技股盘前普跌：英伟达跌超1%</h3>
+    <p>美股盘前，大型科技股普遍下跌。截至发稿，英伟达跌超1%，Meta跌0.87%，谷歌跌0.79%，微软跌0.42%，特斯拉跌0.41%，苹果跌0.36%，亚马逊跌0.14%。投资者情绪偏向谨慎，等待本周更多经济数据指引。</p>
+    <a href="https://36kr.com/newsflashes/3765253864129284" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>热门中概股盘前多数下跌：理想汽车跌超2%</h3>
+    <p>36氪获悉，热门中概股美股盘前多数下跌。理想汽车跌超2%，阿里巴巴、京东跌超1%，小鹏集团跌0.86%，网易跌0.55%，拼多多跌0.31%；蔚来涨超1%，百度涨0.68%，哔哩哔哩涨0.17%。</p>
+    <a href="https://36kr.com/newsflashes/3765256730903046" target="_blank">原文链接 →</a>
+  </div>
+
+  <div class="news-item">
+    <h3>蔚蓝锂芯2025年净利润7.11亿元，同比增长45.66%</h3>
+    <p>蔚蓝锂芯发布2025年财报：全年实现营业收入81.13亿元，同比增长20.09%；归母净利润7.11亿元，同比增长45.66%；公司拟每10股派发现金红利1元，并以资本公积金每10股转增4.8股，业绩表现亮眼。</p>
+    <a href="http://static.cninfo.com.cn/finalpage/2026-04-14/1225099269.PDF" target="_blank">原文链接 →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>AI日报 · 数据来源：AIbase · 36氪 · VentureBeat · The Verge · The Guardian · WIRED</p>
+  <p>由 OpenClaw 自动生成 · 2026-04-13</p>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
