@@ -3,457 +3,495 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌟 全球AI日报 · 2026年4月14日</title>
+<title>🌟 AI日报 · 2026年4月14日</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 20px; }
-body {
-  background: #0d0b1e;
-  color: #e8e4f0;
-  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-  min-height: 100vh;
-  line-height: 1.8;
-}
-/* 顶部Banner */
-.header {
-  background: linear-gradient(135deg, #6c3fdd 0%, #3b1f8c 50%, #1a0f4e 100%);
-  padding: 1.5rem 1rem 1rem;
-  text-align: center;
-  border-bottom: 3px solid #9b6dff;
-}
-.header .date { font-size: 0.85rem; color: #c4b5fd; letter-spacing: 2px; margin-bottom: 0.3rem; }
-.header .title { font-size: 1.8rem; font-weight: bold; color: #fff; line-height: 1.3; }
-.header .subtitle { font-size: 0.8rem; color: #c4b5fd; margin-top: 0.3rem; }
-
-/* Tab导航 */
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  background: #1a1535;
-  border-bottom: 2px solid #3b2f8c;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  gap: 2px;
-}
-.tab {
-  flex: 1;
-  min-width: 80px;
-  padding: 0.6rem 0.3rem;
-  text-align: center;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #9b8fc7;
-  cursor: pointer;
-  border-radius: 8px 8px 0 0;
-  transition: all 0.2s;
-  border: 1px solid transparent;
-}
-.tab:hover { background: #2a2050; color: #c4b5fd; }
-.tab.active {
-  background: #6c3fdd;
-  color: #fff;
-  border-color: #9b6dff;
-}
-
-/* 分类区块 */
-.section { display: none; padding: 0.8rem; }
-.section.active { display: block; }
-
-.section-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.section-title .emoji { font-size: 1.2rem; }
-
-/* 新闻卡片 */
-.news-item {
-  background: #1a1535;
-  border: 1px solid #2e2660;
-  border-radius: 12px;
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.7rem;
-  transition: border-color 0.2s;
-}
-.news-item:hover { border-color: #6c3fdd; }
-
-.news-title {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #e0d7ff;
-  margin-bottom: 0.3rem;
-  line-height: 1.5;
-}
-.news-tags { margin-bottom: 0.3rem; }
-.tag {
-  display: inline-block;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  margin-right: 0.3rem;
-}
-.tag-cn { background: #dc2626; color: #fff; }
-.tag-global { background: #2563eb; color: #fff; }
-.tag-hot { background: #d97706; color: #fff; }
-.tag-new { background: #059669; color: #fff; }
-
-.news-summary {
-  font-size: 0.9rem;
-  color: #b8b0d8;
-  line-height: 1.7;
-  margin-bottom: 0.4rem;
-}
-.news-link {
-  font-size: 0.75rem;
-  color: #9b8fc7;
-  text-decoration: none;
-}
-.news-link:hover { color: #c4b5fd; text-decoration: underline; }
-
-/* 底部 */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  color: #6b6280;
-  font-size: 0.75rem;
-  border-top: 1px solid #2e2660;
-  margin-top: 1rem;
-}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 20px; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0d0221 0%, #1a0533 50%, #0d0221 100%);
+    min-height: 100vh;
+    color: #e8e0f0;
+  }
+  .hero {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    background: linear-gradient(180deg, rgba(88,28,135,0.4) 0%, transparent 100%);
+  }
+  .hero h1 { font-size: 2.2rem; color: #e0aaff; margin-bottom: 0.3rem; }
+  .hero p { color: #a78bfa; font-size: 1rem; }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background: rgba(13,2,33,0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(139,92,246,0.2);
+  }
+  .nav button {
+    background: rgba(139,92,246,0.15);
+    border: 1px solid rgba(139,92,246,0.4);
+    color: #c4b5fd;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .nav button:hover, .nav button.active {
+    background: rgba(139,92,246,0.4);
+    color: #fff;
+    border-color: #8b5cf6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .card {
+    background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.25);
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); border-color: rgba(139,92,246,0.5); }
+  .card-title { font-size: 1.1rem; color: #e0aaff; margin-bottom: 0.6rem; line-height: 1.5; }
+  .card-summary { color: #c4b5fd; line-height: 1.8; margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .card-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .tag {
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .tag-cn { background: rgba(239,68,68,0.2); color: #fca5a5; }
+  .tag-global { background: rgba(59,130,246,0.2); color: #93c5fd; }
+  .tag-fire { background: rgba(249,115,22,0.2); color: #fdba74; }
+  .tag-new { background: rgba(34,197,94,0.2); color: #86efac; }
+  .card-link {
+    color: #a78bfa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .card-link:hover { background: rgba(139,92,246,0.2); color: #e0aaff; }
+  .footer { text-align: center; padding: 1.5rem; color: rgba(139,92,246,0.5); font-size: 0.85rem; }
+  .emoji-icon { font-size: 1.5rem; margin-right: 0.4rem; }
+  .section-title { font-size: 1.3rem; color: #e0aaff; margin: 1.5rem 0 1rem; padding-left: 0.5rem; border-left: 4px solid #8b5cf6; }
 </style>
-<script>
-function showTab(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelector('.tab[onclick*="'+id+'"]').classList.add('active');
-}
-</script>
 </head>
 <body>
 
-<div class="header">
-  <div class="date">2026年4月14日 · 星期二</div>
-  <div class="title">🌟 全球AI日报</div>
-  <div class="subtitle">每日AI资讯精选 · 老年友好大字体版</div>
+<div class="hero">
+  <h1>🌟 全球AI日报</h1>
+  <p>2026年4月14日 · 星期二 · 每日08:30自动更新</p>
 </div>
 
-<div class="tabs">
-  <div class="tab active" onclick="showTab('tab-cn')">🇨🇳 国内要闻</div>
-  <div class="tab" onclick="showTab('tab-product')">🚀 新品动态</div>
-  <div class="tab" onclick="showTab('tab-industry')">🏭 行业资讯</div>
-  <div class="tab" onclick="showTab('tab-business')">💼 商业运用</div>
-  <div class="tab" onclick="showTab('tab-vc')">💡 创业融资</div>
-  <div class="tab" onclick="showTab('tab-hot')">🔥 讨论热点</div>
+<div class="nav">
+  <button class="active" onclick="show('cn')">🇨🇳 国内要闻</button>
+  <button onclick="show('new')">🚀 新品动态</button>
+  <button onclick="show('industry')">🏭 行业资讯</button>
+  <button onclick="show('biz')">💼 商业运用</button>
+  <button onclick="show('fund')">💡 创业融资</button>
+  <button onclick="show('hot')">🔥 讨论热点</button>
 </div>
 
-<!-- 国内要闻 -->
-<div id="tab-cn" class="section active">
-  <div class="section-title" style="background:#2d1f5e;color:#e0d7ff;"><span class="emoji">🇨🇳</span> 国内要闻 · 8条</div>
+<div class="container">
 
-  <div class="news-item">
-    <div class="news-title">爱奇艺龚宇：AI电影时代来临，3至6个月内或产出商业大片</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">爱奇艺CEO龚宇在《人民日报》撰文预测，以Seedance2.0为代表的视频生成大模型正推动AI影视制作跨越实验阶段，预计3至6个月内即可产出符合商业标准的大体量影视作品。龚宇还透露，首家爱奇艺乐园已在江苏扬州正式开业，探索AI时代IP多维价值转化。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27097" target="_blank">🔗 原文链接（AIbase）</a>
+  <!-- 国内要闻 -->
+  <div id="cn" class="section active">
+    <h2 class="section-title">🇨🇳 国内要闻</h2>
+
+    <div class="card">
+      <div class="card-title">🔵 AI正式纳入中国教资考试与公共必修课：五部门联合部署</div>
+      <div class="card-summary">教育部等五部门联合发文，将人工智能纳入教师资格考试内容，并在全国大中小学公共必修课中全面铺开。此举标志着中国全民智能素养培育正式进入制度化阶段，AI教育从高等教育下沉至K12阶段，未来三年内覆盖学生规模预计超2亿。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27102" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 阿里巴巴首款具身机器人曝光：高德具身业务部将发布四足机器人</div>
+      <div class="card-summary">阿里巴巴旗下高德地图具身业务部首款产品即将发布，为四足机器人，定位为阿里巴巴首款具身智能硬件产品。据悉，该项目由阿里自动驾驶团队主导研发，结合高德在导航与地图领域的技术积累，主打室外复杂地形适应能力，将与阿里云、菜鸟物流形成协同。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27103" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 DeepMind CEO Hassabis重磅预言：AGI五年内到来，AI是"十倍速工业革命"</div>
+      <div class="card-summary">Google DeepMind CEO德米斯·哈萨比斯在接受《金融时报》专访时表示，通用人工智能（AGI）有望在五年内实现，届时AI带来的变革将远超互联网，其影响规模相当于"十倍速工业革命"。他指出当前AI系统已展示出真正的推理能力，下一步是让AI自主科学发现。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27104" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 火山引擎Seedance 2.0全面开放API，全球SOTA级视频生成能力来袭</div>
+      <div class="card-summary">字节跳动旗下火山引擎正式发布Seedance 2.0系列API，并开放全球SOTA级视频生成能力。该模型支持更高分辨率、更长时序一致性，视频生成质量达到当前业界最高水平，同时大幅降低推理成本，已向全球开发者开放申请。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27107" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 AI医疗进入"深水区"：研究指生成式模型尚难独立承担临床推理重任</div>
+      <div class="card-summary">权威医学期刊《柳叶刀》子刊发表研究，对多款主流生成式AI医疗模型进行临床推理评估，结果显示现有模型在复杂病例诊断、多步骤临床推理方面与专科医生仍有显著差距，但作为辅助工具可有效提升医生诊断效率。研究建议将AI定位为"临床决策支持"而非替代方案。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27101" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 对话即办公！阿里千问上线表格Agent，直接生成与编辑Excel</div>
+      <div class="card-summary">阿里云千问大模型上线全新表格处理Agent，用户通过自然语言对话即可完成Excel文件的生成、编辑、公式计算与数据可视化分析。该功能面向企业用户，支持复杂表格逻辑理解，降低了数据分析门槛，可嵌入企业OA系统，首批合作客户包括多家头部电商与金融机构。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27100" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 网易云音乐AI广告因"恐怖谷"翻车，客服紧急致歉</div>
+      <div class="card-summary">网易云音乐新一季AI生成广告因人物形象过于诡异引发用户强烈不适，被调侃"脖子扭到后背去了"，相关话题迅速登上微博热搜。网易云音乐客服公开致歉，承认AI生图质量把控不足，并承诺下架相关物料，同时启动内部审查流程。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27096" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔵 AIbase MiniMax Agent桌面端大升级：上线Pocket功能，跨平台接管飞书微信</div>
+      <div class="card-summary">MiniMax Agent桌面端迎来重大更新，正式推出Pocket功能，实现跨平台消息自动接管，用户可在电脑端同时管理飞书、微信等多个办公通讯软件的消息处理与自动回复。该功能依托MiniMax大模型语言理解能力，支持自定义回复策略，首批向企业用户开放。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27114" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">网易云音乐AI广告"恐怖谷"翻车，客服紧急致歉</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-hot">🔥 热议</span></div>
-    <div class="news-summary">网易云音乐近期投放的AI生成广告因人物形象诡异、动作扭曲引发用户强烈不适，被指"恐怖谷"效应翻车。大量用户在社交平台反馈广告画面令人不安，网易云音乐客服已紧急致歉并表示将撤换相关素材。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27096" target="_blank">🔗 原文链接（AIbase）</a>
+  <!-- 新品动态 -->
+  <div id="new" class="section">
+    <h2 class="section-title">🚀 新品动态</h2>
+
+    <div class="card">
+      <div class="card-title">🤖 火山引擎Seedance 2.0全面开放API：全球SOTA级视频生成</div>
+      <div class="card-summary">字节跳动火山引擎正式发布Seedance 2.0视频生成模型API，全面开放全球开发者接入。该模型在视频分辨率、时序一致性方面达到当前业界最高水平，推理成本大幅优化，支持文生视频、图生视频等多模态任务，是国内视频生成能力的重大突破。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27107" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤖 AI交互新突破！Skywork AI发布Matrix-Game 3.0：720p 40帧实时高清"世界生成"</div>
+      <div class="card-summary">Skywork AI发布Matrix-Game 3.0，实现AI交互重大突破——在消费级硬件上完成720p 40帧实时高清"世界生成"效果，用户可在虚拟环境中与AI实时对话互动，画面流畅度与真实世界接近。这一进展标志着AI驱动的实时渲染技术正式进入实用阶段。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27106" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤖 特斯拉2026春季更新：FSD一键订阅、车载AI迎来语音时代</div>
+      <div class="card-summary">特斯拉发布2026年春季软件更新，旗下FSD（全自动驾驶）正式推出一键订阅模式，降低用户体验门槛。同时车载AI语音助手全面升级，支持自然连续对话、实时导航辅助与娱乐控制，意味着特斯拉车内交互正式进入AI语音时代。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27110" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤖 100B匿名模型深夜上线OpenRouter，搅动开源模型格局</div>
+      <div class="card-summary">一款参数量超过100B的匿名大模型深夜悄然上线OpenRouter平台，引发开发者社区广泛讨论。该模型未公开开发团队信息，但评测结果显示其在多项基准测试中与GPT-4o、Claude 3.5旗鼓相当，引发关于开源模型匿名开发模式的行业讨论。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-new">🚀 新品</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://finance.sina.com.cn/tech/2026-04-14/doc-inhumshf9142145.shtml" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤖 Google研究推出Vantage：大语言模型协作与创造力测评新方法</div>
+      <div class="card-summary">Google AI Research推出名为Vantage的测评框架，专门用于评估大语言模型在团队协作与创意任务中的表现。与传统基准测试不同，Vantage模拟真实项目协作场景，测试模型在多人互动、迭代改进、创意发散等方面的综合能力，为AI Agent评估提供了新范式。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-new">🚀 新品</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27113" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤖 OpenAI内部备忘录流出：代号Spud模型对标Anthropic Mythos</div>
+      <div class="card-summary">OpenAI内部备忘录被泄露，显示该公司正在开发代号为"Spud"的新模型，旨在对标Anthropic旗下的Mythos系列模型。备忘录指出Spud将重点提升长文本推理与复杂任务规划能力，预计将在未来数月内发布早期预览版本。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-new">🚀 新品</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27108" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">软银成立新公司研发日本国产AI，力争2030年突破万亿参数</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">软银宣布成立新公司全力研发日本国产AI，目标在2030年实现万亿参数规模超越。该项目获得索尼、本田、新日铁等日本 domestic 巨头支持，是软银机器人+AI战略的重要组成，旨在打造不依赖美国和中国的"主权AI"。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27091" target="_blank">🔗 原文链接（AIbase）</a>
+  <!-- 行业资讯 -->
+  <div id="industry" class="section">
+    <h2 class="section-title">🏭 行业资讯</h2>
+
+    <div class="card">
+      <div class="card-title">📊 OpenAI、 Google、 Anthropic三巨头"吞噬"软件世界</div>
+      <div class="card-summary">The Verge深度报道指出，OpenAI、Google与Anthropic正在以前所未有的速度"吞噬"整个软件行业。三家公司通过API授权、企业订阅和Agent平台，正在成为各类软件产品的底层基础设施，中小SaaS厂商面临严峻的生存压力，行业格局正在被AI能力差距重塑。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 SoftBank联手索尼本田成立新公司，主攻"物理AI"</div>
+      <div class="card-summary">软银（SoftBank）宣布联合索尼、本田、Nippon Steel等日本巨头成立新公司，专注"物理AI"（Physical AI）研发，目标是构建能够自主控制机器人和工业设备的AI模型，计划2030年前实现完全自主化。日本此举被视为在全球主权AI竞争中抢占先机的重要布局。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 新技术HarmonyGNN显著提升图神经网络准确率</div>
+      <div class="card-summary">学术论文预印本平台arXiv发表重磅研究，研究人员提出名为HarmonyGNN的新型图神经网络架构，在多个标准基准数据集上实现准确率显著提升，尤其在社交网络分析、分子结构预测等场景中表现突出，被认为是图神经网络领域的重要突破。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27095" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 AI电影时代倒计时！爱奇艺龚宇：3至6个月内或产出AI商业大片</div>
+      <div class="card-summary">爱奇艺CEO龚宇在行业论坛上表示，AI生成电影技术已接近商业化临界点，预计3至6个月内将出现首部由AI深度参与制作的商业级电影。他指出当前AI在视觉特效、分镜生成等环节已大幅压缩制作周期与成本，但全AI生成仍需克服叙事连贯性等技术瓶颈。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27097" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 Anthropic牵头AI安全联盟，亚马逊、苹果、谷歌、微软等联手护驾开源安全</div>
+      <div class="card-summary">Anthropic宣布牵头成立AI安全产业联盟，首批成员包括亚马逊、苹果、博通、思科、CrowdStrike、谷歌、JP摩根、Linus基金会、微软、英伟达、Palo Alto Networks等超过40家机构。联盟承诺提供1亿美元API使用额度及400万美元直接捐赠，以提升开源软件安全生态。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://venturebeat.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 不堪AI虚假报告"轰炸"，Node.js宣布暂停发放安全赏金</div>
+      <div class="card-summary">Node.js项目组宣布暂时停止其安全赏金计划，原因是大量由AI生成的虚假漏洞报告涌入，严重消耗了维护团队的审核精力。官方声明指出，AI生成的安全报告数量在过去半年增长超过10倍，其中绝大多数经核验为误报或低质量内容，团队呼吁建立AI友好的报告筛选机制。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27094" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">OpenAI结盟亚马逊，与微软"蜜月期"生变</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">OpenAI宣布与亚马逊达成战略合作，被外界视为与微软关系的重大转变。此前OpenAI与微软深度绑定，此次"结盟亚马逊"标志着算力竞赛升级，OpenAI正在寻求更多云服务商支持以分散风险。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27087" target="_blank">🔗 原文链接（AIbase）</a>
+  <!-- 商业运用 -->
+  <div id="biz" class="section">
+    <h2 class="section-title">💼 商业运用</h2>
+
+    <div class="card">
+      <div class="card-title">💰 OpenAI内部信炮轰Anthropic：虚增80亿营收，质疑其商业数据</div>
+      <div class="card-summary">OpenAI内部通信记录被曝光，其中公开质疑Anthropic夸大营收数据，称其存在"虚增80亿美元"的情况，并声称Anthropic当前营收并未超越OpenAI。该内部信加剧了AI独角兽之间的公开口水战，也引发市场对AI公司估值与商业数据真实性的担忧。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27111" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 AI赋能蓝领！谷歌投资千万美元资助美国制造业转型</div>
+      <div class="card-summary">谷歌宣布投资超过千万美元，用于资助美国制造业AI转型项目，重点面向中小企业与产业工人技能升级。该计划预计覆盖超过4万名制造业从业者，提供AI工具使用培训与就业再匹配支持，旨在缩小AI技术红利在蓝领群体中的覆盖缺口。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27098" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 谷歌Meet实时语音翻译功能扩展至移动端</div>
+      <div class="card-summary">Google Meet的AI实时语音翻译功能正式扩展至移动端，支持英语与西班牙语、法语、德语、葡萄牙语、意大利语之间的实时互译。该功能此前仅限网页端使用，移动端上线后大幅拓宽了跨语言协作场景的覆盖范围，目前已向特定Google AI和Workspace订阅用户开放。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 OpenAI发布AI儿童安全政策框架，呼吁立法升级</div>
+      <div class="card-summary">OpenAI正式发布AI儿童安全政策框架（Child Protection Blueprint），由该公司在NCMEC和检察官联盟协助下制定。框架涵盖AI生成儿童性虐待内容的防范、报告机制优化与系统性干预等维度，同时呼吁全球立法者升级相关法律法规以应对AI时代的新型儿童保护挑战。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 Tubi成首个接入ChatGPT的流媒体，AI推荐"你今晚想看啥"</div>
+      <div class="card-summary">流媒体平台Tubi宣布正式登陆ChatGPT应用商店，成为全球首个在该平台开设AI聊天推荐功能的流媒体服务。用户可直接在ChatGPT中输入"@Tubi"并描述想看的影片类型（如"一场噩梦般的悬疑片"），AI即可返回Tubi平台上匹配的影片推荐并支持直接跳转观看。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💰 谷歌Google Finance AI改造版扩展至100+国家</div>
+      <div class="card-summary">谷歌宣布将Google Finance的AI改造版（内置Gemini聊天机器人、新版图表工具与升级资讯流）扩展至超过100个国家和地区，此前仅在美国和印度上线。新版支持本地语言交互，标志着谷歌将AI赋能传统产品的大规模商业化加速推进。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">微软Copilot重大重塑：拟引入OpenClaw技术实现AI智能体自主运行</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">✨ 新品</span></div>
-    <div class="news-summary">据报道，微软正拟对Copilot进行重大架构重塑，计划引入OpenClaw技术实现AI智能体（Agent）的自主运行。这意味着Copilot将从辅助工具升级为可独立完成复杂任务的智能助手，标志微软在AI Agent赛道加速布局。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27085" target="_blank">🔗 原文链接（AIbase）</a>
+  <!-- 创业融资 -->
+  <div id="fund" class="section">
+    <h2 class="section-title">💡 创业融资</h2>
+
+    <div class="card">
+      <div class="card-title">🏆 开源中国完成数亿元C+轮融资，加速打造AI开发者"模力方舟"</div>
+      <div class="card-summary">开源中国宣布完成数亿元人民币C+轮融资，投资方包括多家头部产业资本。本轮融资将重点用于"模力方舟"AI开发者平台建设，为国内开发者提供模型调用、微调、部署一站式服务，进一步完善中文AI开发生态。开源中国旗下Gitee代码托管平台拥有超过4000万开发者用户。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27099" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏆 中金资本等在武汉新设20亿元创业投资基金</div>
+      <div class="card-summary">中金资本与武汉光谷交投、湖北莲花山人工智能研究院共同出资，成立规模达20亿元人民币的光谷交投中金（武汉）创业投资基金。该基金聚焦人工智能、信息技术、高端制造等战略性新兴产业，是中部地区今年最大规模AI相关创投基金之一。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://36kr.com/newsflashes/3766503752434433" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏆 众擎机器人赵同阳：人形今年很卷，要全身心坐镇公司</div>
+      <div class="card-summary">人形机器人创业公司众擎机器人创始人赵同阳发布内部信，表示今年人形机器人赛道竞争极为激烈，公司面临巨大压力需全身心投入运营。众擎机器人成立于2022年，专注于双足人形机器人研发，此前曾因大额猎头费用纠纷引发关注。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://finance.sina.com.cn/tech/2026-04-14/doc-inhumshk4293108.shtml" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏆 追觅被曝拖欠近70万猎头费，俞浩曾声称2亿挖首席科学家</div>
+      <div class="card-summary">智能清洁家电企业追觅科技被曝拖欠猎头费用近70万元，涉及多家猎头机构。与此同时，追觅创始人俞浩此前曾高调宣称"2亿元年薪挖首席科学家"，引发行业热议。追觅近年来在扫地机器人、洗地机市场增长迅速，但高速扩张也带来内部管理压力。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
+        <a class="card-link" href="https://finance.sina.com.cn/tech/2026-04-14/doc-inhummye5058076.shtml" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏆 Anthropic估值排名全球第三，IPO预期持续升温</div>
+      <div class="card-summary">在OpenAI内部信炮轰Anthropic数据的背景下，Anthropic最新估值依然稳居全球AI公司第三位，仅次于OpenAI和字节跳动。知情人士透露，Anthropic正在积极扩招企业销售团队，为可能的IPO做准备，预计最快将在2027年提交上市申请。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">国产协作机器人企业"庞伯特"完成近2亿元A轮系列融资</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">✨ 融资</span></div>
-    <div class="news-summary">国内协作机器人企业"庞伯特"宣布完成A轮系列融资，三轮累计金额近2亿元，神骐资本、明势创投、蓝驰创投、锦秋基金、华创资本等头部机构参投，高鹄资本担任独家财务顾问。融资将用于产品技术迭代及全球化布局。</div>
-    <a class="news-link" href="https://36kr.com/newsflashes/3765973483111174" target="_blank">🔗 原文链接（36氪）</a>
+  <!-- 讨论热点 -->
+  <div id="hot" class="section">
+    <h2 class="section-title">🔥 讨论热点</h2>
+
+    <div class="card">
+      <div class="card-title">🔥 OpenAI vs Anthropic公开开战：内部信"曝光战"愈演愈烈</div>
+      <div class="card-summary">OpenAI与Anthropic之间的竞争本周升级为公开"曝光战"。先是OpenAI内部信质疑Anthropic虚增80亿营收，随后Anthropic CEO Dario Amodei公开发文反击，声称OpenAI"不择手段抹黑竞争对手"。两大AI巨头矛盾公开化，引发科技圈广泛讨论AI独角兽竞争底线问题。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27111" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔥 AI生成"特朗普弥赛亚"图像引争议：深度伪造政治内容泛滥</div>
+      <div class="card-summary">特朗普在Truth Social平台发布了一张AI生成的自我神化图像，图中的他如同弥赛亚在治愈他人，该图像迅速在社交网络病毒式传播。这只是AI生成政治虚假内容泛滥的最新案例。《纽约时报》等主流媒体警告称，AI图像正在成为选举信息战的新武器，各国监管机构面临严峻挑战。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔥 100B匿名模型深夜上线：开源社区掀起"身份猜谜"热潮</div>
+      <div class="card-summary">一款100B+参数的匿名大模型悄然上线OpenRouter，其来源引发全球开发者社区疯狂猜测。有人认为是某大厂的"白送"开源版本，也有猜测指向主权AI背景下某国家的技术发布。模型质量评测表现优异，但团队匿名这一异常举动本身成为了最大看点。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://finance.sina.com.cn/tech/2026-04-14/doc-inhumshf9142145.shtml" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔥 AICowork成为企业级Agent部署新标准：Zoom会议记录自动转行动清单</div>
+      <div class="card-summary">Anthropic旗下企业级AI协作工具Claude Cowork本周发布重磅更新，新增Zoom会议录音自动转录并生成行动清单功能，引发企业用户广泛好评。该功能允许企业IT管理员批量部署，并支持权限管控，被认为是AI Agent在企业场景落地的里程碑式应用。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔥 网易云音乐AI广告"恐怖谷"翻车：AI生图质量把控成行业难题</div>
+      <div class="card-summary">网易云音乐AI生成广告因人物形象异常诡异（如"脖子扭到后背"）引发用户强烈不适，#网易云音乐AI广告#话题登顶微博热搜。AI生图"恐怖谷"问题再次被广泛讨论——即AI生成的人物图像在逼近真实但未能完全达到时，反而会引发人类强烈反感，这给品牌营销敲响警钟。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.aibase.com/news/27096" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔥 OpenAI macOS应用遭Axios供应链攻击，波及ChatGPT用户</div>
+      <div class="card-summary">开源社区热门编程工具Axios被黑客入侵并植入恶意脚本，影响了包括ChatGPT macOS应用在内的多款工具。OpenAI已紧急发布安全更新并重新签发证书，同时公布事件调查报告。此事件再次暴露了AI工具生态链安全风险的脆弱性，引发开发者社区对供应链安全的高度重视。</div>
+      <div class="card-meta">
+        <div class="tags"><span class="tag tag-global">🌐 国际</span><span class="tag tag-fire">🔥 热点</span></div>
+        <a class="card-link" href="https://www.theverge.com/" target="_blank">原文链接 →</a>
+      </div>
+    </div>
+
   </div>
 
-  <div class="news-item">
-    <div class="news-title">越疆科技完成A股IPO辅导验收，协作机器人赛道加速</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">证监会网站披露，深圳市越疆科技股份有限公司IPO辅导状态已变更为"辅导验收"。越疆科技为国内协作机器人头部企业，此前于2025年12月在深交所办理辅导备案，拟首次公开发行股票，辅导券商为国泰海通证券。</div>
-    <a class="news-link" href="https://36kr.com/newsflashes/3765984322322952" target="_blank">🔗 原文链接（36氪）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">一季度A股科技股领涨，创业板指、深成指双双涨逾1%</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">4月14日A股高开，创业板指、深成指双双涨逾1%。存储芯片、有色金属、软件服务、算力等方向涨幅居前。沪深京三市上涨个股近3300只，市场情绪回暖，科技板块资金流入明显。</div>
-    <a class="news-link" href="https://36kr.com/newsflashes/3766025573958405" target="_blank">🔗 原文链接（36氪）</a>
-  </div>
-</div>
-
-<!-- 新品动态 -->
-<div id="tab-product" class="section">
-  <div class="section-title" style="background:#1a3a2e;color:#6effc4;"><span class="emoji">🚀</span> 新品动态 · 6条</div>
-
-  <div class="news-item">
-    <div class="news-title">谷歌Gemini推出基于Nano Banana的交互式可视化图像生成</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">谷歌Gemini推出全新交互式可视化图像生成功能，基于Nano Banana技术实现。用户可通过自然语言描述实时生成可交互的动态图表与可视化图像，支持数据探索与多轮对话修正，大幅降低了数据可视化的技术门槛。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27093" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Claude Code本地推理"超进化"：对接魔改版Gemma 4，速度暴增5倍</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span></div>
-    <div class="news-summary">开发者成功将Claude Code对接魔改版Gemma 4，实现本地推理速度暴增5倍的突破性成果。该方案针对CRUD开发场景进行专项优化，在本地运行环境下即可获得接近云端质量的代码生成体验，被评价为"本地开发者的春天"。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27089" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">LPM1.0模型发布：单图转实时交互式数字人视频</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">研究人员发布LPM1.0模型，实现仅凭单张静态图片即可生成实时交互式数字人视频的重大突破。该技术可将任意人物照片转化为可对话、可互动的虚拟数字形象，支持实时渲染与语音驱动，适用于虚拟主播、客服数字人等场景。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27080" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">谷歌Veo 3.1 Lite视频模式上线：Ultra订阅用户免积分无限生成</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span></div>
-    <div class="news-summary">谷歌推出Veo 3.1 Lite视频生成模式，Ultra订阅用户可享受免积分无限生成特权。该模式在保持高质量输出的同时大幅降低了使用成本门槛，进一步加剧AI视频生成领域的竞争。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27083" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI伦敦首个永久办公室2027年启用，可容纳超500名员工</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">OpenAI正式确定英国永久总部选址，位于伦敦核心地段，将于2027年正式启用，可容纳超过500名员工。这是OpenAI在英国市场的首个永久办公室，标志着其欧洲战略的重大升级，旨在吸引英国及欧洲顶尖AI人才。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27078" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Google Meet AI实时语音翻译扩展至移动端</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 新品</span></div>
-    <div class="news-summary">Google Meet的AI语音翻译功能此前仅支持网页端，现已扩展至移动端，支持英语与西班牙语、法语、德语、葡萄牙语、意大利语之间的实时语音互译，订阅Google AI和Workspace的用户可率先体验。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/13" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-</div>
-
-<!-- 行业资讯 -->
-<div id="tab-industry" class="section">
-  <div class="section-title" style="background:#1a2a3a;color:#6eb5ff;"><span class="emoji">🏭</span> 行业资讯 · 6条</div>
-
-  <div class="news-item">
-    <div class="news-title">HarmonyGNN新技术显著提升图神经网络准确率</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 技术</span></div>
-    <div class="news-summary">研究人员推出HarmonyGNN新技术，通过改进图神经网络的注意力机制和信息传递路径，在多个标准数据集上实现显著准确率提升。该技术对社交网络分析、分子结构预测、知识图谱推理等场景具有重要应用价值。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27095" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">多家美媒封禁互联网档案馆"时光机"爬虫，防AI训练滥用</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 行业</span></div>
-    <div class="news-summary">《纽约时报》《华盛顿邮报》等多家美国主流媒体宣布封禁互联网档案馆（Wayback Machine）的"时光机"爬虫，阻止其被用于AI模型训练。这一举措旨在防止AI系统大规模抓取历史新闻内容用于商业模型训练。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27084" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">软银成立"物理AI"新公司，欲造2030年自主控制机器人的AI模型</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 行业</span></div>
-    <div class="news-summary">软银宣布成立专注于"物理AI"的新公司，目标到2030年开发出能够自主控制机器设备和机械臂的AI模型。该项目获得索尼、本田、新日铁等日本巨头支持，被视为日本争夺AI物理世界话语权的关键布局。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/13" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI、谷歌、Anthropic正在"吞噬"整个软件世界</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 行业</span><span class="tag tag-hot">🔥 热议</span></div>
-    <div class="news-summary">The Verge深度报道指出，OpenAI、谷歌与Anthropic正在以惊人的速度重塑整个软件行业格局。三家公司通过API授权、企业合作和直接收购等手段，几乎渗透到每一款主流软件产品中，行业集中度引发监管关注。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/12" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI收购Hiro Finance，强化金融AI能力</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 行业</span></div>
-    <div class="news-summary">OpenAI确认收购金融初创公司Hiro Finance，这是继收购Multi之后又一笔重要收购。Hiro Finance专注于AI驱动的个人理财与金融分析，此次收购被普遍视为OpenAI强化金融AI能力、拓展B端收入的重要战略布局。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27081" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Anthropic、微软、谷歌等成立AI安全联盟，开放1000万美元信用额度</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 行业</span></div>
-    <div class="news-summary">Anthropic联合AWS、Apple、Broadcom、Cisco、CrowdStrike、谷歌、JP Morgan、Linux Foundation、微软、英伟达、Palo Alto Networks等巨头成立AI安全联盟，承诺提供高达1000万美元的Claude使用信用额度，以及400万美元直接赠款，用于支持开源安全研究。</div>
-    <a class="news-link" href="https://venturebeat.com/2026/04/13" target="_blank">🔗 原文链接（VentureBeat）</a>
-  </div>
-</div>
-
-<!-- 商业运用 -->
-<div id="tab-business" class="section">
-  <div class="section-title" style="background:#3a2a1a;color:#ffb86b;"><span class="emoji">💼</span> 商业运用 · 6条</div>
-
-  <div class="news-item">
-    <div class="news-title">Meta扎克伯格亲自编写代码，训练AI数字分身替代本人与员工互动</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">Meta创始人扎克伯格亲自参与代码编写，并训练了一个AI数字分身来替代他本人与员工进行日常互动。该AI分身可处理部分管理沟通事务，体现了扎克伯格对AI替代管理层重复工作的实验性探索，也引发关于AI在企业管理中角色的讨论。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27088" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI发布AI儿童安全政策框架，对抗AI生成儿童性虐待内容</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">OpenAI发布AI儿童安全政策框架（Child Protection Blueprint），由OpenAI联合NCMEC和检察官联盟共同制定，旨在推动相关法律现代化、改进举报流程并构建拦截儿童剥削的系统性方案。文件还呼吁建立行业通用的AI儿童安全标准。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/08" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Tubi成首个推出ChatGPT应用的流媒体服务</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">流媒体平台Tubi宣布推出ChatGPT应用，成为首个在ChatGPT应用商店上架的流媒体服务。用户可通过自然语言描述观影偏好（如"今晚想看一部像发烧梦但不是恐怖片的电影"），Tubi AI将返回个性化推荐并可直接跳转观看。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/08" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">谷歌金融AI应用向100多个国家扩展，支持本地语言</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">谷歌将其AI驱动的全新金融应用（Google Finance）扩展至全球100多个国家，新增澳大利亚、巴西、加拿大、印度尼西亚、日本、墨西哥等市场。该应用内置Gemini聊天机器人，支持本地语言交互，并提供全新图表工具和升级版新闻订阅。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/08" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">爱奇艺扬州乐园正式开业，探索AI时代IP实体化</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">首家爱奇艺乐园在江苏扬州正式开业，这是爱奇艺将数字IP实体化的重要尝试。通过跨媒介IP融合文旅模式，探索AI时代下IP资产的多维价值转化，将线上内容IP延伸至线下体验消费场景。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27097" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI工程师揭秘：百万行代码零人编码，AI蒸馏经验让智能体成为"终极队友"</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">OpenAI内部工程师披露，其团队已实现百万行代码完全由AI生成的创举，核心策略在于"AI蒸馏经验"——将资深工程师的决策模式和行为数据化，让AI智能体学会处理各种边缘案例。该实践被形容为培养"终极队友"，引发工程师群体对职业未来的思考。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27086" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-</div>
-
-<!-- 创业融资 -->
-<div id="tab-vc" class="section">
-  <div class="section-title" style="background:#1a3a3a;color:#6bffff;"><span class="emoji">💡</span> 创业融资 · 6条</div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI收购Hiro Finance：实质是人才收购，加码金融AI</div>
-    <div class="news-tags"><span class="tag tag-new">✨ 融资</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">OpenAI确认收购金融初创公司Hiro Finance（专注AI理财），这是OpenAI开启"掘金"模式的重要信号。外界分析认为此轮收购核心目的是人才收购，OpenAI拟借助Hiro团队强化在金融AI领域的竞争力。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27079" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">协作机器人"庞伯特"完成近2亿元A轮系列融资</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span><span class="tag tag-new">✨ 融资</span></div>
-    <div class="news-summary">庞伯特完成A轮系列融资、三轮累计近2亿元，神骐资本、明势创投、蓝驰创投、锦秋基金、华创资本等头部机构参投。本轮融资将用于产品技术迭代，同时加速推进全球化品牌与市场布局。</div>
-    <a class="news-link" href="https://36kr.com/newsflashes/3765973483111174" target="_blank">🔗 原文链接（36氪）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">越疆科技完成A股IPO辅导验收，协作机器人冲刺上市</div>
-    <div class="news-tags"><span class="tag tag-cn">🇨🇳 国内</span></div>
-    <div class="news-summary">深圳市越疆科技股份有限公司IPO辅导状态变更为"辅导验收"，拟首次公开发行股票并在深交所上市。越疆科技为国内协作机器人头部厂商，此前于2025年12月办理辅导备案，辅导券商为国泰海通证券。</div>
-    <a class="news-link" href="https://36kr.com/newsflashes/3765984322322952" target="_blank">🔗 原文链接（36氪）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Claude Cowork企业版发布：可基于Zoom会议转录自动生成待办事项</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">Anthropic推出Claude Cowork企业版更新，新增IT管理员批量部署工具，并支持将Zoom会议转录自动转化为结构化待办事项。这标志着Anthropic在B端市场的AI Agent产品力进一步增强。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/10" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">GoDaddy与Cloudflare合作：允许站长管理AI爬虫访问权限</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 商业</span></div>
-    <div class="news-summary">网络托管平台GoDaddy宣布与Cloudflare合作，将AI Crawl Control工具集成至其托管服务，允许网站所有者精细控制AI爬虫的访问权限，包括完全封禁、仅限白名单或付费访问等多个选项。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/07" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Anthropic AI安全联盟成立：1000万美元信用额度+400万美元直接赠款</div>
-    <div class="news-tags"><span class="tag tag-global">🌐 融资</span></div>
-    <div class="news-summary">Anthropic牵头成立AI安全联盟，汇集AWS、苹果、博通、思科、CrowdStrike、谷歌、JP Morgan、Linux Foundation、微软、英伟达、Palo Alto Networks等科技巨头，承诺提供1000万美元Claude使用额度及400万美元直接赠款，用于支持开源安全研究。</div>
-    <a class="news-link" href="https://venturebeat.com/2026/04/13" target="_blank">🔗 原文链接（VentureBeat）</a>
-  </div>
-</div>
-
-<!-- 讨论热点 -->
-<div id="tab-hot" class="section">
-  <div class="section-title" style="background:#3a1a1a;color:#ff6b6b;"><span class="emoji">🔥</span> 讨论热点 · 6条</div>
-
-  <div class="news-item">
-    <div class="news-title">Grafana开源监控平台曝提示词漏洞，黑客可诱导AI助手泄露企业数据</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 安全</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">知名开源监控平台Grafana被发现存在提示词注入漏洞，黑客可利用恶意构造的数据源配置诱导嵌入的AI助手泄露企业敏感信息。安全研究人员警告所有使用Grafana AI功能的企业立即检查配置，目前官方已发布安全补丁。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27090" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">Node.js不堪AI虚假安全报告"轰炸"，宣布暂停发放安全赏金</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 安全</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">Node.js项目方宣布暂停安全赏金计划，原因是大量由AI生成的虚假或低质量安全报告涌入，占用了安全团队大量精力进行无效排查。项目方表示，在找到有效过滤AI生成报告的方法之前，安全赏金计划将暂停运行。</div>
-    <a class="news-link" href="https://www.aibase.com/zh/news/27094" target="_blank">🔗 原文链接（AIbase）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI macOS应用因Axios被黑更新安全证书</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 安全</span></div>
-    <div class="news-summary">由于Axios账户被黑客入侵，恶意脚本被植入其Windows/macOS/Linux设备的开发工具中，可能波及ChatGPT macOS应用。OpenAI紧急发布安全更新并更换证书，提示用户尽快更新至最新版本。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/11" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">AI生成特朗普"神像"图片在社交平台疯传，美国大选再掀Deepfake风暴</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 热议</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">特朗普在Truth Social发布了一张AI生成的"神化"自画像，图中他以某种宗教形象出现并"治愈"了好莱坞演员伊桑·霍克。该图片在社交平台疯传并引发巨大争议，被认为是AI深度伪造技术在美国大选中的典型应用，引发公众对信息真实性前所未有的担忧。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/13" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">AI假新闻传播力碾压真相：伊朗政权宣传案例警示</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 热议</span></div>
-    <div class="news-summary">The Verge刊发深度报道，揭示AI生成内容在传播虚假信息方面的效率远超传统媒体。以伊朗政权宣传为例，其AI生成内容在社交平台的传播速度和覆盖人群远超真实新闻，印证了"真相总是输给AI slop"的悲观判断。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/11" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">OpenAI年关生死局：Anthropic与OpenAI均面临史上最大商业化压力</div>
-    <div class="news-tags"><span class="tag tag-hot">🔥 热议</span><span class="tag tag-global">🌐 国际</span></div>
-    <div class="news-summary">The Verge主笔Nilay Patel撰文称，2026年将是Anthropic和OpenAI的"成败之年"，两家公司正面临史上最大的商业化压力——必须证明其烧钱速度与营收增长能够匹配，否则将面临投资者信心崩溃的风险。</div>
-    <a class="news-link" href="https://www.theverge.com/2026/04/09" target="_blank">🔗 原文链接（The Verge）</a>
-  </div>
 </div>
 
 <div class="footer">
-  <p>🌟 全球AI日报 · 2026年4月14日 · 第47期</p>
-  <p>由 星野AI 自动生成 · 数据来源：AIbase · 36氪 · The Verge · VentureBeat</p>
-  <p>GitHub Pages: <a href="https://204337189-ctrl.github.io/ai-daily-report/" style="color:#9b8fc7;">https://204337189-ctrl.github.io/ai-daily-report/</a></p>
+  <p>🌟 AI日报 · 每日08:30自动更新 · 数据来源：AIbase · 36氪 · 澎湃新闻 · 新浪科技 · VentureBeat · The Verge</p>
+  <p>由星野 🤖 自动整理生成 · 2026年4月14日</p>
 </div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
