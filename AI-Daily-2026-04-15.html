@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 全球AI日报 · 2026年4月15日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
+  background: #0d0d1a;
+  color: #e0d8f5;
+  min-height: 100vh;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 50%, #1a0a3d 100%);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #4a3b8c;
+  box-shadow: 0 4px 24px rgba(100, 60, 200, 0.3);
+}
+.header .date { font-size: 28px; font-weight: bold; color: #c4a0ff; margin-bottom: 6px; }
+.header .subtitle { font-size: 20px; color: #a090d0; margin-bottom: 10px; }
+.header .tagline { font-size: 18px; color: #8070b0; }
+.header .ai-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Navigation Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+  background: #12102a;
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid #2d2455;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 6px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #9090b0;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.tab-btn:hover { background: #1e1845; color: #c4a0ff; }
+.tab-btn.active { background: linear-gradient(135deg, #4c1d95, #7c3aed); color: white; font-weight: bold; }
+
+/* Section */
+.section { display: none; }
+.section.active { display: block; }
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c4a0ff;
+  margin: 24px 0 16px;
+  padding-left: 12px;
+  border-left: 4px solid #7c3aed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* News Card */
+.news-card {
+  background: #13112d;
+  border: 1px solid #2a2455;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.news-card:hover { border-color: #6d5aad; }
+.news-card .card-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.news-card .tag {
+  font-size: 15px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.tag-cn { background: #3b1f6e; color: #d4a0ff; }
+.tag-globe { background: #1f3b6e; color: #a0d4ff; }
+.tag-fire { background: #6e2b1f; color: #ffb0a0; }
+.tag-new { background: #1f4e3b; color: #a0ffd4; }
+
+.news-card .title { font-size: 20px; font-weight: bold; color: #ddd0ff; line-height: 1.4; margin-bottom: 8px; }
+.news-card .summary { font-size: 19px; color: #a098c0; line-height: 1.7; margin-bottom: 10px; }
+.news-card .source-row { display: flex; justify-content: space-between; align-items: center; }
+.news-card .src-label { font-size: 16px; color: #6a5a8a; }
+.news-card .link {
+  font-size: 16px;
+  color: #a78bfa;
+  text-decoration: none;
+  padding: 3px 10px;
+  border: 1px solid #4a3a7a;
+  border-radius: 6px;
+}
+.news-card .link:hover { background: #2d2455; color: #c4a0ff; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: #5a4a7a;
+  font-size: 16px;
+  margin-top: 30px;
+  border-top: 1px solid #2a2455;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body { font-size: 18px; }
+  .header .date { font-size: 24px; }
+  .tab-btn { min-width: 60px; font-size: 15px; padding: 8px 4px; }
+  .news-card .title { font-size: 19px; }
+  .news-card .summary { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <div class="date">🌟 全球AI日报</div>
+  <div class="subtitle">2026年4月15日 · 星期三</div>
+  <div class="tagline">星野出品 · 每日08:30自动推送</div>
+  <div class="ai-badge">🤖 AI · Artificial Intelligence Daily</div>
+</div>
+
+<!-- Navigation -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('china')">🇨🇳 国内</button>
+  <button class="tab-btn" onclick="showTab('new')">🚀 新品</button>
+  <button class="tab-btn" onclick="showTab('industry')">🏭 行业</button>
+  <button class="tab-btn" onclick="showTab('biz')">💼 商业</button>
+  <button class="tab-btn" onclick="showTab('startup')">💡 创业</button>
+  <button class="tab-btn" onclick="showTab('hot')">🔥 热点</button>
+</div>
+
+<!-- 🇨🇳 国内要闻 -->
+<div class="section active" id="tab-china">
+  <div class="section-title">🇨🇳 国内要闻</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">斯坦福2026AI报告：中美技术差距仅剩2.7%，中国专利与机器人双登顶</div>
+    </div>
+    <div class="summary">斯坦福大学最新AI指数报告显示，中美AI技术差距已缩小至2.7%，中国在AI专利数量和机器人应用领域双双跃居全球第一。该报告综合评估了论文发表、专利授权、产业化等多项指标，中国在计算机视觉、自然语言处理等领域的技术实力获得国际认可。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27119" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">金融AI规模化元年！13家银行砸1800亿死磕科技，大模型成标配</div>
+    </div>
+    <div class="summary">2026年被视为金融AI规模化元年，13家主流银行累计投入超1800亿元用于AI基础设施建设，大模型已在风控、客服、投研等场景全面落地。业内预计金融AI市场规模将在年内突破500亿元，传统银行数字化转型进入深水区。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27116" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">菜鸟发布攀爬机器人ZeeBot：实测仓库存取效率提升100%</div>
+    </div>
+    <div class="summary">菜鸟集团在亚特兰大MODEX 2026国际物流展上发布首款自研"攀爬机器人"ZeeBot，可在货架三维空间内自主攀爬作业。实测数据显示，该技术使仓库存取效率翻倍，首个项目已在广东交付使用，标志着中国物流机器人技术再获突破。</div>
+    <div class="source-row">
+      <span class="src-label">来源：36氪 · 2026-04-15</span>
+      <a class="link" href="https://36kr.com/newsflashes/3767429503173382" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">A股创业板指高开1.06%创10年新高，科技股集体走强</div>
+    </div>
+    <div class="summary">A股三大指数集体高开，创业板指高开1.06%创2015年6月以来新高。AI概念股、半导体板块领涨，恒生科技指数涨2.26%，京东集团涨近6%，阿里巴巴、百度集团涨超4%，市场情绪显著回暖。</div>
+    <div class="source-row">
+      <span class="src-label">来源：36氪 · 2026-04-15</span>
+      <a class="link" href="https://36kr.com/newsflashes/3767410190057990" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">AIbase供应链攻击波及OpenAI！macOS用户请立即检查应用版本</div>
+    </div>
+    <div class="summary">AIbase平台曝光一起针对AI工具生态的供应链攻击事件，部分macOS应用被植入恶意脚本，可能影响OpenAI ChatGPT的macOS应用用户。安全专家建议所有macOS用户立即检查应用版本并更新至最新官方版本，避免账户凭证泄露。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27127" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">特斯拉上海工厂将为擎天柱机器人量产提供"金钥匙"</div>
+    </div>
+    <div class="summary">特斯拉中国区总经理王昊表示，上海超级工厂的高效生产和创新能力被视为推动马斯克人形机器人商业化的关键因素。他将上海制造部门形容为解决大规模量产挑战的"金钥匙"，引发市场对国产特斯拉机器人量产的广泛期待。</div>
+    <div class="source-row">
+      <span class="src-label">来源：36氪 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-15/doc-inhupqxn3660920.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">中科曙光2025年营收同比增长13.81%，拟分红5.56亿元</div>
+    </div>
+    <div class="summary">中科曙光发布2025年财报，全年营收同比增长13.81%，拟向股东分红5.56亿元。作为中国超算和AI基础设施龙头，曙光在国产AI芯片替代和智算中心建设中持续受益，股价表现稳健。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪科技 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/stock/relnews/2026-04-15/doc-inhupvff8506002.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">一季度A股IPO"量质齐升"：30家公司上市，募资258亿同比增六成</div>
+    </div>
+    <div class="summary">2026年一季度A股完成上市发行的公司共30家，较去年同期增加3家；IPO募资规模达258.79亿元，同比增长近六成。单个IPO项目融资能力显著提升，主要集中在电子、高端装备、新材料、新能源等新质生产力领域。</div>
+    <div class="source-row">
+      <span class="src-label">来源：36氪 · 2026-04-15</span>
+      <a class="link" href="https://36kr.com/newsflashes/3767371900175109" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🚀 新品动态 -->
+<div class="section" id="tab-new">
+  <div class="section-title">🚀 新品动态</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">国产Kimi K2.6-code上线：对标Sonnet 4.6，编程新利器</div>
+    </div>
+    <div class="summary">国产万亿参数大模型Kimi K2.6-code正式上线，专注于代码生成与编程辅助，实测对标Anthropic Sonnet 4.6编程能力。该模型在中文编程场景下表现优异，支持超长上下文理解，可高效处理复杂代码补全、调试和重构任务。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27125" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">微软推出MAI-Image-2-Efficient：高效低成本的图像生成模型</div>
+    </div>
+    <div class="summary">微软发布MAI-Image-2-Efficient图像生成模型，定价比前代降低41%，文本输入每百万Token仅5美元，图像输出每百万Token仅19.5美元。在NVIDIA H100硬件上运行速度提升22%，吞吐量效率提升4倍，被称为企业级"生产工作马"。</div>
+    <div class="source-row">
+      <span class="src-label">来源：VentureBeat / AIbase · 2026-04-14</span>
+      <a class="link" href="https://venturebeat.com/technology/microsoft-launches-mai-image-2-efficient-a-cheaper-and-faster-ai-image-model" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">火山引擎Seedance 2.0全面开放API服务</div>
+    </div>
+    <div class="summary">字节跳动旗下火山引擎发布Seedance 2.0，并全面开放API服务。该视频生成模型在生成质量和速度上均有大幅提升，已面向开发者和企业客户开放接入，支持多场景视频内容自动化生产。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27107" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">Chrome为Gemini上线"技能库"：一键复用提示词</div>
+    </div>
+    <div class="summary">谷歌Chrome浏览器为Gemini AI上线"技能库"功能，用户可将常用提示词模板保存并一键复用，告别重复输入。该功能支持跨会话记忆，用户可为不同场景（写作、编程、翻译等）预设专属提示词组合，大幅提升效率。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27122" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">Claude Code正式推出Routines：Mac关机也能云端自动跑</div>
+    </div>
+    <div class="summary">Anthropic为Claude Code桌面应用推出Routines功能，用户可在Mac上设置自动化例程，即使计算机关机，任务仍可在云端自动执行。新功能支持代码审查、自动化测试、持续集成等场景，大幅提升开发者工作效率。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27115" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">MiniMax Agent桌面端大升级：上线Pocket功能，跨平台接管飞书微信</div>
+    </div>
+    <div class="summary">MiniMax Agent桌面端迎来重大升级，上线Pocket功能，支持跨平台统一管理飞书、微信等多个办公通讯工具。用户可通过单一界面实现消息汇总、智能回复和任务管理，AI助手真正成为跨平台办公中枢。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-14</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27114" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-new">✨</span>
+      <div class="title">谷歌Gemini新功能：复杂概念秒变可玩模拟，学物理再不用死记硬背</div>
+    </div>
+    <div class="summary">谷歌为Gemini推出全新"概念模拟"功能，可将复杂物理概念（如电磁场、流体力学）自动转化为可交互的动态模拟。用户拖拽参数即可实时观察现象变化，大幅降低抽象概念学习门槛，被誉为AI+教育里程碑式突破。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27126" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🏭 行业资讯 -->
+<div class="section" id="tab-industry">
+  <div class="section-title">🏭 行业资讯</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">英伟达股价10连涨！万亿算力订单撑住4.6万亿美元市值，距历史新高仅差8%</div>
+    </div>
+    <div class="summary">英伟达股价连续10个交易日上涨，市值逼近4.6万亿美元，距历史新高仅差8%。在全球AI算力需求爆发背景下，英伟达数据中心业务持续超预期，H100/B100系列GPU供不应求，机构投资者普遍看好其长期成长逻辑。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪财经 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/world/2026-04-15/doc-inhupkrh4339902.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">Science Corp推进生物混合脑机接口，首次人体试验提上日程</div>
+    </div>
+    <div class="summary">由前Neuralink高管创立的Science Corp宣布，生物混合脑机接口项目取得关键进展，已聘请顶级神经生物学家主导研发，并计划启动首次人体临床试验。该技术结合生物组织与电子元件，有望为瘫痪和神经退行性疾病患者带来新治疗方案。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27117" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">SoftBank成立新公司打造"物理AI"，索尼、本田、Nippon Steel联手</div>
+    </div>
+    <div class="summary">软银与索尼、本田、Nippon Steel等日本巨头联合成立新公司，目标是在2030年前开发出可自主控制机器设备的AI模型。公司名称和更多细节尚未公布，但被视为日本应对美国和中国AI竞争的国家级战略布局。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-14</span>
+      <a class="link" href="https://www.theverge.com/2026/04/14/softbank-physical-ai-robotics" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">OpenAI、谷歌、Anthropic"三分天下"，重塑全球软件格局</div>
+    </div>
+    <div class="summary">据The Verge分析，OpenAI、谷歌与Anthropic三家AI巨头正形成事实上的寡头格局，通过API授权、企业订阅和平台生态加速渗透全球软件产业。中小SaaS厂商面临严峻选择：是依附大模型生态还是自建AI能力，两难并存。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-12</span>
+      <a class="link" href="https://www.theverge.com/2026/04/12/openai-google-anthropic-software-world" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">AI生成代码43%需在生产环境调试，代码质量成企业新痛点</div>
+    </div>
+    <div class="summary">行业调查显示，AI生成的代码变更中有43%需要在生产环境中进行调试修复，代码质量和可靠性仍是企业落地AI编程工具的主要障碍。分析指出，AI编程工具适合处理重复性代码任务，但复杂业务逻辑仍需人工把关。</div>
+    <div class="source-row">
+      <span class="src-label">来源：VentureBeat · 2026-04-14</span>
+      <a class="link" href="https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">谷歌AI研究推出Vantage：基于大语言模型的协作与创造力测评新方法</div>
+    </div>
+    <div class="summary">谷歌AI研究部门发布Vantage基准测评体系，专门用于评估大语言模型在协作任务和创造性输出方面的能力。与传统基准不同，Vantage模拟真实团队合作场景，从多维度量化AI作为"协作伙伴"的价值。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-14</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27113" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 💼 商业运用 -->
+<div class="section" id="tab-biz">
+  <div class="section-title">💼 商业运用</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">Anthropic估值最高达8000亿美元！多家VC争相抛出投资要约</div>
+    </div>
+    <div class="summary">据知情人士透露，风险投资机构正争相向Anthropic抛出投资要约，估值最高已达8000亿美元。贝森特盛赞其Mythos模型为"阶跃式变革"，Anthropic在企业AI市场的快速渗透使其成为继OpenAI之后最受追捧的AI公司，融资规模或刷新行业纪录。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪财经 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-15/doc-inhupqxn3628700.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">OpenAI向部分用户发布Cyber模型，与Anthropic Mythos正面竞争</div>
+    </div>
+    <div class="summary">OpenAI正式向部分用户发布代号"Cyber"的AI模型，直接对标Anthropic的Mythos系列。该模型定位为面向安全专家和高级开发者的专业工具，具备强大的代码分析和逆向工程能力，标志着两家AI巨头在高端企业市场的竞争全面升温。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪财经 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/world/2026-04-15/doc-inhupkrq3712839.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">千问上线表格Agent：对话即可生成、编辑Excel</div>
+    </div>
+    <div class="summary">阿里千问上线全新"表格Agent"功能，用户通过自然语言对话即可完成Excel表格的生成、编辑、公式编写和数据可视化分析。该功能深度集成办公场景，大幅降低数据分析门槛，被视为AI办公领域的里程碑式产品。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪科技 · 2026-04-14</span>
+      <a class="link" href="https://finance.sina.com.cn/tob/2026-04-14/doc-inhunpms4719540.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">Claude Code桌面版重磅改版：多智能体管理成为核心</div>
+    </div>
+    <div class="summary">Anthropic发布Claude Code桌面应用重大更新，以多智能体管理为核心设计理念。新增侧边栏会话管理、拖拽布局自定义、内置终端和文件编辑器，方便开发者同时操控多个AI代理处理不同任务，大幅提升复杂项目的开发效率。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-14</span>
+      <a class="link" href="https://www.theverge.com/2026/04/14/claude-code-desktop-redesign-multi-agent" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">谷歌Meet实时语音翻译功能扩展至移动端</div>
+    </div>
+    <div class="summary">谷歌将Meet的AI实时语音翻译功能从网页端扩展至移动端，支持英语与西班牙语、法语、德语、葡萄牙语、意大利语之间的实时互译。该功能面向Google AI Plus和Workspace订阅用户开放，移动商务人士将率先受益。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-08</span>
+      <a class="link" href="https://www.theverge.com/2026/04/08/google-meet-ai-translation-mobile" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">同程旅行发布多款AI旅行创新产品，AI赋能旅游体验</div>
+    </div>
+    <div class="summary">同程旅行在第六届消博会上发布多款AI旅行创新产品，涵盖智能行程规划、实时翻译导览、个性化推荐等场景。AI技术正加速渗透旅游产业链，从出行前规划到目的地体验全链路智能化，提升游客服务效率和体验质量。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪科技 · 2026-04-14</span>
+      <a class="link" href="https://finance.sina.com.cn/tech/2026-04-14/doc-inhunawe4150784.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 💡 创业融资 -->
+<div class="section" id="tab-startup">
+  <div class="section-title">💡 创业融资</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">估值3亿美元！AfterQuery完成A轮融资，助力AI数据创新</div>
+    </div>
+    <div class="summary">AI数据创新公司AfterQuery宣布完成A轮融资，企业估值达3亿美元。本轮融资将用于扩大团队规模和技术研发，AfterQuery专注于为AI模型提供高质量训练数据解决方案，在数据合成和数据标注领域拥有独特技术壁垒。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27123" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">光合创投完成开年最大VC募集：双币基金超50亿元人民币</div>
+    </div>
+    <div class="summary">光合创投正式宣布完成新一期双币基金募资，其中第六期早期美元基金募资4.6亿美元，第三期人民币基金首关10亿元、目标20亿元，两支新基金总规模折合人民币超50亿元，可投资金超过70亿元，主要布局AI和硬科技领域早期项目。</div>
+    <div class="source-row">
+      <span class="src-label">来源：36氪 · 2026-04-15</span>
+      <a class="link" href="https://36kr.com/newsflashes/3767383167844866" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">开源中国完成C+轮融资，累计融资近20亿元</div>
+    </div>
+    <div class="summary">开源中国宣布完成C+轮融资，累计融资总额接近20亿元。开源中国旗下拥有Gitee代码托管平台，是国内最大的开源社区之一。本轮融资将加速Gitee在AI赋能开发者工具方面的产品研发和国际化布局。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪科技 · 2026-04-14</span>
+      <a class="link" href="https://finance.sina.com.cn/tob/2026-04-14/doc-inhunpms4715369.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-cn">🇨🇳</span>
+      <div class="title">橡鹿机器人启动1亿生态扶持计划，造中餐机器人生态圈</div>
+    </div>
+    <div class="summary">橡鹿机器人宣布启动1亿元生态扶持计划，旨在打造中餐机器人生态圈。该计划面向餐饮产业链合作伙伴，提供技术赋能、渠道共享和资本支持，加速中餐标准化和智能化进程，目标覆盖数万家中餐厅。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪科技 · 2026-04-14</span>
+      <a class="link" href="https://finance.sina.com.cn/tob/2026-04-14/doc-inhunpmy4090247.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">OpenAI内部备忘录流出：代号Spud模型对标Anthropic Mythos</div>
+    </div>
+    <div class="summary">OpenAI内部备忘录被曝光，显示该公司正在开发代号为"Spud"的AI模型，直接对标Anthropic的Mythos系列。备忘录同时指出Anthropic"虚增80亿美元营收"，双方在技术和商业层面的竞争趋于白热化，AI行业格局加速洗牌。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27108" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-globe">🌐</span>
+      <div class="title">软银联手索尼本田：2030物理AI新公司正式落地</div>
+    </div>
+    <div class="summary">软银与索尼、本田、Nippon Steel等日企联手成立的"物理AI"新公司正式落地，目标2030年前实现可自主控制机器设备的AI模型。日本国家队入场AI赛道，全球AI竞争格局从纯软件迈向软硬一体新阶段。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge / 36氪 · 2026-04-14</span>
+      <a class="link" href="https://www.theverge.com/2026/04/14/softbank-physical-ai-robotics" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🔥 讨论热点 -->
+<div class="section" id="tab-hot">
+  <div class="section-title">🔥 讨论热点</div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">OpenAI内部信炮轰Anthropic：虚增80亿营收？双方隔空互怼</div>
+    </div>
+    <div class="summary">OpenAI内部信件被泄露，直指Anthropic存在虚增约80亿美元营收的行为，并称其并未超越OpenAI。这一指控在社交媒体引发轩然大波，Anthropic尚未正式回应，两家AI巨头从技术竞争升级到舆论战。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27111" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">NAACP控告xAI在孟菲斯排放有毒污染物，环保争议持续发酵</div>
+    </div>
+    <div class="summary">NAACP正式对埃隆·马斯克的xAI公司提起诉讼，指控其在孟菲斯附近数据中心运营过程中排放有毒污染物，危及周边居民健康。此案引发关于AI数据中心环境影响的广泛讨论，科技公司绿色运营问题再度被推上风口浪尖。</div>
+    <div class="source-row">
+      <span class="src-label">来源：AIbase · 2026-04-15</span>
+      <a class="link" href="https://www.aibase.com/zh/news/27124" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">Meta被曝用AI克隆人取代CEO？扎克伯格"换人"计划引发热议</div>
+    </div>
+    <div class="summary">据科技媒体报道，Meta正测试用AI生成的"扎克伯格克隆人"代替CEO出席部分公开活动。该消息在社交媒体引发热议，有用户调侃"难怪他总是不苟言笑"。Meta尚未正面回应，AI数字人取代企业高管的讨论持续升温。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-14</span>
+      <a class="link" href="https://www.theverge.com/2026/04/14/meta-ai-clone-zuckerberg-ceo" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">特朗普发布AI生成"自我神化"图像，Deepfake恐慌再升级</div>
+    </div>
+    <div class="summary">美国总统特朗普在社交平台发布一张AI生成的自我神化图像，画面中他以某种宗教形象出现并"治愈"他人。此举引发关于AI生成内容滥用和政治人物自我神化的广泛批评，Deepfake治理议题再次成为全球监管焦点。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-13</span>
+      <a class="link" href="https://www.theverge.com/2026/04/13/trump-ai-image-deepfake" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">"AI时代我们都是移民"：Sam Altman深夜发文谈AGI与人类未来</div>
+    </div>
+    <div class="summary">OpenAI CEO Sam Altman深夜在社交媒体发布长文，阐述他对AGI和人类未来的思考，提到"我们都在成为AI时代的移民"，并警告不应由任何单一公司控制通用人工智能。该帖文迅速引发数百万阅读，科技界对AGI治理的讨论再度升温。</div>
+    <div class="source-row">
+      <span class="src-label">来源：The Verge · 2026-04-10</span>
+      <a class="link" href="https://www.theverge.com/2026/04/10/sam-altman-agi-control" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="card-header">
+      <span class="tag tag-fire">🔥</span>
+      <div class="title">贝森特盛赞Anthropic的Mythos是"阶跃式变革"，投资圈沸腾</div>
+    </div>
+    <div class="summary">知名投资人贝森特公开盛赞Anthropic的Mythos模型代表AI领域的"阶跃式变革"，此言一出迅速在投资圈和科技圈刷屏。Mythos被认为是Anthropic面向企业市场的旗舰产品，贝森特的背书进一步点燃了市场对AI应用的想象空间。</div>
+    <div class="source-row">
+      <span class="src-label">来源：新浪财经 · 2026-04-15</span>
+      <a class="link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-15/doc-inhupqxe4244206.shtml" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>📡 数据来源：AIbase · 36氪 · 澎湃新闻 · 新浪科技 · VentureBeat · The Verge</p>
+  <p>🤖 全球AI日报 · 每日08:30自动生成 · 由星野出品</p>
+  <p style="margin-top:8px;">🌟 <a href="https://204337189-ctrl.github.io/ai-daily-report/" style="color:#a78bfa;">https://204337189-ctrl.github.io/ai-daily-report/</a></p>
+</div>
+
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
