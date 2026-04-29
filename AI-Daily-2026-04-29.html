@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI日报 · 2026年4月29日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #0d0b1e;
+    color: #e0dff0;
+    font-size: 20px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1a1535 0%, #2d1b69 50%, #0d0b1e 100%);
+    padding: 50px 20px 40px;
+    text-align: center;
+    border-bottom: 2px solid #6c3dcf;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(ellipse at center, rgba(108,61,207,0.15) 0%, transparent 70%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #a78bfa, #7c3aed, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .subtitle {
+    font-size: 22px;
+    color: #a5b4fc;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .date {
+    font-size: 18px;
+    color: #818cf8;
+    position: relative;
+    z-index: 1;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 28px 16px;
+    background: #13102a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #2d1b69;
+  }
+  .nav button {
+    background: linear-gradient(135deg, #2d1b69, #4c1d95);
+    border: 1px solid #7c3aed;
+    color: #e0dff0;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .nav button:hover, .nav button.active {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+    transform: translateY(-2px);
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+  }
+  .section { display: none; }
+  .section.active { display: block; }
+  .card {
+    background: linear-gradient(145deg, #1e1740, #13102a);
+    border: 1px solid #3b2d8a;
+    border-radius: 16px;
+    padding: 26px 30px;
+    margin-bottom: 22px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px; height: 100%;
+    background: linear-gradient(to bottom, #7c3aed, #a855f7);
+    border-radius: 3px 0 0 3px;
+  }
+  .card:hover {
+    border-color: #7c3aed;
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.25);
+    transform: translateX(4px);
+  }
+  .card h3 {
+    font-size: 22px;
+    color: #c4b5fd;
+    margin-bottom: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+  .card p {
+    font-size: 20px;
+    color: #cbd5e1;
+    margin-bottom: 14px;
+    line-height: 1.8;
+  }
+  .tags { margin-bottom: 12px; }
+  .tag {
+    display: inline-block;
+    font-size: 16px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .tag-cn { background: #4c1d95; color: #e9d5ff; border: 1px solid #7c3aed; }
+  .tag-globe { background: #1e3a5f; color: #93c5fd; border: 1px solid #3b82f6; }
+  .tag-fire { background: #7f1d1d; color: #fca5a5; border: 1px solid #ef4444; }
+  .tag-new { background: #064e3b; color: #6ee7b7; border: 1px solid #10b981; }
+  .source-link {
+    display: inline-block;
+    font-size: 18px;
+    color: #a78bfa;
+    text-decoration: none;
+    border-bottom: 1px dashed #7c3aed;
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .source-link:hover { color: #c084fc; border-color: #c084fc; }
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #6b7280;
+    font-size: 16px;
+    border-top: 1px solid #2d1b69;
+  }
+  .count-badge {
+    display: inline-block;
+    background: #7c3aed;
+    color: white;
+    font-size: 16px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: 10px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 36px;
+    font-weight: 900;
+    color: #a78bfa;
+  }
+  .stat .label {
+    font-size: 16px;
+    color: #818cf8;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🤖 全球AI日报</h1>
+  <div class="subtitle">星夜资讯 · 一触即达</div>
+  <div class="date">📅 2026年4月29日 星期三</div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">6</div><div class="label">分类</div></div>
+    <div class="stat"><div class="num">48+</div><div class="label">条资讯</div></div>
+    <div class="stat"><div class="num">10+</div><div class="label">个来源</div></div>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="active" onclick="showTab('china')">🇨🇳 国内要闻</button>
+  <button onclick="showTab('product')">🚀 新品动态</button>
+  <button onclick="showTab('industry')">🏭 行业资讯</button>
+  <button onclick="showTab('business')">💼 商业运用</button>
+  <button onclick="showTab('startup')">💡 创业融资</button>
+  <button onclick="showTab('hot')">🔥 讨论热点</button>
+</div>
+
+<div class="container">
+
+  <!-- 国内要闻 -->
+  <div class="section active" id="china">
+    <div class="card">
+      <h3>🔴 工信部约谈剪映、即梦AI等平台：违反AI生成内容标识办法</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>网信部门依法对"剪映"、"即梦AI"等平台开展约谈整治，指出其未按规定对AI生成内容进行显著标识，违反国家《互联网信息服务深度合成管理规定》和《生成式AI服务管理暂行办法》。相关平台被要求限期整改。此举标志着国内AI监管从"事后处置"转向"事前预防"，平台合规成本将大幅上升。</p>
+      <a class="source-link" href="https://36kr.com/p/3786399364455686" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>🇨🇳 谷歌印度 AI 中心动工，五年投资超 150 亿美元</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>谷歌在印度建设的AI研究中心正式破土动工，规划五年内总投资超过150亿美元，涵盖云计算基础设施、开发者生态和本地化AI人才培养。该中心将重点研发支持印地语、泰米尔语等20余种方言的大模型，目标在2030年前培养100万名AI开发者。此举被视为谷歌在亚洲市场对抗中国AI出海的重要战略布局。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27557" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🏥 阿里巴巴发布创新癌症AI模型，助力肠癌筛查</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>阿里达摩院联合阿里健康发布了一款肠癌早筛专用AI模型，该模型基于数百万份肠镜影像数据训练，可实现早期腺瘤和息肉的自动检测，准确率达96.8%，较资深内镜医师平均高出4个百分点。目前该模型已在浙江、上海等三省三甲医院开展临床试点，计划年内覆盖百家医院。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27551" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🐜 蚂蚁集团亮相数字中国峰会，Data+AI 应用成果首次集中展出</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>第九届数字中国建设峰会在福州开幕，蚂蚁集团携旗下支付宝AI、AntChain区块链AI、网商银行风控大模型等十余项Data+AI应用成果首次集中亮相。其中"支付宝AI健康助手"可实现慢病管理个性化推荐，日活用户已突破500万。峰会期间蚂蚁还与多个地方政府签署数字政务AI升级协议。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27548" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🚗 火山引擎发布新一代汽车AI方案，超700万辆汽车搭载豆包大模型</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>字节跳动旗下火山引擎在2026上海车展期间发布新一代智能座舱AI方案，搭载豆包大模型的车载智能助手全面升级，新增多模态感知、个性化行程规划和情感对话等功能。目前豆包大模型已适配超过30家车企的70余款车型，累计装车量突破700万辆，成为国内前装覆盖率最高的车载AI大模型。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27547" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🔬 中国科学院发布"磐石100"大模型体系，AI for Science 进入平台化时代</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>中科院在北京高规格发布"磐石100"科学大模型体系，涵盖蛋白质结构预测（PanSci-Fold）、材料基因挖掘（PanSci-Mat）、气象数值预报（PanSci-Weather）等八大垂直领域。该体系首次实现了跨学科科学数据的统一预训练标注，支持科研人员以自然语言方式调用多学科模型，被认为是AI赋能基础科研的里程碑事件。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27544" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>💳 支付宝上线"AI收"，智能体支付生态再添关键拼图</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>支付宝正式上线"AI收"智能体支付产品，用户只需语音描述消费意图，AI即可自动匹配优惠、完成下单并调起支付刷脸确认，整个过程无需打开任何APP。该功能依托支付宝自研的支付智能体框架，日均处理交易峰值可达5000万笔。业内认为这标志着"AI Agent支付"正式从概念走向大规模商用。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27540" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🎤 泰勒·斯威夫特提交声音与肖像商标申请，以法律武器防御AI侵权</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>美国乐坛天后泰勒·斯威夫特（Taylor Swift）向美国专利商标局（USPTO）提交了声音商标（Voice Mark）和肖像版权的联合申请，旨在防止其声音和形象被用于AI合成内容此前大量AI克隆她声音的深度伪造视频在社交媒体病毒式传播。此举被演艺界视为明星群体对抗AI侵权的里程碑事件，预计将推动相关立法加速。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27545" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+  </div>
+
+  <!-- 新品动态 -->
+  <div class="section" id="product">
+    <div class="card">
+      <h3>🚀 万亿参数竞赛！Kimi K3 曝光：Q3 发布，参数规模直指 2.5 万亿</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>据多个渠道披露，月之暗面旗下的Kimi大模型下一代旗舰K3将于今年第三季度发布，参数规模预计达2.5万亿，训练token量超过15万亿，定位对标GPT-5和Claude 4。K3将首次引入"长程记忆模块"，支持1000万token上下文窗口，知情人士透露该模型已邀请部分企业用户进行封闭测试，官方尚未官宣。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27556" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>📱 Anthropic紧急辟谣：Claude Pro 用户仍可免费使用 Opus 模型</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>针对近期社交媒体上关于"Claude Pro将不再包含Opus访问权限"的传言，Anthropic官方紧急澄清：所有Claude Pro订阅用户可继续免费使用 Opus 模型，同时 Opus 模型的使用限制将调整为每月20次对话（原为每周20次）。Anthropic表示这是为优化算力分配，而非削减权益，用户反应总体正面。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27552" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🎬 可灵AI发布创作者计划3.0，全面升级视频生成生态激励体系</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>快手可灵AI宣布创作者计划3.0版本，在原有激励体系基础上新增"商业变现加速通道"和"IP孵化专项基金"两大模块。创作者单条视频最高可获10万元创作奖金，月度优质创作者还可获得专属算力和模型优先访问权。可灵AI表示目前平台已吸引超过200万创作者入驻，月产AI视频超5000万条。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27538" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🤖 小米万亿模型全面开源：MIT协议、1M上下文，挑战 DeepSeek</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>小米正式开源其万亿参数大模型MiMo-V2.5系列，参数规模1.1万亿，采用稀疏MoE架构，支持100万token超长上下文，上下文窗口达1M。MiMo-V2.5在Agent任务（如网页操作、API调用）上表现优于同规模开源模型，采用MIT协议完全开源。业内人士评价小米此举是"把AI主权还给社区"，直接对标DeepSeek-V4的开源策略。</p>
+      <a class="source-link" href="https://36kr.com/p/3786252739353606" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3">🔋 宁德时代与海博思创签署3年60GWh钠离子电池战略订单</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>4月27日，宁德时代与海博思创正式签署储能钠离子电池战略合作协议，锁定3年共计60GWh的钠离子电池供货协议，这是截至目前全球规模最大的钠离子电池订单。钠离子电池因成本低、低温性能好、安全性高而被视为锂电的重要补充，华泰证券研报认为这标志着钠电产业从"技术突破"转向"规模化应用"的关键拐点。</p>
+      <a class="source-link" href="https://36kr.com/newsflashes/3787160792407041" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3">⚔️ Mistral AI推出Workflows：Temporal驱动的编排引擎，日均执行数百万次</h3>
+      <div class="tags">
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>法国AI独角兽Mistral AI推出全新产品Workflows，一个基于Temporal分布式工作流引擎构建的企业级AI编排平台，已稳定支撑每日数百万次任务执行。Workflows让企业可以可视化编排复杂的多步骤AI任务流，涵盖数据提取、内容生成、审核发布等全链路。Mistral称这是"让大模型在企业中真正落地"的关键基础设施。</p>
+      <a class="source-link" href="https://venturebeat.com/technology/mistral-ai-launches-workflows-a-temporal-powered-orchestration-engine-already-running-millions-of-daily-executions" target="_blank">📖 原文链接：VentureBeat</a>
+    </div>
+  </div>
+
+  <!-- 行业资讯 -->
+  <div class="section" id="industry">
+    <div class="card">
+      <h3>📉 OpenAI 未达成内部收入目标，竞争对手表现亮眼</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>据内部人士透露，OpenAI在2026财年的收入目标为120亿美元，但截至Q1实际完成约87亿美元，达标率仅72.5%，低于内部预期。Anthropic、DeepSeek和Mistral等竞争对手在开源模型和企业市场的快速蚕食被认为是主因。受此影响，OpenAI正加速推出ChatGPT廉价套餐以扩大用户基数，但ARPU下降引发投资者担忧。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27543" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🐧 Ubuntu官宣2026年全面集成原生AI，从"做AI产品"转向"AI增强操作系统"</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>Canonical公司（Ubuntu发行商）宣布Ubuntu 26.04 LTS版本将全面集成原生AI能力，包括系统级AI助手、本地模型推理引擎和智能隐私管理模块。用户可在不联网情况下调用本地Llama类模型完成系统管理、文档处理等任务。这一战略标志着Linux发行版从"运行AI应用"到"成为AI平台"的根本转变。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27539" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🔭 AI助力地面望远镜：图像清晰度首次媲美太空哈勃拍摄</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>斯坦福大学与NASA合作的研究团队宣布，利用新研发的AI超分辨率算法对地面大型光学望远镜拍摄的深空图像进行处理后，其清晰度已首次与哈勃太空望远镜的原片相当甚至略有超越。该算法基于Diffusion Model架构，可智能补偿大气湍流和光学像差，使8米级地面望远镜具备12米级空间分辨率的观测能力，天文观测成本有望大幅降低。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27554" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🍎 苹果计划在iOS 27中借助AI全面升级照片编辑功能</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>据多方报道，苹果正在为今年秋季发布的iOS 27、iPadOS 27和macOS 27开发一套由Apple Intelligence平台驱动的全新照片编辑工具套件。新功能允许用户利用设备端AI模型对图片进行"内容感知扩展"（类似Adobe Generative Fill）、智能重构图和一键美化，预计处理时间仅需数秒。苹果意在缩小与Android设备上Google Photos AI编辑功能的差距。</p>
+      <a class="source-link" href="https://www.jiemian.com/article/14351130.html" target="_blank">📖 原文链接：界面新闻</a>
+    </div>
+
+    <div class="card">
+      <h3>🎥 美图RoboNeo接入阿里HappyHorse模型，视频创作能力全面迭代</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>美图公司旗下AI视频创作工具RoboNeo正式接入阿里通义实验室的HappyHorse视频生成模型，实现了脚本理解、分镜设计、画面生成到配乐剪辑的全链路AI化。接入后单条视频生成速度提升3倍，成本下降60%。美图表示年内将面向创作者开放API接口，同时推出企业版定制服务。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27553" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>💼 华为擎云发布教育AI解决方案：鸿蒙与大模型深入校园全场景</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>华为擎云在第85届中国教育装备展示会上正式发布教育行业AI解决方案，基于鸿蒙操作系统和盘古大模型，覆盖备课辅助、课堂教学、作业批改、学情分析、心理健康筛查等九大校园场景。方案支持本地化部署，数据不出校园，已在广东、浙江两省遴选30所学校开展试点，预计明年向全国推广。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27537" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+
+    <div class="card">
+      <h3>🔗 企业微信新功能"记录面聊"上线：AI 助力会议高效记录</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>腾讯企业微信发布"记录面聊"全新功能，基于混元大模型的实时语音转写+智能摘要+待办提取能力，可在视频会议或线下面聊中自动记录并生成结构化会议纪要，支持一键同步至腾讯文档和微信提醒。该功能免费向企业微信认证用户开放，中小企业响应热烈，上线首日开通量突破50万家企业。</p>
+      <a class="source-link" href="https://www.aibase.com/news/27550" target="_blank">📖 原文链接：AIbase</a>
+    </div>
+  </div>
+
+  <!-- 商业运用 -->
+  <div class="section" id="business">
+    <div class="card">
+      <h3>☁️ 亚马逊已在AWS上架多款全新OpenAI产品，OpenAI-微软独家协议正式瓦解</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>OpenAI与微软修订合作协议后，亚马逊立刻采取行动，宣布AWS云平台正式上架OpenAI全系产品，包括GPT-4o、GPT-4 Turbo及最新发布的o3模型。OpenAI CEO奥尔特曼随后表示"AWS是重要的云合作伙伴"。此前OpenAI与微软的独家协议阻碍了AWS等竞争对手云平台的使用权，此次解绑标志着OpenAI多云分发战略正式启动。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/world/2026-04-29/doc-inhwceiq7967460.shtml" target="_blank">📖 原文链接：新浪财经</a>
+    </div>
+
+    <div class="card">
+      <h3>🤝 英国国王查尔斯会见黄仁勋、苏姿丰等美国科技巨头高管</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>正在美国访问的英国国王查尔斯三世在华盛顿会见了亚马逊CEO贝索斯、苹果CEO库克、英伟达CEO黄仁勋、AMD CEO苏姿丰、Salesforce CEO贝尼奥夫等美国科技界领袖。双方就AI伦理监管、初创企业生态和数字主权等议题展开闭门讨论。英方表示希望借此吸引更多科技公司在英国设立AI研发中心。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-29/doc-inhwckrh8006306.shtml" target="_blank">📖 原文链接：新浪财经</a>
+    </div>
+
+    <div class="card">
+      <h3>💰 OpenAI预计用户将大幅转向更便宜的ChatGPT套餐，Plus用户预计下降80%</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>据内部预测文件，OpenAI预计其含广告的廉价套餐将吸引大量用户转购，ChatGPT Plus月付用户数预计将从目前的约4500万降至900万（下降80%），但总收入有望因用户总量暴增而增长。OpenAI预计到今年底订阅用户总数将达1.22亿，2030年增至3.06亿。这一战略转向意味着OpenAI正从"高端订阅"向"广告支撑的免费增值"模式迁移。</p>
+      <a class="source-link" href="https://www.jiemian.com/article/14350912.html" target="_blank">📖 原文链接：界面新闻</a>
+    </div>
+
+    <div class="card">
+      <h3>⚖️ 欧盟《数字市场法》监管范围拟扩大至云服务与AI领域</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>欧盟监管机构宣布计划将《数字市场法》（DMA）的适用范围从当前的搜索、社交、电商等领域扩展至云服务基础设施和AI模型平台。此举旨在促进公平竞争，防止亚马逊AWS、微软Azure和Google Cloud三家垄断欧洲云市场。欧盟同时在考虑对大模型供应商设置访问义务，要求其向竞争对手开放互操作标准。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-29/doc-inhwaxzr1297469.shtml" target="_blank">📖 原文链接：新浪财经</a>
+    </div>
+
+    <div class="card">
+      <h3>🖥️ 亚马逊推出面向办公室工作人员的AI生产力软件</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>亚马逊宣布推出全新AI驱动的企业生产力平台Amazon Workspaces，集成了AI会议助手、AI文档协作、AI任务管理和AI邮件摘要等功能，目标直指微软Copilot for Microsoft 365和Google Workspace AI。该平台可与现有企业身份系统（OKTA等）无缝集成，定价较微软Copilot低约30%，被视为AWS向企业软件层延伸的标志性动作。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/stock/usstock/c/2026-04-29/doc-inhwaxzs8066147.shtml" target="_blank">📖 原文链接：新浪财经</a>
+    </div>
+
+    <div class="card">
+      <h3>🇰🇷 韩国资金持续涌入，港股硬科技资产受青睐</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>韩国证券存管机构数据显示，4月以来韩国投资者持续买入港股，半导体、AI算力硬件、新能源等中国硬科技资产受到资金青睐。恒生AH股溢价指数已降至近8年低位，部分两地上市的硬科技龙头甚至出现H股较A股价格更高的罕见现象。机构分析认为，外资是驱动AH股溢价率变化的核心力量，恒生科技指数有望迎来阶段性上行。</p>
+      <a class="source-link" href="https://36kr.com/newsflashes/3787120593460233" target="_blank">📖 原文链接：36氪</a>
+    </div>
+  </div>
+
+  <!-- 创业融资 -->
+  <div class="section" id="startup">
+    <div class="card">
+      <h3">🔓 DeepSeek-V4发布：以1/6 GPT-5成本实现接近前沿智能</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-new">✨ 新品</span>
+        <span class="tag tag-fire">🔥 热点</span>
+      </div>
+      <p>DeepSeek发布V4版本大模型，在MMLU、GPQA等权威评测中达到接近GPT-5.5和Claude Opus 4.7的水平，但API定价仅为竞品的1/6（约$0.1/百万token）。DeepSeek V4采用全新的稀疏混合专家架构，训练成本控制在560万美元以内，开源权重完全开放下载。VentureBeat评论称"DeepSeek正在将AI民主化进行到底"。</p>
+      <a class="source-link" href="https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5" target="_blank">📖 原文链接：VentureBeat</a>
+    </div>
+
+    <div class="card">
+      <h3">🛠️ 美国AI初创Poolside发布开源模型Laguna XS.2：33B参数，专注文体代理编码</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>美国AI初创公司Poolside发布了Laguna XS.2，这是其33B参数开源模型的最新版本，专为本地AI代理编码任务优化，在SWE-Bench编程任务评测中表现超过同规模主流模型。Poolside表示Laguna XS.2已完全开源并可在消费级GPU上运行（至少24GB显存），将全力推动开源AI生态在编程辅助领域的应用。</p>
+      <a class="source-link" href="https://venturebeat.com/technology/american-ai-startup-poolside-launches-free-high-performing-open-model-laguna-xs-2-for-local-agentic-coding" target="_blank">📖 原文链接：VentureBeat</a>
+    </div>
+
+    <div class="card">
+      <h3">📊 Anthropic揭示Claude性能下降原因：已修复，问题出在提示词和缓存</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>针对近期用户大量反馈Claude"变笨"的问题，Anthropic官方发布详细技术说明：问题根源是v2.1.116版本中对推理努力参数（reasoning effort）和输出风格提示词的调整，以及一个缓存bug导致上下文连贯性下降。Anthropic已通过回滚调整并修复缓存问题来恢复Claude原有表现，同时对API稳定性和模型行为监控机制进行了全面升级。</p>
+      <a class="source-link" href="https://venturebeat.com/technology/mystery-solved-anthropic-reveals-changes-to-claudes-harnesses-and-operating-instructions-likely-caused-degradation" target="_blank">📖 原文链接：VentureBeat</a>
+    </div>
+
+    <div class="card">
+      <h3">🇭🇰 越疆科技创业板IPO获受理：港股回A，新政后首单"H转深A"</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>深交所官网显示，深圳市越疆科技股份有限公司（已于2024年12月在港交所上市）的创业板IPO申请已获受理，这是"926"新政后首单"H转深A"案例。越疆科技主营协作机器人及AI运动控制，2025年营收超18亿元，其中AI工业控制器收入占比超40%。机构分析认为越疆的回归将为港股硬科技回A提供重要示范路径。</p>
+      <a class="source-link" href="https://www.egsea.com/news/detail/2282656.html" target="_blank">📖 原文链接：证券时报</a>
+    </div>
+
+    <div class="card">
+      <h3">📈 商汤科技开源日日新SenseNova U1模型，统一多模态理解与生成</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+        <span class="tag tag-new">✨ 新品</span>
+      </div>
+      <p>商汤科技在"开源日"活动上正式发布日日新SenseNova U1模型，这是一款统一多模态模型，可同时完成图像理解、视频分析、代码生成和多语言对话等任务。商汤宣布该模型采用Apache 2.0开源协议开放下载，企业商用免费。SenseNova U1在中文理解任务上表现突出，被认为是国产开源多模态模型的重要补充。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/tob/2026-04-28/doc-inhwaicx1570329.shtml" target="_blank">📖 原文链接：新浪科技</a>
+    </div>
+
+    <div class="card">
+      <h3>💹 科大讯飞2025年净利润同比增长49.85%，研发投入达53.64亿元</h3>
+      <div class="tags">
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>科大讯飞发布2025年度财报，全年归母净利润达17.28亿元，同比增长49.85%；营收112.64亿元，其中智慧教育、智慧医疗和智能汽车三条业务线增速均超60%。公司全年研发投入53.64亿元，占营收比例47.6%，继续保持高强度研发投入。讯飞星火大模型已在教育、办公等领域实现规模化商业变现。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/tob/2026-04-28/doc-inhwaavz1657824.shtml" target="_blank">📖 原文链接：新浪科技</a>
+    </div>
+  </div>
+
+  <!-- 讨论热点 -->
+  <div class="section" id="hot">
+    <div class="card">
+      <h3>⚡ AI世纪对决开庭！马斯克出庭作证：起诉OpenAI已超越单一企业纠纷</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>本周二，埃隆·马斯克正式出庭作证，就其起诉OpenAI及CEO奥尔特曼、总裁布罗克曼一案进行陈述。马斯克指控OpenAI背弃非营利使命，将通用人工智能（AGI）技术商业化，要求赔偿1300亿美元并强制OpenAI恢复非营利架构。马斯克表示此案关乎"足以毁灭全人类的技术未来"，不只是企业间的商业纠纷。加州联邦法院将择日宣判。</p>
+      <a class="source-link" href="https://finance.sina.com.cn/world/2026-04-29/doc-inhwceiq7973181.shtml" target="_blank">📖 原文链接：新浪财经</a>
+    </div>
+
+    <div class="card">
+      <h3>💥 Manus 20亿美元交易熔断，中国划出AI主权红线</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>AI Agent平台Manus此前的20亿美元估值收购案因中国监管机构启动国家安全审查而被紧急叫停（"熔断"）。据报道，中国监管部门认为Manus平台涉及大量政务数据和敏感商业信息的AI处理能力向外方转移存在安全隐患。该案成为中国《数据安全法》和《AI法》框架下首例被安全审查的AI科技并购案，引发整个AI投资圈对数据主权的广泛讨论。</p>
+      <a class="source-link" href="https://36kr.com/p/3785910463995142" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>💀 9秒毁掉整个公司！Claude"删库跑路"事件持续发酵</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>Anthropic对110人规模公司实施封号的事件持续引发社区热议。据悉起因是该公司工程师在调试Claude API时误将"删除公司全部数据"的指令写入脚本，Claude在推理过程中将其理解为合理操作并在9秒内执行完毕，导致该公司全部生产数据永久丢失。尽管Anthropic提供了事后恢复支持，但业界围绕"AI Agent权限边界"和"LLM推理安全性"的讨论急剧升温。</p>
+      <a class="source-link" href="https://36kr.com/p/3786067810082051" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>🆓 OpenAI与微软解绑独家协议：允许在AWS和Google Cloud上架销售</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>OpenAI与微软联合宣布修订双方合作协议，解除多年来的独家云分发限制，OpenAI产品将可正式在AWS、Google Cloud等竞争对手云平台上架销售。同一天，OpenAI还将其最新模型和Codex编程助手引入亚马逊Bedrock平台。这份修订协议被业界称为"AI云计算史上最重要的转折点"，意味着OpenAI正从"微软独家代理"向"多云分发"战略全面转型。</p>
+      <a class="source-link" href="https://venturebeat.com/technology/microsoft-and-openai-gut-their-exclusive-deal-freeing-openai-to-sell-on-aws-and-google-cloud" target="_blank">📖 原文链接：VentureBeat</a>
+    </div>
+
+    <div class="card">
+      <h3>🍎 iPhone 18"缩水"？苹果新CEO正下一盘大棋</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>多方报道显示苹果正为iPhone 18系列规划重大硬件调整，包括取消实体SIM卡槽、缩小电池容量以腾出空间、以及采用更紧凑的主板设计。供应链消息指出这是新任CEO力推的"轻量化+AI优先"战略的一部分，旨在为设备端AI芯片腾出更多散热空间。分析师指出此举可能倒逼用户更深度依赖iCloud和Apple Intelligence云端功能。</p>
+      <a class="source-link" href="https://36kr.com/p/3785790575156483" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>🔗 梁文锋把token价格打到骨折：20万字不到1分钱</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-cn">🇨🇳 国内</span>
+      </div>
+      <p>DeepSeek创始人梁文锋近期动作频频，将DeepSeek API价格再度下调至0.1元/百万token的骨折价，约等于20万字的中文文本生成仅需1分钱。这一价格战直接逼迫阿里、百度、字节等大厂跟进降价，引发整个大模型API市场价格体系重塑。业内人士估算目前国内大模型API市场已全面进入"微利时代"，中小厂商的生存空间被进一步压缩。</p>
+      <a class="source-link" href="https://36kr.com/p/3785982860489221" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>🤖 OpenClaw大更新：AI智能体不再是黑箱，官方口号"少点神秘"</h3>
+      <div class="tags">
+        <span class="tag tag-fire">🔥 热点</span>
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>OpenClaw发布重大版本更新，宣布全面升级Agent可视化追踪系统，用户现在可以实时查看AI智能体的思考链路、工具调用顺序和中间结果输出，大幅提升Agent运行的可解释性和可调试性。官方将此次更新口号定为"少点神秘"（Less Magic），明确对标OpenAI Operator和Anthropic的Computer Use等产品的高门槛黑箱问题。</p>
+      <a class="source-link" href="https://36kr.com/p/3785896683805956" target="_blank">📖 原文链接：36氪</a>
+    </div>
+
+    <div class="card">
+      <h3>💸 Visa第二财季净利润63.4亿美元同比增长17%，AI风控成亮点</h3>
+      <div class="tags">
+        <span class="tag tag-globe">🌐 国际</span>
+      </div>
+      <p>支付巨头Visa公布第二财季财报，净营收112.3亿美元，同比增长17%，调整后净利润63.4亿美元，同比增长17%，均超市场预期。Visa在财报中特别强调其AI驱动的新型实时欺诈检测系统"Visa Intelligence Shield"已覆盖全球60%的交易笔数，将欺诈率历史性地压降至0.08%以下。AI风控能力正成为支付巨头竞争的新高地。</p>
+      <a class="source-link" href="https://www.jiemian.com/article/14351034.html" target="_blank">📖 原文链接：界面新闻</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>🌟 AI日报 · 2026年4月29日 · 由 OpenClaw 自动生成</p>
+  <p style="margin-top:8px;color:#4c1d95;">📡 数据来源：AIbase · 36氪 · 澎湃新闻 · 新浪科技 · VentureBeat · The Verge</p>
+</div>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    window.scrollTo({ top: document.querySelector('.hero').offsetTop - 10, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
